@@ -1,4 +1,3 @@
-
 // Language System
 class LanguageManager {
     constructor() {
@@ -70,79 +69,18 @@ class LanguageManager {
     }
 }
 
-// Mobile Navigation
-class MobileNavigation {
-    constructor() {
-        this.hamburger = document.querySelector('.hamburger');
-        this.navMenu = document.querySelector('.nav-menu');
-        this.navLinks = document.querySelectorAll('.nav-link');
-        this.init();
-    }
-
-    init() {
-        if (this.hamburger && this.navMenu) {
-            this.hamburger.addEventListener('click', () => this.toggleMenu());
-            this.navLinks.forEach(link => {
-                link.addEventListener('click', () => this.closeMenu());
-            });
-        }
-    }
-
-    toggleMenu() {
-        this.hamburger.classList.toggle('active');
-        this.navMenu.classList.toggle('active');
-    }
-
-    closeMenu() {
-        this.hamburger.classList.remove('active');
-        this.navMenu.classList.remove('active');
-    }
-}
-
-// Smooth Scrolling
-class SmoothScroll {
-    constructor() {
-        this.init();
-    }
-
-    init() {
-        const links = document.querySelectorAll('a[href^="#"]');
-        links.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-
-                if (targetElement) {
-                    const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
-                    const targetPosition = targetElement.offsetTop - headerHeight;
-
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    }
-}
-
-// Carousel Fix
+// Image Carousel
 function initImageCarousel() {
     const images = document.querySelectorAll('.carousel-image');
-    if (!images || images.length === 0) return;
+    if (images.length === 0) return;
 
     let currentIndex = 0;
 
     function showNextImage() {
-        if (!images[currentIndex]) return;
-        if (images[currentIndex].classList) {
-            images[currentIndex].classList.remove('active');
-        }
+        if (images.length === 0) return;
+        images[currentIndex].classList.remove('active');
         currentIndex = (currentIndex + 1) % images.length;
-        if (images[currentIndex] && images[currentIndex].classList) {
-            images[currentIndex].classList.add('active');
-        }
+        images[currentIndex].classList.add('active');
     }
 
     setInterval(showNextImage, 4000);
@@ -150,10 +88,6 @@ function initImageCarousel() {
 
 document.addEventListener('DOMContentLoaded', () => {
     new LanguageManager();
-    new MobileNavigation();
-    new SmoothScroll();
     initImageCarousel();
     console.log('Mineral Gemstones website loaded successfully!');
 });
-
-// Service Worker REMOVED to fix 404 e
