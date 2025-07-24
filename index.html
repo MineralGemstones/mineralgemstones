@@ -10,26 +10,37 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      text-align: center;
       background-color: #f9f9f9;
+      text-align: center;
     }
+
     header img {
       width: 200px;
-      margin-top: 20px;
+      margin: 20px auto;
     }
+
     .carousel {
-      position: relative;
       max-width: 100%;
-      margin: 30px auto;
-      overflow: hidden;
+      margin: 0 auto;
+      position: relative;
     }
-    .carousel-image {
-      display: none;
+
+    .carousel img {
       width: 100%;
       height: auto;
+      max-height: 600px;
+      object-fit: contain; /* evita corte */
+      display: none;
     }
-    .carousel-image.active {
+
+    .carousel img.active {
       display: block;
+    }
+
+    @media (max-width: 768px) {
+      .carousel img {
+        max-height: 300px;
+      }
     }
   </style>
 </head>
@@ -39,12 +50,22 @@
   </header>
 
   <section class="carousel">
-    <img src="hero_image_1.jpg" alt="Hero 1" class="carousel-image active">
-    <img src="hero_image_2.jpg" alt="Hero 2" class="carousel-image">
-    <img src="hero_image_3.jpg" alt="Hero 3" class="carousel-image">
+    <img src="hero_image_1.jpg" alt="Hero 1" class="active">
+    <img src="hero_image_2.jpg" alt="Hero 2">
+    <img src="hero_image_3.jpg" alt="Hero 3">
   </section>
 
-  <script src="main.js"></script>
+  <script>
+    const images = document.querySelectorAll('.carousel img');
+    let index = 0;
+
+    function showNextImage() {
+      images[index].classList.remove('active');
+      index = (index + 1) % images.length;
+      images[index].classList.add('active');
+    }
+
+    setInterval(showNextImage, 4000);
+  </script>
 </body>
 </html>
-
