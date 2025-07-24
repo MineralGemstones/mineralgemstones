@@ -1,15 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mineral Gemstones</title>
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      background-color: #f9f9f9;
+    }
+    header img {
+      width: 200px;
+      margin-top: 20px;
+    }
+    .carousel {
+      position: relative;
+      max-width: 100%;
+      margin: 30px auto;
+      overflow: hidden;
+    }
+    .carousel-image {
+      display: none;
+      width: 100%;
+      height: auto;
+    }
+    .carousel-image.active {
+      display: block;
+    }
+  </style>
 </head>
 <body>
-  <h1>🚀 Site funcionando com CSS</h1>
-  <p>Se você está vendo este texto com estilo diferente, o CSS está carregando corretamente.</p>
+  <header>
+    <img src="logo.png" alt="Mineral Gemstones Logo">
+  </header>
 
-  <!-- Reativando o JavaScript -->
-  <script src="/js/main.js"></script>
+  <section class="carousel">
+    <img src="hero_image_1.jpg" alt="Hero 1" class="carousel-image active">
+    <img src="hero_image_2.jpg" alt="Hero 2" class="carousel-image">
+    <img src="hero_image_3.jpg" alt="Hero 3" class="carousel-image">
+  </section>
+
+  <script src="main.js"></script>
 </body>
 </html>
+
