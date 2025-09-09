@@ -5,19 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mineral Gemstones - Professional Gemological Services</title>
   <meta name="description" content="Professional gemological services including gemstone identification, appraisal, and certification. Expert analysis by certified gemologists.">
-
-  <!-- Mantidos os caminhos originais -->
   <link rel="stylesheet" href="/css/styles.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-
   <style>
-    /* Opcional: suavizar transição do hero */
-    .carousel-image { opacity: 0; transition: opacity .6s ease; position: absolute; inset: 0; width:100%; height:100%; object-fit: cover; }
-    .carousel-image.active { opacity: 1; }
-    .hero-image { position: relative; overflow: hidden; }
+    .carousel-image{opacity:0;transition:opacity .6s ease;position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .carousel-image.active{opacity:1}
+    .hero-image{position:relative;overflow:hidden}
+    .lang-btn.active{outline:2px solid #fff3}
 
-    /* Blog cards (REMOVIDO o uso; mantido aqui apenas se você reativar futuramente) */
-    .lang-btn.active { outline: 2px solid #fff3; }
+    /* Testimonials */
+    .testimonials{padding:60px 0;background:#0c0c0c}
+    .testimonials .section-title{margin-bottom:22px}
+    .t-wrap{position:relative;overflow:hidden}
+    .t-track{display:flex;gap:20px;transition:transform .5s ease}
+    .t-card{min-width:320px;flex:0 0 100%;background:#111;border:1px solid #222;border-radius:16px;padding:22px;color:#eee;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+    .t-stars{color:#f5c518;margin-bottom:8px}
+    .t-author{margin-top:10px;opacity:.9;font-weight:600}
+    .t-nav{display:flex;gap:10px;justify-content:center;margin-top:16px}
+    .t-btn{background:#1b1b1b;border:1px solid #2a2a2a;border-radius:10px;padding:8px 12px;color:#ddd;cursor:pointer}
+    .t-btn:hover{background:#242424}
+    @media(min-width:720px){.t-card{flex:0 0 70%}}
+    @media(min-width:1024px){.t-card{flex:0 0 50%}}
   </style>
 </head>
 <body>
@@ -29,22 +37,12 @@
           <img src="/images/logo.png" alt="Mineral Gemstones" class="logo">
         </div>
         <ul class="nav-menu">
-          <li class="nav-item">
-            <a href="#home" class="nav-link" data-en="Home" data-pt="Início" data-es="Inicio">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="#services" class="nav-link" data-en="Services" data-pt="Serviços" data-es="Servicios">Services</a>
-          </li>
-          <li class="nav-item">
-            <a href="#about" class="nav-link" data-en="About" data-pt="Sobre" data-es="Acerca">About</a>
-          </li>
-          <!-- ITEM BLOG REMOVIDO DO CABEÇALHO -->
-          <li class="nav-item">
-            <a href="#education" class="nav-link" data-en="Education" data-pt="Educação" data-es="Educación">Education</a>
-          </li>
-          <li class="nav-item">
-            <a href="#contact" class="nav-link" data-en="Contact" data-pt="Contato" data-es="Contacto">Contact</a>
-          </li>
+          <li class="nav-item"><a href="#home" class="nav-link" data-en="Home" data-pt="Início" data-es="Inicio">Home</a></li>
+          <li class="nav-item"><a href="#services" class="nav-link" data-en="Services" data-pt="Serviços" data-es="Servicios">Services</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link" data-en="About" data-pt="Sobre" data-es="Acerca">About</a></li>
+          <!-- Blog removido -->
+          <li class="nav-item"><a href="#education" class="nav-link" data-en="Education" data-pt="Educação" data-es="Educación">Education</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link" data-en="Contact" data-pt="Contato" data-es="Contacto">Contact</a></li>
         </ul>
         <div class="language-selector">
           <button class="lang-btn active" data-lang="en">EN</button>
@@ -52,9 +50,7 @@
           <button class="lang-btn" data-lang="es">ES</button>
         </div>
         <div class="hamburger" id="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
         </div>
       </div>
     </nav>
@@ -141,18 +137,9 @@ Ya sea que sea un coleccionista, alguien que heredó una joya familiar o está a
           </p>
 
           <div class="features">
-            <div class="feature">
-              <i class="fas fa-check-circle"></i>
-              <span data-en="GIA Certified Gemologists" data-pt="Gemólogos Certificados pelo GIA" data-es="Gemólogos Certificados por GIA">GIA Certified Gemologists</span>
-            </div>
-            <div class="feature">
-              <i class="fas fa-check-circle"></i>
-              <span data-en="Advanced Testing Equipment" data-pt="Equipamentos de Teste Avançados" data-es="Equipos de Prueba Avanzados">Advanced Testing Equipment</span>
-            </div>
-            <div class="feature">
-              <i class="fas fa-check-circle"></i>
-              <span data-en="International Standards" data-pt="Padrões Internacionais" data-es="Estándares Internacionales">International Standards</span>
-            </div>
+            <div class="feature"><i class="fas fa-check-circle"></i><span data-en="GIA Certified Gemologists" data-pt="Gemólogos Certificados pelo GIA" data-es="Gemólogos Certificados por GIA">GIA Certified Gemologists</span></div>
+            <div class="feature"><i class="fas fa-check-circle"></i><span data-en="Advanced Testing Equipment" data-pt="Equipamentos de Teste Avançados" data-es="Equipos de Prueba Avanzados">Advanced Testing Equipment</span></div>
+            <div class="feature"><i class="fas fa-check-circle"></i><span data-en="International Standards" data-pt="Padrões Internacionais" data-es="Estándares Internacionales">International Standards</span></div>
           </div>
         </div>
         <div class="about-image">
@@ -162,16 +149,14 @@ Ya sea que sea un coleccionista, alguien que heredó una joya familiar o está a
     </div>
   </section>
 
-  <!-- Blog Carousel Section REMOVIDO INTEIRO -->
-
-  <!-- Education Section (imagens e links corrigidos para relativos) -->
+  <!-- Education Section (corrigido: imagens e links absolutos) -->
   <section id="education" class="education">
     <div class="container">
       <h2 class="section-title" data-en="Education" data-pt="Educação" data-es="Educación">Education</h2>
       <div class="education-grid">
         <div class="education-card">
-          <a href="pages/education/diamond_4cs.html">
-            <img src="images/education/diamond_4cs.jpg" alt="The 4Cs of Diamonds">
+          <a href="/pages/education/diamond_4cs.html">
+            <img src="/images/education/diamond_4cs.jpg" alt="The 4Cs of Diamonds">
             <div class="education-content">
               <h3 data-en="The 4Cs of Diamonds" data-pt="Os 4Cs dos Diamantes" data-es="Las 4Cs de los Diamantes">The 4Cs of Diamonds</h3>
               <p data-en="Learn about Cut, Color, Clarity, and Carat Weight - the universal standard for diamond quality." data-pt="Aprenda sobre Lapidação, Cor, Pureza e Peso em Quilates - o padrão universal para a qualidade de diamantes." data-es="Aprenda sobre Talla, Color, Claridad y Peso en Quilates - el estándar universal para la calidad de los diamantes.">Learn about Cut, Color, Clarity, and Carat Weight - the universal standard for diamond quality.</p>
@@ -179,14 +164,54 @@ Ya sea que sea un coleccionista, alguien que heredó una joya familiar o está a
           </a>
         </div>
         <div class="education-card">
-          <a href="pages/education/precious_stones.html">
-            <img src="images/education/precious_stones.jpg" alt="Precious Stones Guide">
+          <a href="/pages/education/precious_stones.html">
+            <img src="/images/education/precious_stones.jpg" alt="Precious Stones Guide">
             <div class="education-content">
               <h3 data-en="Precious Stones Guide" data-pt="Guia de Pedras Preciosas" data-es="Guía de Piedras Preciosas">Precious Stones Guide</h3>
               <p data-en="Discover the world of precious stones, including sapphires, rubies, and emeralds." data-pt="Descubra o mundo das pedras preciosas, incluindo safiras, rubis e esmeraldas." data-es="Descubra el mundo de las piedras preciosas, incluyendo zafiros, rubíes y esmeraldas.">Discover the world of precious stones, including sapphires, rubies, and emeralds.</p>
             </div>
           </a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section (novo) -->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <h2 class="section-title" data-en="Testimonials" data-pt="Depoimentos" data-es="Testimonios">Testimonials</h2>
+      <div class="t-wrap">
+        <div class="t-track" id="tTrack">
+          <article class="t-card">
+            <div class="t-stars">★★★★★</div>
+            <p>Exceptional expertise. Rafael explained every detail of my diamond and gave me total confidence in the purchase.</p>
+            <div class="t-author">Mariana S. — Engagement Ring</div>
+          </article>
+          <article class="t-card">
+            <div class="t-stars">★★★★★</div>
+            <p>Professional appraisal delivered fast and clearly documented. Perfect for my insurance provider.</p>
+            <div class="t-author">Daniel R. — Insurance Appraisal</div>
+          </article>
+          <article class="t-card">
+            <div class="t-stars">★★★★★</div>
+            <p>We verified a family emerald and learned its history. Honest, transparent, and very knowledgeable.</p>
+            <div class="t-author">Lucia A. — Heirloom Evaluation</div>
+          </article>
+          <article class="t-card">
+            <div class="t-stars">★★★★★</div>
+            <p>Great buyer’s advisory. Saved me from overpaying and found a better stone that matched my goals.</p>
+            <div class="t-author">Brian K. — Buyer’s Advisory</div>
+          </article>
+          <article class="t-card">
+            <div class="t-stars">★★★★★</div>
+            <p>The education content is outstanding. I now understand the 4Cs and feel secure investing in gems.</p>
+            <div class="t-author">Patricia M. — Education Session</div>
+          </article>
+        </div>
+      </div>
+      <div class="t-nav">
+        <button class="t-btn" id="tPrev"><i class="fas fa-chevron-left"></i></button>
+        <button class="t-btn" id="tNext"><i class="fas fa-chevron-right"></i></button>
       </div>
     </div>
   </section>
@@ -201,12 +226,10 @@ Ya sea que sea un coleccionista, alguien que heredó una joya familiar o está a
           <p data-en="Have a question or need a consultation? Contact us today!" data-pt="Tem alguma dúvida ou precisa de uma consulta? Entre em contato conosco hoje!" data-es="¿Tiene alguna pregunta o necesita una consulta? ¡Contáctenos hoy!">Have a question or need a consultation? Contact us today!</p>
           <ul>
             <li><i class="fas fa-user"></i> Rafael Ferreira</li>
-            <!-- Telefone e e-mail removidos -->
             <li><i class="fas fa-map-marker-alt"></i> California - USA</li>
           </ul>
         </div>
         <div class="contact-form">
-          <!-- Substitua YOUR_FORMSPREE_ID pelo seu ID real do Formspree -->
           <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
             <input type="text" name="name" placeholder="Your Name" required data-en="Your Name" data-pt="Seu Nome" data-es="Su Nombre">
             <input type="email" name="email" placeholder="Your Email" required data-en="Your Email" data-pt="Seu E-mail" data-es="Su Correo">
@@ -230,11 +253,11 @@ Ya sea que sea un coleccionista, alguien que heredó una joya familiar o está a
         <div class="footer-section">
           <h4 data-en="Services" data-pt="Serviços" data-es="Servicios">Services</h4>
           <ul>
-            <li><a href="/pages/services/gemstone_identification.html" data-en="Gemstone Identification" data-pt="Identificação de Gemas" data-es="Identificación de Gemas">Gemstone Identification</a></li>
-            <li><a href="/pages/services/gemstone_appraisal.html" data-en="Gemstone Appraisal" data-pt="Avaliação de Gemas" data-es="Evaluación de Gemas">Gemstone Appraisal</a></li>
-            <li><a href="/pages/services/certification_services.html" data-en="Certification Services" data-pt="Serviços de Certificação" data-es="Servicios de Certificación">Certification Services</a></li>
-            <li><a href="/pages/services/quality_analysis.html" data-en="Quality Analysis" data-pt="Análise de Qualidade" data-es="Análisis de Calidad">Quality Analysis</a></li>
-            <li><a href="/pages/services/detailed_appraisal_services.html" data-en="Detailed Appraisal Services" data-pt="Serviços de Avaliação Detalhados" data-es="Servicios de Tasación Detallados">Detailed Appraisal Services</a></li>
+            <li><a href="/pages/services/gemstone_identification.html">Gemstone Identification</a></li>
+            <li><a href="/pages/services/gemstone_appraisal.html">Gemstone Appraisal</a></li>
+            <li><a href="/pages/services/certification_services.html">Certification Services</a></li>
+            <li><a href="/pages/services/quality_analysis.html">Quality Analysis</a></li>
+            <li><a href="/pages/services/detailed_appraisal_services.html">Detailed Appraisal Services</a></li>
           </ul>
         </div>
         <div class="footer-section">
@@ -249,14 +272,11 @@ Ya sea que sea un coleccionista, alguien que heredó una joya familiar o está a
     </div>
   </footer>
 
-  <!-- Seu JS original -->
   <script src="/js/main.js"></script>
-
-  <!-- Funcionais adicionais: carrossel, idioma e feedback do form (blog removido) -->
   <script>
   document.addEventListener("DOMContentLoaded", function () {
-    /* ====== HERO CAROUSEL ====== */
-    (function heroCarousel(){
+    /* HERO CAROUSEL */
+    (function(){
       const wrap = document.getElementById("heroCarousel");
       if(!wrap) return;
       const slides = wrap.querySelectorAll(".carousel-image");
@@ -268,42 +288,50 @@ Ya sea que sea un coleccionista, alguien que heredó una joya familiar o está a
       }, 4000);
     })();
 
-    /* ====== MOBILE MENU ====== */
-    (function mobileMenu(){
+    /* MOBILE MENU */
+    (function(){
       const burger = document.getElementById("hamburger");
       const menu = document.querySelector(".nav-menu");
       if(!burger || !menu) return;
       burger.addEventListener("click", ()=> menu.classList.toggle("open"));
     })();
 
-    /* ====== LANGUAGE SWITCHER ====== */
-    (function langSwitcher(){
+    /* LANGUAGE SWITCHER */
+    (function(){
       const btns = document.querySelectorAll(".lang-btn");
-      function setLang(lang) {
-        document.querySelectorAll("[data-en]").forEach(function(el){
-          const text = el.getAttribute("data-" + lang);
-          if(!text) return;
-          if(el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
-            el.setAttribute("placeholder", text);
-          } else {
-            el.innerHTML = text;
-          }
+      function setLang(lang){
+        document.querySelectorAll("[data-en]").forEach(el=>{
+          const tx = el.getAttribute("data-"+lang);
+          if(!tx) return;
+          if(el.tagName==="INPUT"||el.tagName==="TEXTAREA"){ el.setAttribute("placeholder", tx); }
+          else { el.innerHTML = tx; }
         });
-        btns.forEach(b => b.classList.toggle("active", b.dataset.lang === lang));
+        btns.forEach(b=> b.classList.toggle("active", b.dataset.lang===lang));
       }
-      btns.forEach(b => b.addEventListener("click", ()=> setLang(b.dataset.lang)));
-      setLang("en"); // idioma inicial
+      btns.forEach(b=> b.addEventListener("click", ()=> setLang(b.dataset.lang)));
+      setLang("en");
     })();
 
-    /* ====== CONTACT FORM FEEDBACK ====== */
-    (function formFeedback(){
+    /* CONTACT FORM FEEDBACK */
+    (function(){
       const form = document.querySelector("#contact form");
       const status = document.getElementById("formStatus");
       if(!form || !status) return;
-      form.addEventListener("submit", function(){
-        // Apenas feedback visual imediato (a entrega é feita pelo Formspree)
-        setTimeout(()=> status.textContent = "Message sent! Thank you.", 500);
-      });
+      form.addEventListener("submit", ()=> setTimeout(()=> status.textContent="Message sent! Thank you.", 500));
+    })();
+
+    /* TESTIMONIALS CAROUSEL */
+    (function(){
+      const track = document.getElementById('tTrack');
+      const prev = document.getElementById('tPrev');
+      const next = document.getElementById('tNext');
+      if(!track) return;
+      let idx = 0;
+      const cards = track.children;
+      function update(){ track.style.transform = `translateX(-${idx*100}%)`; }
+      prev && prev.addEventListener('click', ()=>{ idx = (idx-1+cards.length)%cards.length; update(); });
+      next && next.addEventListener('click', ()=>{ idx = (idx+1)%cards.length; update(); });
+      setInterval(()=>{ idx = (idx+1)%cards.length; update(); }, 5000);
     })();
   });
   </script>
