@@ -11,15 +11,15 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
   <style>
-    /* ÍCONES DOS CARDS DE OUR SERVICES: aumentados */
+    /* ÍCONES DOS CARDS DE OUR SERVICES: tamanho aprovado */
     .services .service-icon { transform: scale(2); transform-origin: center; }
 
-    /* Opcional: suavizar transição do hero */
+    /* Suavizar transição do hero */
     .carousel-image { opacity: 0; transition: opacity .6s ease; position: absolute; inset: 0; width:100%; height:100%; object-fit: cover; }
     .carousel-image.active { opacity: 1; }
     .hero-image { position: relative; overflow: hidden; }
 
-    /* Blog cards layout básico (mantém seu estilo principal) */
+    /* Blog cards layout básico */
     .blog-carousel .carousel-track { display: flex; gap: 16px; overflow-x: auto; scroll-behavior: smooth; }
     .blog-card { display: block; min-width: 300px; background: #111; color: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; }
     .blog-card img { width: 100%; height: 160px; object-fit: cover; display: block; }
@@ -27,7 +27,7 @@
     .blog-card h3 { font-size: 1rem; margin: 0 0 6px; color: #fff; }
     .blog-card .read-more { font-size: .9rem; opacity: .85; }
 
-    /* Acessibilidade do botão ativo de idioma */
+    /* Botão de idioma ativo */
     .lang-btn.active { outline: 2px solid #fff3; }
   </style>
 </head>
@@ -169,7 +169,7 @@ Ya sea que sea un coleccionista, alguien que heredó una joya familiar o está a
           </div>
         </div>
         <div class="about-image">
-          <img src="/images/rafael_ferreira.png" alt="Rafael Ferreira - Gemologist">
+          <img src="/images/rafael_ferreira.png" alt="Rafael Ferreira - GIA Gemologist">
         </div>
       </div>
     </div>
@@ -226,7 +226,6 @@ Ya sea que sea un coleccionista, alguien que heredó una joya familiar o está a
           <p data-en="Have a question or need a consultation? Contact us today!" data-pt="Tem alguma dúvida ou precisa de uma consulta? Entre em contato conosco hoje!" data-es="¿Tiene alguna pregunta o necesita una consulta? ¡Contáctenos hoy!">Have a question or need a consultation? Contact us today!</p>
           <ul>
             <li><i class="fas fa-user"></i> <span data-en="Rafael Ferreira - GIA Gemologist" data-pt="Rafael Ferreira - Gemologista GIA" data-es="Rafael Ferreira - Gemólogo GIA">Rafael Ferreira - GIA Gemologist</span></li>
-            <!-- Telefone e e-mail removidos -->
             <li><i class="fas fa-map-marker-alt"></i> <span data-en="California - USA" data-pt="Califórnia - EUA" data-es="California - EE.UU.">California - USA</span></li>
           </ul>
         </div>
@@ -324,7 +323,6 @@ Ya sea que sea un coleccionista, alguien que heredó una joya familiar o está a
     (function blogHome(){
       const track = document.getElementById("blogTrack");
       if(!track) return;
-      // ajuste os nomes/arquivos conforme seus posts existentes
       const posts = [
         { title: "How to Read Diamond 4Cs (GIA)", img: "/images/blog/diamond_4cs_thumb.jpg", url: "/pages/blog/diamond-4cs.html" },
         { title: "Pearl Grading Basics", img: "/images/blog/pearl_grading_thumb.jpg", url: "/pages/blog/pearl-grading.html" },
@@ -356,7 +354,6 @@ Ya sea que sea un coleccionista, alguien que heredó una joya familiar o está a
       const status = document.getElementById("formStatus");
       if(!form || !status) return;
       form.addEventListener("submit", function(){
-        // Apenas feedback visual imediato (a entrega é feita pelo Formspree)
         setTimeout(()=> status.textContent = "Message sent! Thank you.", 500);
       });
     })();
