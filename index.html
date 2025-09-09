@@ -6,6 +6,7 @@
   <title>Mineral Gemstones - Professional Gemological Services</title>
   <meta name="description" content="Professional gemological services including gemstone identification, appraisal, and certification. Expert analysis by certified gemologists.">
 
+  <!-- Caminhos originais -->
   <link rel="stylesheet" href="/css/styles.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
@@ -15,22 +16,29 @@
     .carousel-image.active{opacity:1}
     .hero-image{position:relative;overflow:hidden}
 
-    /* Language active */
+    /* Botão de idioma ativo */
     .lang-btn.active{outline:2px solid #fff3}
 
-    /* Testimonials */
+    /* ===== Testimonials (corrigido) ===== */
     .testimonials{padding:60px 0;background:#000}
     .testimonials .section-title{margin-bottom:22px;color:#fff}
     .t-wrap{position:relative;overflow:hidden}
-    .t-track{display:flex;gap:20px;will-change:transform;transition:transform .5s ease}
-    .t-card{min-width:320px;flex:0 0 100%;background:#111;border:1px solid #222;border-radius:16px;padding:22px;color:#eee;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+    /* sem gap; usamos margem nos cards e translação em px */
+    .t-track{display:flex;will-change:transform;transition:transform .5s ease}
+    .t-card{
+      min-width:320px;
+      flex:0 0 calc(100% - 20px);
+      margin:0 10px;              /* substitui o gap */
+      background:#111;border:1px solid #222;border-radius:16px;
+      padding:22px;color:#eee;box-shadow:0 8px 24px rgba(0,0,0,.25)
+    }
     .t-stars{color:#f5c518;margin-bottom:8px}
     .t-author{margin-top:10px;opacity:.9;font-weight:600}
     .t-nav{display:flex;gap:10px;justify-content:center;margin-top:16px}
     .t-btn{background:#1b1b1b;border:1px solid #2a2a2a;border-radius:10px;padding:8px 12px;color:#ddd;cursor:pointer}
     .t-btn:hover{background:#242424}
-    @media(min-width:720px){.t-card{flex:0 0 70%}}
-    @media(min-width:1024px){.t-card{flex:0 0 50%}}
+    @media(min-width:720px){.t-card{flex:0 0 calc(70% - 20px)}}
+    @media(min-width:1024px){.t-card{flex:0 0 calc(50% - 20px)}}
   </style>
 </head>
 <body>
@@ -54,7 +62,9 @@
           <button class="lang-btn" data-lang="pt">PT</button>
           <button class="lang-btn" data-lang="es">ES</button>
         </div>
-        <div class="hamburger" id="hamburger"><span class="bar"></span><span class="bar"></span><span class="bar"></span></div>
+        <div class="hamburger" id="hamburger">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </div>
       </div>
     </nav>
   </header>
@@ -119,14 +129,13 @@
     </div>
   </section>
 
-  <!-- About (COMPLETO) -->
+  <!-- About -->
   <section id="about" class="about">
     <div class="container">
       <div class="about-content">
         <div class="about-text">
           <h2 class="section-title" data-en="About Mineral Gemstones" data-pt="Sobre a Mineral Gemstones" data-es="Acerca de Mineral Gemstones">About Mineral Gemstones</h2>
-          <p
-            data-en="Hello, my name is Rafael Ferreira, and I am the founder of Mineral Gemstones. For many years, I followed a conventional professional path, but I always felt something was missing: a true connection with my work. I found that connection in the fascinating and eternal world of gemstones.
+          <p data-en="Hello, my name is Rafael Ferreira, and I am the founder of Mineral Gemstones. For many years, I followed a conventional professional path, but I always felt something was missing: a true connection with my work. I found that connection in the fascinating and eternal world of gemstones.
 Living in Los Angeles for over ten years, I decided to transform a long-standing passion into a profession. I immersed myself in studies and today I am a proud advanced student of the Gemological Institute of America (GIA ), the largest and most respected global authority in gemology, pursuing the prestigious Graduate Gemologist training.
 Mineral Gemstones was born from my personal journey and the desire to bring clarity, confidence, and transparency to the jewelry market. My goal is not just to appraise a stone; it is to understand its history, its journey from the mine to the jewel, and to translate its value honestly and accurately for you.
 Whether you are a collector, someone who inherited a family jewel, or are about to make one of the most important purchases of your life, I am here to be your trusted guide. Combining the technical rigor learned at GIA with a genuine passion, my commitment is to ensure you understand and appreciate the true value of what you hold in your hands."
@@ -214,6 +223,7 @@ Ya sea que sea un coleccionista, alguien que heredó una joya familiar o está a
           </ul>
         </div>
         <div class="contact-form">
+          <!-- Substitua YOUR_FORMSPREE_ID pelo seu ID real do Formspree -->
           <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
             <input type="text" name="name" placeholder="Your Name" required data-en="Your Name" data-pt="Seu Nome" data-es="Su Nombre">
             <input type="email" name="email" placeholder="Your Email" required data-en="Your Email" data-pt="Seu E-mail" data-es="Su Correo">
@@ -260,10 +270,13 @@ Ya sea que sea un coleccionista, alguien que heredó una joya familiar o está a
     </div>
   </footer>
 
+  <!-- JS principal do site -->
   <script src="/js/main.js"></script>
+
+  <!-- Funcionais adicionais: carrossel, idioma, feedback e testimonials fix -->
   <script>
   document.addEventListener("DOMContentLoaded", function () {
-    /* Hero carousel fade */
+    /* ====== HERO CAROUSEL ====== */
     (function(){
       const wrap = document.getElementById("heroCarousel");
       if(!wrap) return;
@@ -276,7 +289,7 @@ Ya sea que sea un coleccionista, alguien que heredó una joya familiar o está a
       }, 4000);
     })();
 
-    /* Mobile menu */
+    /* ====== MOBILE MENU ====== */
     (function(){
       const burger = document.getElementById("hamburger");
       const menu = document.querySelector(".nav-menu");
@@ -284,38 +297,44 @@ Ya sea que sea un coleccionista, alguien que heredó una joya familiar o está a
       burger.addEventListener("click", ()=> menu.classList.toggle("open"));
     })();
 
-    /* Language switcher */
+    /* ====== LANGUAGE SWITCHER ====== */
     (function(){
       const btns = document.querySelectorAll(".lang-btn");
-      function setLang(lang){
-        document.querySelectorAll("[data-en]").forEach(el=>{
-          const tx = el.getAttribute("data-"+lang);
-          if(!tx) return;
-          if(el.tagName==="INPUT"||el.tagName==="TEXTAREA"){ el.setAttribute("placeholder", tx); }
-          else { el.innerHTML = tx; }
+      function setLang(lang) {
+        document.querySelectorAll("[data-en]").forEach(function(el){
+          const text = el.getAttribute("data-" + lang);
+          if(!text) return;
+          if(el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+            el.setAttribute("placeholder", text);
+          } else {
+            el.innerHTML = text;
+          }
         });
-        btns.forEach(b=> b.classList.toggle("active", b.dataset.lang===lang));
+        btns.forEach(b => b.classList.toggle("active", b.dataset.lang === lang));
       }
-      btns.forEach(b=> b.addEventListener("click", ()=> setLang(b.dataset.lang)));
+      btns.forEach(b => b.addEventListener("click", ()=> setLang(b.dataset.lang)));
       setLang("en");
     })();
 
-    /* Contact form visual feedback */
+    /* ====== CONTACT FORM FEEDBACK ====== */
     (function(){
       const form = document.querySelector("#contact form");
       const status = document.getElementById("formStatus");
       if(!form || !status) return;
-      form.addEventListener("submit", ()=> setTimeout(()=> status.textContent="Message sent! Thank you.", 500));
+      form.addEventListener("submit", function(){
+        setTimeout(()=> status.textContent = "Message sent! Thank you.", 500);
+      });
     })();
 
-    /* Testimonials - loop contínuo verdadeiro (clones nas pontas) */
+    /* ====== TESTIMONIALS - loop contínuo com deslocamento em px ====== */
     (function(){
       const track = document.getElementById('tTrack');
-      const prev = document.getElementById('tPrev');
-      const next = document.getElementById('tNext');
-      if(!track) return;
+      const wrap  = track?.closest('.t-wrap');
+      const prev  = document.getElementById('tPrev');
+      const next  = document.getElementById('tNext');
+      if(!track || !wrap) return;
 
-      // Clonar primeiro e último
+      // Clonar primeiro e último para loop perfeito
       const first = track.children[0];
       const last  = track.children[track.children.length-1];
       const firstClone = first.cloneNode(true);
@@ -324,38 +343,41 @@ Ya sea que sea un coleccionista, alguien que heredó una joya familiar o está a
       track.insertBefore(lastClone, first);
 
       let idx = 1; // começa no primeiro real
-      const cards = track.children;
+      let slideW = wrap.clientWidth; // largura visível
+
+      function recalc(){
+        slideW = wrap.clientWidth;
+        go(idx, true);
+      }
 
       function go(i, instant=false){
         track.style.transition = instant ? 'none' : 'transform .5s ease';
-        track.style.transform = `translateX(-${i*100}%)`;
+        track.style.transform  = `translateX(-${i * slideW}px)`;
       }
-      go(idx, true); // posiciona no primeiro real
 
       function nextSlide(){ idx++; go(idx); }
       function prevSlide(){ idx--; go(idx); }
 
+      // posiciona no primeiro real
+      go(idx, true);
+
       track.addEventListener('transitionend', ()=>{
-        // se chegou ao clone do primeiro (final), volta invisível para o primeiro real
-        if(cards[idx] === firstClone){
-          idx = 1;
-          go(idx, true);
-        }
-        // se chegou ao clone do último (início), vai invisível para o último real
-        if(cards[idx] === lastClone){
-          idx = cards.length - 2;
-          go(idx, true);
-        }
+        const cards = track.children;
+        const lastIndex = cards.length - 1;
+        if(cards[idx] === firstClone){ idx = 1; go(idx, true); }
+        if(cards[idx] === lastClone ){ idx = lastIndex - 1; go(idx, true); }
       });
 
       prev && prev.addEventListener('click', prevSlide);
       next && next.addEventListener('click', nextSlide);
 
       // autoplay
-      setInterval(nextSlide, 4000);
+      const timer = setInterval(nextSlide, 4000);
+
+      // recalcular ao redimensionar
+      window.addEventListener('resize', recalc, {passive:true});
     })();
   });
   </script>
 </body>
 </html>
-
