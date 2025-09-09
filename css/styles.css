@@ -871,4 +871,46 @@ section {
 img[src*="quality_analysis"] {
   display: none !important;
 }
+/* ===== Fix: Hero carousel não aparece no mobile ===== */
+.hero-image,
+.image-carousel{
+  position: relative;
+  width: 100%;
+  height: 60vh;          /* altura visível no mobile */
+  min-height: 300px;     /* altura mínima para telas pequenas */
+  overflow: hidden;      /* evita rolagem interna */
+}
+
+.carousel-image{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;               /* evita “inline-gap” em alguns navegadores */
+  opacity: 0;                   /* controlado pela classe .active */
+  transition: opacity .6s ease;
+  will-change: opacity;
+  -webkit-transform: translateZ(0);         /* suaviza no iOS */
+  -webkit-backface-visibility: hidden;      /* evita flicker no iOS */
+  backface-visibility: hidden;
+}
+
+.carousel-image.active{
+  opacity: 1;
+}
+
+/* Ajuste fino para celulares muito pequenos */
+@media (max-width: 480px){
+  .hero-image,
+  .image-carousel{
+    height: 56vh;
+    min-height: 260px;
+  }
+}
+
+/* Garante que a seção hero não colapse */
+.hero{
+  overflow: hidden;
+}
 
