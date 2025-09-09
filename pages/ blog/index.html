@@ -1,211 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-en="Blog - Mineral Gemstones" data-pt="Blog - Mineral Gemstones" data-es="Blog - Mineral Gemstones">Blog - Mineral Gemstones</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Mineral Gemstones Blog</title>
+  <meta name="description" content="Educational gemology blog featuring diamonds, emeralds, synthetics, and more.">
+  <link rel="stylesheet" href="/css/styles.css">
+  <style>
+    .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+    .blog-card{display:block;background:#111;color:#fff;text-decoration:none;border-radius:12px;overflow:hidden}
+    .blog-card img{width:100%;height:180px;object-fit:cover;display:block}
+    .blog-card .content{padding:14px}
+    .blog-card h3{margin:0 0 6px;font-size:1.05rem;color:#fff}
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-logo">
-                    <img src="/images/logo.png" alt="Mineral Gemstones" class="logo">
-                </div>
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="/index.html#home" class="nav-link" data-en="Home" data-pt="Início" data-es="Inicio">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/index.html#services" class="nav-link" data-en="Services" data-pt="Serviços" data-es="Servicios">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/index.html#about" class="nav-link" data-en="About" data-pt="Sobre" data-es="Acerca">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/pages/blog/index.html" class="nav-link active" data-en="Blog" data-pt="Blog" data-es="Blog">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/index.html#gallery" class="nav-link" data-en="Gallery" data-pt="Galeria" data-es="Galería">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/index.html#education" class="nav-link" data-en="Education" data-pt="Educação" data-es="Educación">Education</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/index.html#contact" class="nav-link" data-en="Contact" data-pt="Contato" data-es="Contacto">Contact</a>
-                    </li>
-                </ul>
-                <div class="language-selector">
-                    <button class="lang-btn active" data-lang="en">EN</button>
-                    <button class="lang-btn" data-lang="pt">PT</button>
-                    <button class="lang-btn" data-lang="es">ES</button>
-                </div>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
-        </nav>
-    </header>
+  <main class="container" style="padding:40px 16px 64px">
+    <h1 class="section-title">From Our Blog</h1>
 
-    <main class="article-main">
-        <div class="container">
-            <h1 class="section-title" data-en="Gemology Blog" data-pt="Blog de Gemologia" data-es="Blog de Gemología">Gemology Blog</h1>
-            <p style="text-align: center; margin-bottom: 50px; font-size: 1.2em; color: #666;" data-en="Professional insights and expertise from Rafael Ferreira, GIA Graduate Gemologist" data-pt="Insights profissionais e expertise de Rafael Ferreira, Gemólogo Graduado pelo GIA" data-es="Perspectivas profesionales y experiencia de Rafael Ferreira, Gemólogo Graduado por GIA">Professional insights and expertise from Rafael Ferreira, GIA Graduate Gemologist</p>
-            
-            <!-- Featured Article -->
-            <div class="featured-article" style="margin-bottom: 60px;">
-                <h2 style="color: #0056b3; margin-bottom: 30px;" data-en="Featured Article" data-pt="Artigo em Destaque" data-es="Artículo Destacado">Featured Article</h2>
-                <div class="blog-card" style="min-width: 100%; margin: 0; display: flex; flex-direction: row; max-width: 100%;">
-                    <img src="/images/blog/diamond-formation.jpg" alt="Diamond Formation" style="width: 300px; height: 200px; object-fit: cover; margin-right: 20px;">
-                    <div class="blog-card-content" style="flex: 1;">
-                        <h3><a href="/pages/blog/diamond-formation-journey.html" data-en="The Incredible Journey of Diamond Formation" data-pt="A Incrível Jornada da Formação do Diamante" data-es="El Increíble Viaje de la Formación del Diamante">The Incredible Journey of Diamond Formation</a></h3>
-                        <p data-en="Explore the geological processes that transform carbon into the world's most coveted gemstone. From the depths of the Earth's mantle to the surface, discover the incredible journey that creates these eternal symbols of beauty and strength." data-pt="Explore os processos geológicos que transformam carbono na gema mais cobiçada do mundo. Das profundezas do manto da Terra até a superfície, descubra a incrível jornada que cria esses símbolos eternos de beleza e força." data-es="Explore los procesos geológicos que transforman el carbono en la gema más codiciada del mundo. Desde las profundidades del manto de la Tierra hasta la superficie, descubra el increíble viaje que crea estos símbolos eternos de belleza y fuerza.">Explore the geological processes that transform carbon into the world's most coveted gemstone. From the depths of the Earth's mantle to the surface, discover the incredible journey that creates these eternal symbols of beauty and strength.</p>
-                        <a href="/pages/blog/diamond-formation-journey.html" class="read-more" data-en="Read Full Article" data-pt="Ler Artigo Completo" data-es="Leer Artículo Completo">Read Full Article</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Blog Categories -->
-            <div class="blog-categories" style="margin-bottom: 50px;">
-                <h2 style="color: #0056b3; margin-bottom: 30px;" data-en="Categories" data-pt="Categorias" data-es="Categorías">Categories</h2>
-                <div class="category-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr )); gap: 20px;">
-                    <div class="category-card" style="background: #f4f4f4; padding: 20px; border-radius: 10px; text-align: center;">
-                        <i class="fas fa-microscope" style="font-size: 2em; color: #FFD700; margin-bottom: 15px;"></i>
-                        <h3 data-en="Professional Notes" data-pt="Notas Profissionais" data-es="Notas Profesionales">Professional Notes</h3>
-                        <p data-en="Technical insights and gemological analysis" data-pt="Insights técnicos e análise gemológica" data-es="Perspectivas técnicas y análisis gemológico">Technical insights and gemological analysis</p>
-                    </div>
-                    <div class="category-card" style="background: #f4f4f4; padding: 20px; border-radius: 10px; text-align: center;">
-                        <i class="fas fa-star" style="font-size: 2em; color: #FFD700; margin-bottom: 15px;"></i>
-                        <h3 data-en="Appraisals & Reviews" data-pt="Avaliações e Análises" data-es="Tasaciones y Reseñas">Appraisals & Reviews</h3>
-                        <p data-en="Case studies and valuation insights" data-pt="Estudos de caso e insights de avaliação" data-es="Estudios de casos y perspectivas de valoración">Case studies and valuation insights</p>
-                    </div>
-                    <div class="category-card" style="background: #f4f4f4; padding: 20px; border-radius: 10px; text-align: center;">
-                        <i class="fas fa-lightbulb" style="font-size: 2em; color: #FFD700; margin-bottom: 15px;"></i>
-                        <h3 data-en="Curiosities" data-pt="Curiosidades" data-es="Curiosidades">Curiosities</h3>
-                        <p data-en="Fascinating facts about gemstones" data-pt="Fatos fascinantes sobre gemas" data-es="Hechos fascinantes sobre las gemas">Fascinating facts about gemstones</p>
-                    </div>
-                    <div class="category-card" style="background: #f4f4f4; padding: 20px; border-radius: 10px; text-align: center;">
-                        <i class="fas fa-book" style="font-size: 2em; color: #FFD700; margin-bottom: 15px;"></i>
-                        <h3 data-en="Case Studies" data-pt="Estudos de Caso" data-es="Estudios de Caso">Case Studies</h3>
-                        <p data-en="Real-world gemological investigations" data-pt="Investigações gemológicas do mundo real" data-es="Investigaciones gemológicas del mundo real">Real-world gemological investigations</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Recent Articles -->
-            <div class="recent-articles">
-                <h2 style="color: #0056b3; margin-bottom: 30px;" data-en="Recent Articles" data-pt="Artigos Recentes" data-es="Artículos Recientes">Recent Articles</h2>
-                <div class="articles-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
-                    
-                    <!-- Article 1 -->
-                    <div class="blog-card" style="min-width: 100%; margin: 0;">
-                        <img src="/images/blog/emerald-quality.jpg" alt="Emerald Quality">
-                        <div class="blog-card-content">
-                            <h3><a href="/pages/blog/emerald-quality-factors.html" data-en="Understanding Emerald Quality: Beyond the 4Cs" data-pt="Entendendo a Qualidade da Esmeralda: Além dos 4Cs" data-es="Entendiendo la Calidad de la Esmeralda: Más Allá de las 4Cs">Understanding Emerald Quality: Beyond the 4Cs</a></h3>
-                            <p data-en="Delve into the unique characteristics that define the beauty and value of emeralds, including origin, treatment, and the importance of inclusions." data-pt="Aprofunde-se nas características únicas que definem a beleza e o valor das esmeraldas, incluindo origem, tratamento e a importância das inclusões." data-es="Profundice en las características únicas que definen la belleza y el valor de las esmeraldas, incluyendo origen, tratamiento y la importancia de las inclusiones.">Delve into the unique characteristics that define the beauty and value of emeralds, including origin, treatment, and the importance of inclusions.</p>
-                            <a href="/pages/blog/emerald-quality-factors.html" class="read-more" data-en="Read More" data-pt="Leia Mais" data-es="Leer Más">Read More</a>
-                        </div>
-                    </div>
-
-                    <!-- Article 2 -->
-                    <div class="blog-card" style="min-width: 100%; margin: 0;">
-                        <img src="/images/blog/synthetic-natural.jpg" alt="Synthetic vs Natural">
-                        <div class="blog-card-content">
-                            <h3><a href="/pages/blog/synthetic-vs-natural-gems.html" data-en="Synthetic vs Natural Gemstones: A Professional Analysis" data-pt="Gemas Sintéticas vs Naturais: Uma Análise Profissional" data-es="Gemas Sintéticas vs Naturales: Un Análisis Profesional">Synthetic vs Natural Gemstones: A Professional Analysis</a></h3>
-                            <p data-en="A comprehensive look at the differences between lab-grown and natural gemstones from a gemologist's perspective." data-pt="Uma análise abrangente das diferenças entre gemas cultivadas em laboratório e naturais sob a perspectiva de um gemólogo." data-es="Una mirada completa a las diferencias entre las gemas cultivadas en laboratorio y las naturales desde la perspectiva de un gemólogo.">A comprehensive look at the differences between lab-grown and natural gemstones from a gemologist's perspective.</p>
-                            <a href="/pages/blog/synthetic-vs-natural-gems.html" class="read-more" data-en="Read More" data-pt="Leia Mais" data-es="Leer Más">Read More</a>
-                        </div>
-                    </div>
-
-                    <!-- Article 3 -->
-                    <div class="blog-card" style="min-width: 100%; margin: 0;">
-                        <img src="/images/blog/sapphire-color.jpg" alt="Sapphire Colors">
-                        <div class="blog-card-content">
-                            <h3 data-en="The Spectrum of Sapphire: Understanding Color Origins" data-pt="O Espectro da Safira: Entendendo as Origens da Cor" data-es="El Espectro del Zafiro: Comprendiendo los Orígenes del Color">The Spectrum of Sapphire: Understanding Color Origins</h3>
-                            <p data-en="Explore how trace elements and geological conditions create the vast array of sapphire colors, from royal blue to padparadscha." data-pt="Explore como elementos traço e condições geológicas criam a vasta gama de cores da safira, do azul real ao padparadscha." data-es="Explore cómo los elementos traza y las condiciones geológicas crean la amplia gama de colores del zafiro, desde el azul real hasta el padparadscha.">Explore how trace elements and geological conditions create the vast array of sapphire colors, from royal blue to padparadscha.</p>
-                            <span class="read-more" data-en="Coming Soon" data-pt="Em Breve" data-es="Próximamente">Coming Soon</span>
-                        </div>
-                    </div>
-
-                    <!-- Article 4 -->
-                    <div class="blog-card" style="min-width: 100%; margin: 0;">
-                        <img src="/images/blog/pearl-appraisal.jpg" alt="Pearl Appraisal">
-                        <div class="blog-card-content">
-                            <h3 data-en="Pearl Appraisal Guide: Valuing Nature's Organic Gems" data-pt="Guia de Avaliação de Pérolas: Valorizando as Gemas Orgânicas da Natureza" data-es="Guía de Tasación de Perlas: Valorando las Gemas Orgánicas de la Naturaleza">Pearl Appraisal Guide: Valuing Nature's Organic Gems</h3>
-                            <p data-en="Learn the factors that determine the quality and value of pearls, from luster to surface quality and everything in between." data-pt="Aprenda os fatores que determinam a qualidade e o valor das pérolas, do brilho à qualidade da superfície e tudo mais." data-es="Aprenda los factores que determinan la calidad y el valor de las perlas, desde el brillo hasta la calidad de la superficie y todo lo que está en el medio.">Learn the factors that determine the quality and value of pearls, from luster to surface quality and everything in between.</p>
-                            <span class="read-more" data-en="Coming Soon" data-pt="Em Breve" data-es="Próximamente">Coming Soon</span>
-                        </div>
-                    </div>
-
-                    <!-- Article 5 -->
-                    <div class="blog-card" style="min-width: 100%; margin: 0;">
-                        <img src="/images/blog/responsible-sourcing.jpg" alt="Responsible Sourcing">
-                        <div class="blog-card-content">
-                            <h3 data-en="Responsible Gem Sourcing: Ethical Practices in the Gemstone Industry" data-pt="Obtenção Responsável de Gemas: Práticas Éticas na Indústria de Gemas" data-es="Abastecimiento Responsable de Gemas: Prácticas Éticas en la Industria de las Piedras Preciosas">Responsible Gem Sourcing: Ethical Practices in the Gemstone Industry</h3>
-                            <p data-en="Discover the importance of ethical sourcing and its impact on communities and the environment in the gemstone trade." data-pt="Descubra a importância da obtenção ética e seu impacto nas comunidades e no meio ambiente no comércio de gemas." data-es="Descubra la importancia del abastecimiento ético y su impacto en las comunidades y el medio ambiente en el comercio de gemas.">Discover the importance of ethical sourcing and its impact on communities and the environment in the gemstone trade.</p>
-                            <span class="read-more" data-en="Coming Soon" data-pt="Em Breve" data-es="Próximamente">Coming Soon</span>
-                        </div>
-                    </div>
-
-                    <!-- Article 6 -->
-                    <div class="blog-card" style="min-width: 100%; margin: 0;">
-                        <img src="/images/blog/investment-gems.jpg" alt="Investment Gems">
-                        <div class="blog-card-content">
-                            <h3 data-en="Gemstones as Investment: A Collector's Guide" data-pt="Gemas como Investimento: Um Guia do Colecionador" data-es="Gemas como Inversión: Una Guía del Coleccionista">Gemstones as Investment: A Collector's Guide</h3>
-                            <p data-en="Understand the factors that make certain gemstones valuable investments and how to build a meaningful collection." data-pt="Entenda os fatores que tornam certas gemas investimentos valiosos e como construir uma coleção significativa." data-es="Comprenda los factores que hacen que ciertas gemas sean inversiones valiosas y cómo construir una colección significativa.">Understand the factors that make certain gemstones valuable investments and how to build a meaningful collection.</p>
-                            <span class="read-more" data-en="Coming Soon" data-pt="Em Breve" data-es="Próximamente">Coming Soon</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Author Bio -->
-            <div class="author-bio" style="background: #f4f4f4; padding: 40px; border-radius: 10px; margin-top: 60px; text-align: center;">
-                <img src="/images/rafael_ferreira.png" alt="Rafael Ferreira" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; margin: 0 auto 20px; border: 3px solid #0056b3;">
-                <h3 style="color: #0056b3; margin-bottom: 10px;">Rafael Ferreira</h3>
-                <p style="color: #FFD700; font-weight: bold; margin-bottom: 20px;" data-en="GIA Graduate Gemologist" data-pt="Gemólogo Graduado pelo GIA" data-es="Gemólogo Graduado por GIA">GIA Graduate Gemologist</p>
-                <p data-en="With over 6 years of experience in the gemstone industry and living in Los Angeles for more than 10 years, Rafael brings a unique perspective to gemological analysis. His passion for gemstones and commitment to ethical practices make him a trusted authority in the field." data-pt="Com mais de 6 anos de experiência na indústria de gemas e morando em Los Angeles há mais de 10 anos, Rafael traz uma perspectiva única para a análise gemológica. Sua paixão por gemas e compromisso com práticas éticas o tornam uma autoridade confiável no campo." data-es="Con más de 6 años de experiencia en la industria de las gemas y viviendo en Los Ángeles durante más de 10 años, Rafael aporta una perspectiva única al análisis gemológico. Su pasión por las gemas y su compromiso con las prácticas éticas lo convierten en una autoridad confiable en el campo.">With over 6 years of experience in the gemstone industry and living in Los Angeles for more than 10 years, Rafael brings a unique perspective to gemological analysis. His passion for gemstones and commitment to ethical practices make him a trusted authority in the field.</p>
-            </div>
+    <div class="blog-grid">
+      <a class="blog-card" href="diamond-formation-journey.html">
+        <img src="/images/blog/diamond_journey_thumb.jpg" alt="Diamond Formation Journey">
+        <div class="content">
+          <h3>The Diamond Formation Journey</h3>
+          <p>From Earth’s mantle to the jewelry showcase—understand the billion-year path of diamonds.</p>
         </div>
-    </main>
+      </a>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <img src="/images/logo.png" alt="Mineral Gemstones" class="footer-logo">
-                    <p data-en="Professional gemological services with over 6 years of experience. Certified gemologists providing accurate identification and valuation." data-pt="Serviços gemológicos profissionais com mais de 6 anos de experiência. Gemólogos certificados fornecendo identificação e avaliação precisas." data-es="Servicios gemológicos profesionales con más de 6 años de experiencia. Gemólogos certificados que brindan identificación y valoración precisas.">Professional gemological services with over 6 years of experience. Certified gemologists providing accurate identification and valuation.</p>
-                </div>
-                <div class="footer-section">
-                    <h4 data-en="Services" data-pt="Serviços" data-es="Servicios">Services</h4>
-                    <ul>
-                        <li><a href="/pages/services/gemstone_identification.html" data-en="Gemstone Identification" data-pt="Identificação de Gemas" data-es="Identificación de Gemas">Gemstone Identification</a></li>
-                        <li><a href="/pages/services/gemstone_appraisal.html" data-en="Gemstone Appraisal" data-pt="Avaliação de Gemas" data-es="Evaluación de Gemas">Gemstone Appraisal</a></li>
-                        <li><a href="/pages/services/certification_services.html" data-en="Certification Services" data-pt="Serviços de Certificação" data-es="Servicios de Certificación">Certification Services</a></li>
-                        <li><a href="/pages/services/quality_analysis.html" data-en="Quality Analysis" data-pt="Análise de Qualidade" data-es="Análisis de Calidad">Quality Analysis</a></li>
-                        <li><a href="/pages/services/detailed_appraisal_services.html" data-en="Detailed Appraisal Services" data-pt="Serviços de Avaliação Detalhados" data-es="Servicios de Tasación Detallados">Detailed Appraisal Services</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4 data-en="Contact" data-pt="Contato" data-es="Contacto">Contact</h4>
-                    <p>Rafael Ferreira</p>
-                    <p>(323)602-8629</p>
-                    <p>terramericacorp@gmail.com</p>
-                    <p data-en="California - USA" data-pt="Califórnia - EUA" data-es="California - EE.UU.">California - USA</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Mineral Gemstones. <span data-en="All rights reserved." data-pt="Todos os direitos reservados." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
-            </div>
+      <a class="blog-card" href="emerald-quality-factors.html">
+        <img src="/images/blog/emerald_quality_thumb.jpg" alt="Emerald Quality Factors">
+        <div class="content">
+          <h3>Emerald Quality Factors</h3>
+          <p>Color, clarity, cut, and carat weight explained under GIA standards.</p>
         </div>
-    </footer>
+      </a>
 
-    <script src="/js/main.js"></script>
+      <a class="blog-card" href="synthetic-vs-natural-gems.html">
+        <img src="/images/blog/synthetic_thumb.jpg" alt="Synthetic vs Natural Gems">
+        <div class="content">
+          <h3>Synthetic vs. Natural Gems</h3>
+          <p>Identification techniques and ethical disclosure in gemology.</p>
+        </div>
+      </a>
+    </div>
+  </main>
 </body>
 </html>
+
