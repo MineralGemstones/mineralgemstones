@@ -11,23 +11,12 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
   <style>
-    /* ÍCONES DOS CARDS DE OUR SERVICES: tamanho aprovado */
-    .services .service-icon { transform: scale(2); transform-origin: center; }
-
-    /* Suavizar transição do hero */
+    /* Opcional: suavizar transição do hero */
     .carousel-image { opacity: 0; transition: opacity .6s ease; position: absolute; inset: 0; width:100%; height:100%; object-fit: cover; }
     .carousel-image.active { opacity: 1; }
     .hero-image { position: relative; overflow: hidden; }
 
-    /* Blog cards layout básico */
-    .blog-carousel .carousel-track { display: flex; gap: 16px; overflow-x: auto; scroll-behavior: smooth; }
-    .blog-card { display: block; min-width: 300px; background: #111; color: #fff; border-radius: 12px; overflow: hidden; text-decoration: none; }
-    .blog-card img { width: 100%; height: 160px; object-fit: cover; display: block; }
-    .blog-card-content { padding: 12px 14px; }
-    .blog-card h3 { font-size: 1rem; margin: 0 0 6px; color: #fff; }
-    .blog-card .read-more { font-size: .9rem; opacity: .85; }
-
-    /* Botão de idioma ativo */
+    /* Blog cards (REMOVIDO o uso; mantido aqui apenas se você reativar futuramente) */
     .lang-btn.active { outline: 2px solid #fff3; }
   </style>
 </head>
@@ -49,9 +38,7 @@
           <li class="nav-item">
             <a href="#about" class="nav-link" data-en="About" data-pt="Sobre" data-es="Acerca">About</a>
           </li>
-          <li class="nav-item">
-            <a href="/pages/blog/index.html" class="nav-link" data-en="Blog" data-pt="Blog" data-es="Blog">Blog</a>
-          </li>
+          <!-- ITEM BLOG REMOVIDO DO CABEÇALHO -->
           <li class="nav-item">
             <a href="#education" class="nav-link" data-en="Education" data-pt="Educação" data-es="Educación">Education</a>
           </li>
@@ -175,28 +162,16 @@ Ya sea que sea un coleccionista, alguien que heredó una joya familiar o está a
     </div>
   </section>
 
-  <!-- Blog Carousel Section -->
-  <section id="blog-carousel" class="blog-carousel">
-    <div class="container">
-      <h2 class="section-title" data-en="From Our Blog" data-pt="Do Nosso Blog" data-es="De Nuestro Blog">From Our Blog</h2>
-      <div class="carousel-container">
-        <div class="carousel-track" id="blogTrack">
-          <!-- Blog cards inseridos via JS -->
-        </div>
-        <button class="carousel-button prev" id="blogPrev"><i class="fas fa-chevron-left"></i></button>
-        <button class="carousel-button next" id="blogNext"><i class="fas fa-chevron-right"></i></button>
-      </div>
-    </div>
-  </section>
+  <!-- Blog Carousel Section REMOVIDO INTEIRO -->
 
-  <!-- Education Section -->
+  <!-- Education Section (imagens e links corrigidos para relativos) -->
   <section id="education" class="education">
     <div class="container">
       <h2 class="section-title" data-en="Education" data-pt="Educação" data-es="Educación">Education</h2>
       <div class="education-grid">
         <div class="education-card">
-          <a href="/pages/education/diamond_4cs.html">
-            <img src="/images/education/diamond_4cs.jpg" alt="The 4Cs of Diamonds">
+          <a href="pages/education/diamond_4cs.html">
+            <img src="images/education/diamond_4cs.jpg" alt="The 4Cs of Diamonds">
             <div class="education-content">
               <h3 data-en="The 4Cs of Diamonds" data-pt="Os 4Cs dos Diamantes" data-es="Las 4Cs de los Diamantes">The 4Cs of Diamonds</h3>
               <p data-en="Learn about Cut, Color, Clarity, and Carat Weight - the universal standard for diamond quality." data-pt="Aprenda sobre Lapidação, Cor, Pureza e Peso em Quilates - o padrão universal para a qualidade de diamantes." data-es="Aprenda sobre Talla, Color, Claridad y Peso en Quilates - el estándar universal para la calidad de los diamantes.">Learn about Cut, Color, Clarity, and Carat Weight - the universal standard for diamond quality.</p>
@@ -204,8 +179,8 @@ Ya sea que sea un coleccionista, alguien que heredó una joya familiar o está a
           </a>
         </div>
         <div class="education-card">
-          <a href="/pages/education/precious_stones.html">
-            <img src="/images/education/precious_stones.jpg" alt="Precious Stones Guide">
+          <a href="pages/education/precious_stones.html">
+            <img src="images/education/precious_stones.jpg" alt="Precious Stones Guide">
             <div class="education-content">
               <h3 data-en="Precious Stones Guide" data-pt="Guia de Pedras Preciosas" data-es="Guía de Piedras Preciosas">Precious Stones Guide</h3>
               <p data-en="Discover the world of precious stones, including sapphires, rubies, and emeralds." data-pt="Descubra o mundo das pedras preciosas, incluindo safiras, rubis e esmeraldas." data-es="Descubra el mundo de las piedras preciosas, incluyendo zafiros, rubíes y esmeraldas.">Discover the world of precious stones, including sapphires, rubies, and emeralds.</p>
@@ -225,8 +200,9 @@ Ya sea que sea un coleccionista, alguien que heredó una joya familiar o está a
           <h3 data-en="Get in Touch" data-pt="Fale Conosco" data-es="Póngase en Contacto">Get in Touch</h3>
           <p data-en="Have a question or need a consultation? Contact us today!" data-pt="Tem alguma dúvida ou precisa de uma consulta? Entre em contato conosco hoje!" data-es="¿Tiene alguna pregunta o necesita una consulta? ¡Contáctenos hoy!">Have a question or need a consultation? Contact us today!</p>
           <ul>
-            <li><i class="fas fa-user"></i> <span data-en="Rafael Ferreira - GIA Gemologist" data-pt="Rafael Ferreira - Gemologista GIA" data-es="Rafael Ferreira - Gemólogo GIA">Rafael Ferreira - GIA Gemologist</span></li>
-            <li><i class="fas fa-map-marker-alt"></i> <span data-en="California - USA" data-pt="Califórnia - EUA" data-es="California - EE.UU.">California - USA</span></li>
+            <li><i class="fas fa-user"></i> Rafael Ferreira</li>
+            <!-- Telefone e e-mail removidos -->
+            <li><i class="fas fa-map-marker-alt"></i> California - USA</li>
           </ul>
         </div>
         <div class="contact-form">
@@ -263,7 +239,7 @@ Ya sea que sea un coleccionista, alguien que heredó una joya familiar o está a
         </div>
         <div class="footer-section">
           <h4 data-en="Contact" data-pt="Contato" data-es="Contacto">Contact</h4>
-          <p><span data-en="Rafael Ferreira - GIA Gemologist" data-pt="Rafael Ferreira - Gemologista GIA" data-es="Rafael Ferreira - Gemólogo GIA">Rafael Ferreira - GIA Gemologist</span></p>
+          <p>Rafael Ferreira</p>
           <p data-en="California - USA" data-pt="Califórnia - EUA" data-es="California - EE.UU.">California - USA</p>
         </div>
       </div>
@@ -276,7 +252,7 @@ Ya sea que sea un coleccionista, alguien que heredó una joya familiar o está a
   <!-- Seu JS original -->
   <script src="/js/main.js"></script>
 
-  <!-- Funcionais adicionais: carrossel, idioma, blog e feedback do form -->
+  <!-- Funcionais adicionais: carrossel, idioma e feedback do form (blog removido) -->
   <script>
   document.addEventListener("DOMContentLoaded", function () {
     /* ====== HERO CAROUSEL ====== */
@@ -319,41 +295,13 @@ Ya sea que sea un coleccionista, alguien que heredó una joya familiar o está a
       setLang("en"); // idioma inicial
     })();
 
-    /* ====== BLOG CARDS (HOME) ====== */
-    (function blogHome(){
-      const track = document.getElementById("blogTrack");
-      if(!track) return;
-      const posts = [
-        { title: "How to Read Diamond 4Cs (GIA)", img: "/images/blog/diamond_4cs_thumb.jpg", url: "/pages/blog/diamond-4cs.html" },
-        { title: "Pearl Grading Basics", img: "/images/blog/pearl_grading_thumb.jpg", url: "/pages/blog/pearl-grading.html" },
-        { title: "Emerald vs. Emerald-Like: Testing & Tips", img: "/images/blog/emerald_thumb.jpg", url: "/pages/blog/emerald-testing.html" },
-        { title: "Gem Investment: What to Know First", img: "/images/blog/invest_thumb.jpg", url: "/pages/blog/gem-investment.html" }
-      ];
-      posts.forEach(p => {
-        const a = document.createElement("a");
-        a.className = "blog-card";
-        a.href = p.url;
-        a.innerHTML = `
-          <img src="${p.img}" alt="${p.title}">
-          <div class="blog-card-content">
-            <h3>${p.title}</h3>
-            <span class="read-more">Read more</span>
-          </div>`;
-        track.appendChild(a);
-      });
-
-      const prev = document.getElementById("blogPrev");
-      const next = document.getElementById("blogNext");
-      prev && prev.addEventListener("click", ()=> track.scrollBy({left: -320, behavior: "smooth"}));
-      next && next.addEventListener("click", ()=> track.scrollBy({left: 320, behavior: "smooth"}));
-    })();
-
     /* ====== CONTACT FORM FEEDBACK ====== */
     (function formFeedback(){
       const form = document.querySelector("#contact form");
       const status = document.getElementById("formStatus");
       if(!form || !status) return;
       form.addEventListener("submit", function(){
+        // Apenas feedback visual imediato (a entrega é feita pelo Formspree)
         setTimeout(()=> status.textContent = "Message sent! Thank you.", 500);
       });
     })();
