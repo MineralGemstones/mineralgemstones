@@ -53,6 +53,10 @@
     .pill{display:inline-block;background:#111;color:#fff;border-radius:999px;padding:6px 12px;font-size:.85rem;margin-bottom:10px}
     .services-grid.interiors-grid .service-card{background:#fff;border:1px solid #e8e8e8}
     .badge{display:inline-block;margin-top:8px;font-size:.8rem;color:#444}
+
+    /* Permite que o <a> se comporte como card */
+    a.service-card{display:block;color:inherit;text-decoration:none}
+    a.service-card:hover{transform:translateY(-2px)}
   </style>
 </head>
 <body>
@@ -126,7 +130,6 @@
             <p data-en="Accurate valuation of gemstones for insurance, estate, or resale purposes" data-pt="Avaliação precisa de gemas para fins de seguro, inventário ou revenda" data-es="Evaluación precisa de gemas para fines de seguro, patrimonio o reventa">Accurate valuation of gemstones for insurance, estate, or resale purposes</p>
           </a>
         </div>
-        <!-- CORREÇÃO AQUI: aspas faltando -->
         <div class="service-card">
           <a href="/pages/services/certification_services.html">
             <div class="service-icon"><i class="fas fa-award"></i></div>
@@ -187,7 +190,7 @@
       </div>
 
       <div class="services-grid interiors-grid" style="margin-top:28px">
-        <div class="service-card">
+        <a href="/pages/natural-stones/semi_precious_slabs.html" class="service-card">
           <div class="service-icon"><i class="fas fa-layer-group"></i></div>
           <h3 data-en="Semi-Precious Slabs" data-pt="Slabs Semipreciosas" data-es="Losas Semipreciosas">Semi-Precious Slabs</h3>
           <p data-en="Allure Agate, Blue Agate, Quartz, Petrified Wood and more. Backlit options available."
@@ -196,9 +199,9 @@
              Allure Agate, Blue Agate, Quartz, Petrified Wood and more. Backlit options available.
           </p>
           <span class="badge" data-en="Tables • Counters • Feature Walls" data-pt="Mesas • Bancadas • Painéis" data-es="Mesas • Encimeras • Paneles">Tables • Counters • Feature Walls</span>
-        </div>
+        </a>
 
-        <div class="service-card">
+        <a href="/pages/natural-stones/quartzite_marble.html" class="service-card">
           <div class="service-icon"><i class="fas fa-mountain"></i></div>
           <h3 data-en="Quartzite & Marble Curation" data-pt="Curadoria de Quartzitos & Mármores" data-es="Curaduría de Cuarcitas & Mármoles">Quartzite & Marble Curation</h3>
           <p data-en="High-end selections like Taj Mahal, Cristallo, Patagonia and rare marbles for luxury projects."
@@ -207,9 +210,9 @@
              High-end selections like Taj Mahal, Cristallo, Patagonia and rare marbles for luxury projects.
           </p>
           <span class="badge" data-en="Kitchens • Bathrooms • Fireplaces" data-pt="Cozinhas • Banheiros • Lareiras" data-es="Cocinas • Baños • Chimeneas">Kitchens • Bathrooms • Fireplaces</span>
-        </div>
+        </a>
 
-        <div class="service-card">
+        <a href="/pages/natural-stones/backlit_onyx.html" class="service-card">
           <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
           <h3 data-en="Backlit Onyx Walls" data-pt="Paredes de Ônix Retroiluminado" data-es="Paredes de Ónix Retroiluminadas">Backlit Onyx Walls</h3>
           <p data-en="Design, technical guidance and vendor coordination for dramatic translucent onyx installations."
@@ -218,9 +221,9 @@
              Design, technical guidance and vendor coordination for dramatic translucent onyx installations.
           </p>
           <span class="badge" data-en="Lighting Specs • Diffusers • Power" data-pt="Especificações de Luz • Difusores • Energia" data-es="Especificaciones de Luz • Difusores • Energía">Lighting Specs • Diffusers • Power</span>
-        </div>
+        </a>
 
-        <div class="service-card">
+        <a href="/pages/natural-stones/custom_furniture.html" class="service-card">
           <div class="service-icon"><i class="fas fa-couch"></i></div>
           <h3 data-en="Custom Furniture & Accents" data-pt="Mobiliário & Peças Sob Medida" data-es="Mobiliario & Piezas a Medida">Custom Furniture & Accents</h3>
           <p data-en="Tables, sideboards, vanity tops and decorative panels with gemstone or natural stone surfaces."
@@ -229,9 +232,9 @@
              Tables, sideboards, vanity tops and decorative panels with gemstone or natural stone surfaces.
           </p>
           <span class="badge" data-en="Residential • Hospitality" data-pt="Residencial • Hospitalidade" data-es="Residencial • Hotelería">Residential • Hospitality</span>
-        </div>
+        </a>
 
-        <div class="service-card">
+        <a href="/pages/natural-stones/sourcing_logistics.html" class="service-card">
           <div class="service-icon"><i class="fas fa-truck-ramp-box"></i></div>
           <h3 data-en="Sourcing & Logistics" data-pt="Sourcing & Logística" data-es="Sourcing & Logística">Sourcing & Logistics</h3>
           <p data-en="Global sourcing, inspection, slab selection, crating and insured transport to fabricators."
@@ -240,9 +243,9 @@
              Global sourcing, inspection, slab selection, crating and insured transport to fabricators.
           </p>
           <span class="badge" data-en="Trade & Homeowners" data-pt="Trade & Residencial" data-es="Trade & Residencial">Trade & Homeowners</span>
-        </div>
+        </a>
 
-        <div class="service-card">
+        <a href="/pages/natural-stones/installation_care.html" class="service-card">
           <div class="service-icon"><i class="fas fa-handshake-angle"></i></div>
           <h3 data-en="Installation Advisory & Care" data-pt="Assessoria de Instalação & Manutenção" data-es="Asesoría de Instalación & Cuidado">Installation Advisory & Care</h3>
           <p data-en="Recommendations on fabricators, sealing, maintenance routines and long-term preservation."
@@ -251,7 +254,7 @@
              Recommendations on fabricators, sealing, maintenance routines and long-term preservation.
           </p>
           <span class="badge" data-en="Spec Sheets • Care Guides" data-pt="Especificações • Guias de Cuidado" data-es="Especificaciones • Guías de Cuidado">Spec Sheets • Care Guides</span>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -321,19 +324,19 @@ Hoy, además de los servicios gemológicos profesionales, también realizo CURAD
   <section id="testimonials" class="testimonials">
     <div class="container">
       <h2 class="section-title" data-en="Testimonials" data-pt="Depoimentos" data-es="Testimonios">Testimonials</h2>
-      <div class="t-wrap">
-        <div class="t-track" id="tTrack">
-          <article class="t-card"><div class="t-stars">★★★★★</div><p>Exceptional expertise. Rafael explained every detail of my diamond and gave me total confidence in the purchase.</p><div class="t-author">Mariana S. — Engagement Ring</div></article>
-          <article class="t-card"><div class="t-stars">★★★★★</div><p>Professional appraisal delivered fast and clearly documented. Perfect for my insurance provider.</p><div class="t-author">Daniel R. — Insurance Appraisal</div></article>
-          <article class="t-card"><div class="t-stars">★★★★★</div><p>We verified a family emerald and learned its history. Honest, transparent, and very knowledgeable.</p><div class="t-author">Lucia A. — Heirloom Evaluation</div></article>
-          <article class="t-card"><div class="t-stars">★★★★★</div><p>Great buyer’s advisory. Saved me from overpaying and found a better stone that matched my goals.</p><div class="t-author">Brian K. — Buyer’s Advisory</div></article>
-          <article class="t-card"><div class="t-stars">★★★★★</div><p>The education content is outstanding. I now understand the 4Cs and feel secure investing in gems.</p><div class="t-author">Patricia M. — Education Session</div></article>
-        </div>
+    <div class="t-wrap">
+      <div class="t-track" id="tTrack">
+        <article class="t-card"><div class="t-stars">★★★★★</div><p>Exceptional expertise. Rafael explained every detail of my diamond and gave me total confidence in the purchase.</p><div class="t-author">Mariana S. — Engagement Ring</div></article>
+        <article class="t-card"><div class="t-stars">★★★★★</div><p>Professional appraisal delivered fast and clearly documented. Perfect for my insurance provider.</p><div class="t-author">Daniel R. — Insurance Appraisal</div></article>
+        <article class="t-card"><div class="t-stars">★★★★★</div><p>We verified a family emerald and learned its history. Honest, transparent, and very knowledgeable.</p><div class="t-author">Lucia A. — Heirloom Evaluation</div></article>
+        <article class="t-card"><div class="t-stars">★★★★★</div><p>Great buyer’s advisory. Saved me from overpaying and found a better stone that matched my goals.</p><div class="t-author">Brian K. — Buyer’s Advisory</div></article>
+        <article class="t-card"><div class="t-stars">★★★★★</div><p>The education content is outstanding. I now understand the 4Cs and feel secure investing in gems.</p><div class="t-author">Patricia M. — Education Session</div></article>
       </div>
-      <div class="t-nav">
-        <button class="t-btn" id="tPrev"><i class="fas fa-chevron-left"></i></button>
-        <button class="t-btn" id="tNext"><i class="fas fa-chevron-right"></i></button>
-      </div>
+    </div>
+    <div class="t-nav">
+      <button class="t-btn" id="tPrev"><i class="fas fa-chevron-left"></i></button>
+      <button class="t-btn" id="tNext"><i class="fas fa-chevron-right"></i></button>
+    </div>
     </div>
   </section>
 
