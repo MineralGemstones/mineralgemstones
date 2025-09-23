@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mineral Gemstones - Professional Gemological Services</title>
-  <meta name="description" content="Professional gemological services including gemstone identification, appraisal, and certification. Expert analysis by certified gemologists.">
+  <meta name="description" content="Professional gemological services including gemstone identification, appraisal, and certification — plus premium natural stones and semi-precious slabs for interiors.">
 
   <!-- Caminhos originais -->
   <link rel="stylesheet" href="/css/styles.css">
@@ -39,6 +39,18 @@
     .t-btn:hover{background:#242424}
     @media(min-width:720px){.t-card{flex:0 0 calc(70% - 20px)}}
     @media(min-width:1024px){.t-card{flex:0 0 calc(50% - 20px)}}
+
+    /* ===== Natural Stones for Interiors (estilos leves, reusando grid) ===== */
+    .interiors{padding:60px 0;background:#f7f7f7}
+    .interiors .section-title{margin-bottom:22px}
+    .interiors-hero{
+      background:#fff;border:1px solid #e8e8e8;border-radius:16px;
+      padding:20px;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap
+    }
+    .interiors-hero .copy{max-width:720px}
+    .pill{display:inline-block;background:#111;color:#fff;border-radius:999px;padding:6px 12px;font-size:.85rem;margin-bottom:10px}
+    .services-grid.interiors-grid .service-card{background:#fff;border:1px solid #e8e8e8}
+    .badge{display:inline-block;margin-top:8px;font-size:.8rem;color:#444}
   </style>
 </head>
 <body>
@@ -52,6 +64,14 @@
         <ul class="nav-menu">
           <li class="nav-item"><a href="#home" class="nav-link" data-en="Home" data-pt="Início" data-es="Inicio">Home</a></li>
           <li class="nav-item"><a href="#services" class="nav-link" data-en="Services" data-pt="Serviços" data-es="Servicios">Services</a></li>
+          <!-- NOVO: Natural Stones for Interiors -->
+          <li class="nav-item">
+            <a href="#interiors" class="nav-link"
+               data-en="Natural Stones for Interiors"
+               data-pt="Pedras Naturais para Interiores"
+               data-es="Piedras Naturales para Interiores">Natural Stones for Interiors</a>
+          </li>
+          <!-- /NOVO -->
           <li class="nav-item"><a href="#about" class="nav-link" data-en="About" data-pt="Sobre" data-es="Acerca">About</a></li>
           <li class="nav-item"><a href="#education" class="nav-link" data-en="Education" data-pt="Educação" data-es="Educación">Education</a></li>
           <li class="nav-item"><a href="#testimonials" class="nav-link" data-en="Testimonials" data-pt="Depoimentos" data-es="Testimonios">Testimonials</a></li>
@@ -129,6 +149,111 @@
     </div>
   </section>
 
+  <!-- NOVO BLOCO: Natural Stones for Interiors -->
+  <section id="interiors" class="interiors">
+    <div class="container">
+      <h2 class="section-title"
+          data-en="Natural Stones for Interiors"
+          data-pt="Pedras Naturais para Interiores"
+          data-es="Piedras Naturales para Interiores">Natural Stones for Interiors</h2>
+
+      <div class="interiors-hero">
+        <div class="copy">
+          <span class="pill"
+            data-en="Residential & Commercial"
+            data-pt="Residencial & Comercial"
+            data-es="Residencial & Comercial">Residential & Commercial</span>
+          <h3
+            data-en="Transform nature into art — premium slabs and custom pieces"
+            data-pt="Transforme a natureza em arte — slabs premium e peças sob medida"
+            data-es="Transforma la naturaleza en arte — losas premium y piezas a medida">
+            Transform nature into art — premium slabs and custom pieces
+          </h3>
+          <p
+            data-en="We curate and advise on natural stones and semi-precious slabs for kitchens, bathrooms, feature walls, tables and luxury accents. From selection to logistics and care, we guide you end-to-end."
+            data-pt="Selecionamos e assessoramos pedras naturais e slabs semipreciosas para cozinhas, banheiros, painéis, mesas e detalhes de luxo. Da escolha à logística e manutenção, guiamos você de ponta a ponta."
+            data-es="Seleccionamos y asesoramos en piedras naturales y losas semipreciosas para cocinas, baños, paneles, mesas y detalles de lujo. Desde la elección hasta la logística y el mantenimiento, te guiamos de principio a fin.">
+            We curate and advise on natural stones and semi-precious slabs for kitchens, bathrooms, feature walls, tables and luxury accents. From selection to logistics and care, we guide you end-to-end.
+          </p>
+          <a href="#contact" class="cta-button"
+             data-en="Request a Quote"
+             data-pt="Solicitar Orçamento"
+             data-es="Solicitar Presupuesto">Request a Quote</a>
+        </div>
+        <img src="/images/interiors/interiors_hero.jpg" alt="Semi-precious and natural stone slabs for interiors" style="max-width:420px;border-radius:12px;width:100%;object-fit:cover">
+      </div>
+
+      <div class="services-grid interiors-grid" style="margin-top:28px">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-layer-group"></i></div>
+          <h3 data-en="Semi-Precious Slabs" data-pt="Slabs Semipreciosas" data-es="Losas Semipreciosas">Semi-Precious Slabs</h3>
+          <p data-en="Allure Agate, Blue Agate, Quartz, Petrified Wood and more. Backlit options available."
+             data-pt="Allure Agate, Blue Agate, Quartzo, Madeira Petrificada e mais. Opções com backlight."
+             data-es="Allure Agate, Blue Agate, Cuarzo, Madera Petrificada y más. Opciones retroiluminadas.">
+             Allure Agate, Blue Agate, Quartz, Petrified Wood and more. Backlit options available.
+          </p>
+          <span class="badge" data-en="Tables • Counters • Feature Walls" data-pt="Mesas • Bancadas • Painéis" data-es="Mesas • Encimeras • Paneles">Tables • Counters • Feature Walls</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-mountain"></i></div>
+          <h3 data-en="Quartzite & Marble Curation" data-pt="Curadoria de Quartzitos & Mármores" data-es="Curaduría de Cuarcitas & Mármoles">Quartzite & Marble Curation</h3>
+          <p data-en="High-end selections like Taj Mahal, Cristallo, Patagonia and rare marbles for luxury projects."
+             data-pt="Seleções high-end como Taj Mahal, Cristallo, Patagonia e mármores raros para projetos de luxo."
+             data-es="Selecciones high-end como Taj Mahal, Cristallo, Patagonia y mármoles raros para proyectos de lujo.">
+             High-end selections like Taj Mahal, Cristallo, Patagonia and rare marbles for luxury projects.
+          </p>
+          <span class="badge" data-en="Kitchens • Bathrooms • Fireplaces" data-pt="Cozinhas • Banheiros • Lareiras" data-es="Cocinas • Baños • Chimeneas">Kitchens • Bathrooms • Fireplaces</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
+          <h3 data-en="Backlit Onyx Walls" data-pt="Paredes de Ônix Retroiluminado" data-es="Paredes de Ónix Retroiluminadas">Backlit Onyx Walls</h3>
+          <p data-en="Design, technical guidance and vendor coordination for dramatic translucent onyx installations."
+             data-pt="Projeto, orientação técnica e coordenação de fornecedores para instalações de ônix translúcido."
+             data-es="Diseño, guía técnica y coordinación de proveedores para instalaciones de ónix translúcido.">
+             Design, technical guidance and vendor coordination for dramatic translucent onyx installations.
+          </p>
+          <span class="badge" data-en="Lighting Specs • Diffusers • Power" data-pt="Especificações de Luz • Difusores • Energia" data-es="Especificaciones de Luz • Difusores • Energía">Lighting Specs • Diffusers • Power</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-couch"></i></div>
+          <h3 data-en="Custom Furniture & Accents" data-pt="Mobiliário & Peças Sob Medida" data-es="Mobiliario & Piezas a Medida">Custom Furniture & Accents</h3>
+          <p data-en="Tables, sideboards, vanity tops and decorative panels with gemstone or natural stone surfaces."
+             data-pt="Mesas, aparadores, tampos de lavatório e painéis decorativos com superfícies de gemas ou pedra natural."
+             data-es="Mesas, aparadores, encimeras de baño y paneles decorativos con superficies de gemas o piedra natural.">
+             Tables, sideboards, vanity tops and decorative panels with gemstone or natural stone surfaces.
+          </p>
+          <span class="badge" data-en="Residential • Hospitality" data-pt="Residencial • Hospitalidade" data-es="Residencial • Hotelería">Residential • Hospitality</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-truck-loading"></i></div>
+          <h3 data-en="Sourcing & Logistics" data-pt="Sourcing & Logística" data-es="Sourcing & Logística">Sourcing & Logistics</h3>
+          <p data-en="Global sourcing, inspection, slab selection, crating and insured transport to fabricators."
+             data-pt="Sourcing global, inspeção, seleção de slabs, engradotamento e transporte assegurado ao marmorista."
+             data-es="Sourcing global, inspección, selección de losas, embalaje y transporte asegurado al marmolista.">
+             Global sourcing, inspection, slab selection, crating and insured transport to fabricators.
+          </p>
+          <span class="badge" data-en="Trade & Homeowners" data-pt="Trade & Residencial" data-es="Trade & Residencial">Trade & Homeowners</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-hands-helping"></i></div>
+          <h3 data-en="Installation Advisory & Care" data-pt="Assessoria de Instalação & Manutenção" data-es="Asesoría de Instalación & Cuidado">Installation Advisory & Care</h3>
+          <p data-en="Recommendations on fabricators, sealing, maintenance routines and long-term preservation."
+             data-pt="Recomendações de marmoristas, seladores, rotinas de manutenção e preservação de longo prazo."
+             data-es="Recomendaciones de marmolistas, selladores, rutinas de mantenimiento y preservación a largo plazo.">
+             Recommendations on fabricators, sealing, maintenance routines and long-term preservation.
+          </p>
+          <span class="badge" data-en="Spec Sheets • Care Guides" data-pt="Especificações • Guias de Cuidado" data-es="Especificaciones • Guías de Cuidado">Spec Sheets • Care Guides</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /NOVO BLOCO -->
+
   <!-- About -->
   <section id="about" class="about">
     <div class="container">
@@ -138,15 +263,15 @@
           <p data-en="Hello, my name is Rafael Ferreira, and I am the founder of Mineral Gemstones. For many years, I followed a conventional professional path, but I always felt something was missing: a true connection with my work. I found that connection in the fascinating and eternal world of gemstones.
 Living in Los Angeles for over ten years, I decided to transform a long-standing passion into a profession. I immersed myself in studies and today I am a proud advanced student of the Gemological Institute of America (GIA ), the largest and most respected global authority in gemology, pursuing the prestigious Graduate Gemologist training.
 Mineral Gemstones was born from my personal journey and the desire to bring clarity, confidence, and transparency to the jewelry market. My goal is not just to appraise a stone; it is to understand its history, its journey from the mine to the jewel, and to translate its value honestly and accurately for you.
-Whether you are a collector, someone who inherited a family jewel, or are about to make one of the most important purchases of your life, I am here to be your trusted guide. Combining the technical rigor learned at GIA with a genuine passion, my commitment is to ensure you understand and appreciate the true value of what you hold in your hands."
+Today, beyond professional gemological services, I also curate and advise on NATURAL STONES FOR INTERIORS — semi-precious slabs, quartzites, marbles and backlit onyx — helping homeowners, architects and designers transform spaces with technical rigor and refined aesthetics."
             data-pt="Olá, meu nome é Rafael Ferreira, e sou o fundador da Mineral Gemstones. Por muitos anos, trilhei um caminho profissional convencional, mas sempre senti que algo faltava: uma conexão verdadeira com o meu trabalho. Essa conexão eu encontrei no fascinante e eterno mundo das pedras preciosas.
 Morando em Los Angeles há mais de dez anos, decidi transformar uma paixão de longa data em uma profissão. Mergulhei de cabeça nos estudos e hoje sou um orgulhoso estudante avançado do Gemological Institute of America (GIA), a maior e mais respeitada autoridade mundial em gemologia, cursando a prestigiada formação de Graduate Gemologist.
 A Mineral Gemstones nasceu da minha jornada pessoal e do desejo de trazer clareza, confiança e transparência ao mercado de joias. Meu objetivo não é apenas avaliar uma pedra; é entender sua história, sua jornada desde a mina até a joia, e traduzir seu valor de forma honesta e precisa para você.
-Seja você um colecionador, alguém que herdou uma joia de família ou está prestes a fazer uma das compras mais importantes da sua vida, estou aqui para ser seu guia de confiança. Combinando o rigor técnico aprendido no GIA com uma paixão genuína, meu compromisso é garantir que você entenda e aprecie o verdadeiro valor do que tem em mãos."
+Hoje, além dos serviços gemológicos profissionais, também faço CURADORIA E ASSESSORIA EM PEDRAS NATURAIS PARA INTERIORES — slabs semipreciosas, quartzitos, mármores e ônix retroiluminado — ajudando clientes finais, arquitetos e designers a transformar espaços com rigor técnico e estética apurada."
             data-es="Hola, mi nombre es Rafael Ferreira, y soy el fundador de Mineral Gemstones. Durante muchos años, seguí un camino profesional convencional, pero siempre sentí que faltaba algo: una conexión verdadera con mi trabajo. Esa conexión la encontré en el fascinante y eterno mundo de las piedras preciosas.
 Viviendo en Los Ángeles desde hace más de diez años, decidí transformar una pasión de larga data en una profesión. Me sumergí de lleno en los estudios y hoy soy un orgulloso estudiante avanzado del Gemological Institute of America (GIA), la autoridad mundial más grande y respetada en gemología, cursando la prestigiosa formación de Graduate Gemologist.
 Mineral Gemstones nació de mi viaje personal y del deseo de traer claridad, confianza y transparencia al mercado de la joyería. Mi objetivo no es solo evaluar una piedra; es entender su historia, su viaje desde la mina hasta la joya, y traducir su valor de manera honesta y precisa para usted.
-Ya sea que sea un coleccionista, alguien que heredó una joya familiar o está a punto de hacer una de las compras más importantes de su vida, estoy aquí para ser su guía de confianza. Combinando el rigor técnico aprendido en el GIA con una pasión genuina, mi compromiso es garantizar que usted entienda y aprecie el verdadero valor de lo que tiene en sus manos.">
+Hoy, además de los servicios gemológicos profesionales, también realizo CURADURÍA Y ASESORÍA EN PIEDRAS NATURALES PARA INTERIORES — losas semipreciosas, cuarcitas, mármoles y ónix retroiluminado — ayudando a propietarios, arquitectos y diseñadores a transformar espacios con rigor técnico y estética refinada.">
             Hello, my name is Rafael Ferreira, and I am the founder of Mineral Gemstones...
           </p>
           <div class="features">
@@ -257,6 +382,8 @@ Ya sea que sea un coleccionista, alguien que heredó una joya familiar o está a
             <li><a href="/pages/services/certification_services.html">Certification Services</a></li>
             <li><a href="/pages/services/quality_analysis.html">Quality Analysis</a></li>
             <li><a href="/pages/services/detailed_appraisal_services.html">Detailed Appraisal Services</a></li>
+            <!-- Link de acesso rápido à nova seção -->
+            <li><a href="#interiors">Natural Stones for Interiors</a></li>
           </ul>
         </div>
         <div class="footer-section">
