@@ -77,4 +77,31 @@
           data-es="Brief e intención de iluminación">Brief and lighting intent</span></li>
         <li><i class="fa-regular fa-circle-dot"></i><span data-en="Shortlist of suitable onyx slabs at partner yards"
           data-pt="Seleção de slabs adequados em pátios parceiros"
-          data-es="Selecc
+          data-es="Selección de losas adecuadas en patios socios">Shortlist of suitable onyx slabs at partner yards</span></li>
+        <li><i class="fa-regular fa-circle-dot"></i><span data-en="Walkthrough (in-person or video) and pricing support"
+          data-pt="Acompanhamento (presencial ou vídeo) e suporte de preços"
+          data-es="Acompañamiento (presencial o vídeo) y apoyo de precios">Walkthrough (in-person or video) and pricing support</span></li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<footer class="footer"><div class="container"><p>&copy; 2024 Mineral Gemstones</p></div></footer>
+<script>
+  (function(){
+    const btns=document.querySelectorAll('.lang-btn');
+    function setLang(lang){
+      document.querySelectorAll('[data-en]').forEach(el=>{
+        const t=el.getAttribute('data-'+lang);
+        if(!t) return;
+        el.innerHTML=t;
+      });
+      btns.forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
+      document.documentElement.lang=lang;
+    }
+    btns.forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+    setLang('en');
+  })();
+</script>
+</body>
+</html>
