@@ -436,7 +436,11 @@ Hoy, además de los servicios gemológicos profesionales, también realizo CURAD
       const burger = document.getElementById("hamburger");
       const menu = document.querySelector(".nav-menu");
       if(!burger || !menu) return;
-      burger.addEventListener("click", ()=> menu.classList.toggle("open"));
+      // usa 'active' para combinar com o CSS existente
+      burger.addEventListener("click", ()=>{
+        menu.classList.toggle("active");
+        burger.classList.toggle("active");
+      });
     })();
 
     /* ====== LANGUAGE SWITCHER ====== */
