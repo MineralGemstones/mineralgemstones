@@ -44,3 +44,66 @@
 </header>
 
 <section class="hero-ns">
+  <div class="container">
+    <h1 data-en="Custom Furniture & Accents — Consulting"
+        data-pt="Mobiliário & Acabamentos — Consultoria"
+        data-es="Mobiliario & Acabados — Consultoría">Custom Furniture & Accents — Consulting</h1>
+    <p class="muted" data-en="Gemstone, quartzite, marble or onyx surfaces for unique pieces."
+       data-pt="Superfícies em gemas, quartzitos, mármores ou ônix para peças únicas."
+       data-es="Superficies en gemas, cuarcitas, mármoles u ónix para piezas únicas.">Gemstone, quartzite, marble or onyx surfaces for unique pieces.</p>
+    <a class="cta" href="/#contact" data-en="Request a Consultation" data-pt="Solicitar Consultoria" data-es="Solicitar Consultoría">Request a Consultation</a>
+  </div>
+</section>
+
+<main class="container" style="padding:28px 0">
+  <div class="grid cols-2">
+    <div class="card">
+      <h2 data-en="What I help you with" data-pt="Como eu ajudo" data-es="Cómo te ayudo">What I help you with</h2>
+      <ul class="list">
+        <li><i class="fa-solid fa-check"></i><span data-en="Material guidance for tabletops, sideboards and vanities"
+          data-pt="Orientação de materiais para tampos de mesa, aparadores e lavatórios"
+          data-es="Orientación de materiales para tapas de mesa, aparadores y lavabos">Material guidance for tabletops, sideboards and vanities</span></li>
+        <li><i class="fa-solid fa-check"></i><span data-en="Vendor introductions (stone yards, fabricators)"
+          data-pt="Indicação de fornecedores (pátios de pedra, marmoristas)"
+          data-es="Presentación de proveedores (patios de piedra, marmolistas)">Vendor introductions (stone yards, fabricators)</span></li>
+        <li><i class="fa-solid fa-check"></i><span data-en="Pricing guidance and negotiation support"
+          data-pt="Orientação de preços e suporte na negociação"
+          data-es="Guía de precios y apoyo en la negociación">Pricing guidance and negotiation support</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2 data-en="How it works" data-pt="Como funciona" data-es="Cómo funciona">How it works</h2>
+      <ul class="list">
+        <li><i class="fa-regular fa-circle-dot"></i><span data-en="Brief: function, style and budget"
+          data-pt="Briefing: função, estilo e orçamento"
+          data-es="Brief: función, estilo y presupuesto">Brief: function, style and budget</span></li>
+        <li><i class="fa-regular fa-circle-dot"></i><span data-en="Curated shortlist and showroom walk-through"
+          data-pt="Seleção curada e acompanhamento em showroom"
+          data-es="Selección curada y acompañamiento en showroom">Curated shortlist and showroom walk-through</span></li>
+        <li><i class="fa-regular fa-circle-dot"></i><span data-en="Support to secure the chosen material"
+          data-pt="Suporte para garantir o material escolhido"
+          data-es="Apoyo para asegurar el material elegido">Support to secure the chosen material</span></li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+<footer class="footer"><div class="container"><p>&copy; 2024 Mineral Gemstones</p></div></footer>
+<script>
+  (function(){
+    const btns=document.querySelectorAll('.lang-btn');
+    function setLang(lang){
+      document.querySelectorAll('[data-en]').forEach(el=>{
+        const t=el.getAttribute('data-'+lang);
+        if(!t) return;
+        el.innerHTML=t;
+      });
+      btns.forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
+      document.documentElement.lang=lang;
+    }
+    btns.forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+    setLang('en');
+  })();
+</script>
+</body>
+</html>
