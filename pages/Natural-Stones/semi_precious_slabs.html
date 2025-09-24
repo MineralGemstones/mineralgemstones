@@ -30,9 +30,9 @@
     <div class="nav-container container">
       <div class="nav-logo"><a href="/"><img src="/images/logo.png" alt="Mineral Gemstones" class="logo"></a></div>
       <ul class="nav-menu" style="display:flex;gap:16px;align-items:center;list-style:none;margin:0">
-        <li class="nav-item"><a href="/">Home</a></li>
-        <li class="nav-item"><a href="/#natural-stones" data-en="Natural Stones" data-pt="Pedras Naturais" data-es="Piedras Naturales">Natural Stones</a></li>
-        <li class="nav-item"><a href="/#contact" data-en="Contact" data-pt="Contato" data-es="Contacto">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/#natural-stones" data-en="Natural Stones" data-pt="Pedras Naturais" data-es="Piedras Naturales">Natural Stones</a></li>
+        <li class="nav-item"><a class="nav-link" href="/#contact" data-en="Contact" data-pt="Contato" data-es="Contacto">Contact</a></li>
       </ul>
       <div class="language-selector">
         <button class="lang-btn active" data-lang="en">EN</button>
@@ -96,22 +96,6 @@
 </main>
 
 <footer class="footer"><div class="container"><p>&copy; 2024 Mineral Gemstones</p></div></footer>
-
-<script>
-  (function(){
-    const btns=document.querySelectorAll('.lang-btn');
-    function setLang(lang){
-      document.querySelectorAll('[data-en]').forEach(el=>{
-        const t=el.getAttribute('data-'+lang);
-        if(!t) return;
-        el.innerHTML=t;
-      });
-      btns.forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
-      document.documentElement.lang=lang;
-    }
-    btns.forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
-    setLang('en');
-  })();
-</script>
+<script src="/js/main.js"></script>
 </body>
 </html>
