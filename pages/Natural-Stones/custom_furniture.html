@@ -16,68 +16,31 @@
   .list li{margin:10px 0;display:flex;gap:10px}
   .list i{color:#0c6}
   .cta{display:inline-block;margin-top:14px;padding:12px 18px;border-radius:10px;background:#111;color:#fff}
-  .muted{color:#666}
+  .muted{color:#bbb}
+  .language-selector{display:flex;gap:6px}
+  .lang-btn{background:#111;color:#fff;border:1px solid #333;border-radius:8px;padding:6px 10px;cursor:pointer}
+  .lang-btn.active{outline:2px solid #fff3}
+  .navbar .nav-container{display:flex;align-items:center;justify-content:space-between}
+  .logo{height:40px}
 </style>
 </head>
 <body>
 <header class="header">
   <nav class="navbar">
-    <div class="nav-container">
+    <div class="nav-container container">
       <div class="nav-logo"><a href="/"><img src="/images/logo.png" class="logo" alt="Mineral Gemstones"></a></div>
-      <ul class="nav-menu">
+      <ul class="nav-menu" style="display:flex;gap:16px;align-items:center;list-style:none;margin:0">
         <li class="nav-item"><a href="/">Home</a></li>
-        <li class="nav-item"><a href="/#natural-stones">Natural Stones</a></li>
-        <li class="nav-item"><a href="/#contact">Contact</a></li>
+        <li class="nav-item"><a href="/#natural-stones" data-en="Natural Stones" data-pt="Pedras Naturais" data-es="Piedras Naturales">Natural Stones</a></li>
+        <li class="nav-item"><a href="/#contact" data-en="Contact" data-pt="Contato" data-es="Contacto">Contact</a></li>
       </ul>
+      <div class="language-selector">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="pt">PT</button>
+        <button class="lang-btn" data-lang="es">ES</button>
+      </div>
     </div>
   </nav>
 </header>
 
 <section class="hero-ns">
-  <div class="container">
-    <h1 data-en="Custom Furniture & Accents — Consulting"
-        data-pt="Mobiliário & Acabamentos — Consultoria"
-        data-es="Mobiliario & Acabados — Consultoría">Custom Furniture & Accents — Consulting</h1>
-    <p class="muted" data-en="Gemstone, quartzite, marble or onyx surfaces for unique pieces."
-       data-pt="Superfícies em gemas, quartzitos, mármores ou ônix para peças únicas."
-       data-es="Superficies en gemas, cuarcitas, mármoles u ónix para piezas únicas.">Gemstone, quartzite, marble or onyx surfaces for unique pieces.</p>
-    <a class="cta" href="/#contact" data-en="Request a Consultation" data-pt="Solicitar Consultoria" data-es="Solicitar Consultoría">Request a Consultation</a>
-  </div>
-</section>
-
-<main class="container" style="padding:28px 0">
-  <div class="grid cols-2">
-    <div class="card">
-      <h2 data-en="What I help you with" data-pt="Como eu ajudo" data-es="Cómo te ayudo">What I help you with</h2>
-      <ul class="list">
-        <li><i class="fa-solid fa-check"></i><span data-en="Material guidance for tabletops, sideboards and vanities"
-          data-pt="Orientação de materiais para tampos de mesa, aparadores e lavatórios"
-          data-es="Orientación de materiales para tapas de mesa, aparadores y lavabos">Material guidance for tabletops, sideboards and vanities</span></li>
-        <li><i class="fa-solid fa-check"></i><span data-en="Vendor introductions (stone yards, fabricators)"
-          data-pt="Indicação de fornecedores (pátios de pedra, marmoristas)"
-          data-es="Presentación de proveedores (patios de piedra, marmolistas)">Vendor introductions (stone yards, fabricators)</span></li>
-        <li><i class="fa-solid fa-check"></i><span data-en="Pricing guidance and negotiation support"
-          data-pt="Orientação de preços e suporte na negociação"
-          data-es="Guía de precios y apoyo en la negociación">Pricing guidance and negotiation support</span></li>
-      </ul>
-    </div>
-    <div class="card">
-      <h2 data-en="How it works" data-pt="Como funciona" data-es="Cómo funciona">How it works</h2>
-      <ul class="list">
-        <li><i class="fa-regular fa-circle-dot"></i><span data-en="Brief: function, style and budget"
-          data-pt="Briefing: função, estilo e orçamento"
-          data-es="Brief: función, estilo y presupuesto">Brief: function, style and budget</span></li>
-        <li><i class="fa-regular fa-circle-dot"></i><span data-en="Curated shortlist and showroom walk-through"
-          data-pt="Seleção curada e acompanhamento em showroom"
-          data-es="Selección curada y acompañamiento en showroom">Curated shortlist and showroom walk-through</span></li>
-        <li><i class="fa-regular fa-circle-dot"></i><span data-en="Support to secure the chosen material"
-          data-pt="Suporte para garantir o material escolhido"
-          data-es="Apoyo para asegurar el material elegido">Support to secure the chosen material</span></li>
-      </ul>
-    </div>
-  </div>
-</main>
-
-<footer class="footer"><div class="container"><p>&copy; 2024 Mineral Gemstones</p></div></footer>
-</body>
-</html>
