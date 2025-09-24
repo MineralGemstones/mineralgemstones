@@ -867,10 +867,12 @@ section {
         gap: 10px;
     }
 }
+
 /* Oculta somente a imagem principal da página Quality Analysis */
 img[src*="quality_analysis"] {
   display: none !important;
 }
+
 /* ===== Fix: Hero carousel não aparece no mobile ===== */
 .hero-image,
 .image-carousel{
@@ -913,11 +915,12 @@ img[src*="quality_analysis"] {
 .hero{
   overflow: hidden;
 }
-/* WhatsApp floating button */
+
+/* WhatsApp floating button (com safe-area para iPhone) */
 .whatsapp-fab {
   position: fixed;
-  right: 18px;
-  bottom: 18px;
+  right: max(18px, env(safe-area-inset-right));
+  bottom: max(18px, env(safe-area-inset-bottom));
   z-index: 9999;
 }
 .whatsapp-fab a {
@@ -937,4 +940,7 @@ img[src*="quality_analysis"] {
 @media (max-width: 640px) {
   .whatsapp-fab a span { display:none; } /* mantém só o ícone no mobile */
 }
-
+/* Respeita preferência de menos animação */
+@media (prefers-reduced-motion: reduce){
+  .whatsapp-fab a { transition: none; }
+}
