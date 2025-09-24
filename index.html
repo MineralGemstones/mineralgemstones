@@ -44,9 +44,12 @@
     .interiors .section-title{margin-bottom:22px}
     .interiors-hero{
       background:#fff;border:1px solid #e8e8e8;border-radius:16px;
-      padding:20px;display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap
+      padding:20px;display:flex;gap:20px;
+      /* centralizado */
+      flex-direction:column;align-items:center;justify-content:center;text-align:center;
+      flex-wrap:wrap
     }
-    .interiors-hero .copy{max-width:720px}
+    .interiors-hero .copy{max-width:720px;margin:0 auto}
     .pill{display:inline-block;background:#111;color:#fff;border-radius:999px;padding:6px 12px;font-size:.85rem;margin-bottom:10px}
     .services-grid.interiors-grid .service-card{background:#fff;border:1px solid #e8e8e8}
     .badge{display:inline-block;margin-top:8px;font-size:.8rem;color:#444}
@@ -123,6 +126,7 @@
             <p data-en="Accurate valuation of gemstones for insurance, estate, or resale purposes" data-pt="Avaliação precisa de gemas para fins de seguro, inventário ou revenda" data-es="Evaluación precisa de gemas para fines de seguro, patrimonio o reventa">Accurate valuation of gemstones for insurance, estate, or resale purposes</p>
           </a>
         </div>
+        <!-- CORREÇÃO AQUI: aspas faltando -->
         <div class="service-card">
           <a href="/pages/services/certification_services.html">
             <div class="service-icon"><i class="fas fa-award"></i></div>
