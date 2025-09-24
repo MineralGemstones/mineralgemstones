@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Semi-Precious Slabs Consulting | Mineral Gemstones</title>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Semi-Precious Slabs — Consulting | Mineral Gemstones</title>
 <meta name="description" content="Consulting to choose semi-precious stone slabs such as Allure Agate, Blue Agate, Quartz and Petrified Wood. Vendor introductions and pricing support.">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="/css/styles.css">
 <style>
   .hero-ns{padding:56px 0;background:#0e0e0e;color:#fff;text-align:center}
-  .hero-ns h1{margin-bottom:10px}
   .container{max-width:1100px;margin:0 auto;padding:0 20px}
   .grid{display:grid;gap:18px}
   @media(min-width:900px){.grid.cols-2{grid-template-columns:1fr 1fr}}
@@ -18,19 +16,29 @@
   .list li{margin:10px 0;display:flex;gap:10px}
   .list i{color:#0c6}
   .cta{display:inline-block;margin-top:14px;padding:12px 18px;border-radius:10px;background:#111;color:#fff}
-  .muted{color:#666}
+  .muted{color:#bbb}
+  .language-selector{display:flex;gap:6px}
+  .lang-btn{background:#111;color:#fff;border:1px solid #333;border-radius:8px;padding:6px 10px;cursor:pointer}
+  .lang-btn.active{outline:2px solid #fff3}
+  .navbar .nav-container{display:flex;align-items:center;justify-content:space-between}
+  .logo{height:40px}
 </style>
 </head>
 <body>
 <header class="header">
   <nav class="navbar">
-    <div class="nav-container">
+    <div class="nav-container container">
       <div class="nav-logo"><a href="/"><img src="/images/logo.png" alt="Mineral Gemstones" class="logo"></a></div>
-      <ul class="nav-menu">
+      <ul class="nav-menu" style="display:flex;gap:16px;align-items:center;list-style:none;margin:0">
         <li class="nav-item"><a href="/">Home</a></li>
-        <li class="nav-item"><a href="/#natural-stones">Natural Stones</a></li>
-        <li class="nav-item"><a href="/#contact">Contact</a></li>
+        <li class="nav-item"><a href="/#natural-stones" data-en="Natural Stones" data-pt="Pedras Naturais" data-es="Piedras Naturales">Natural Stones</a></li>
+        <li class="nav-item"><a href="/#contact" data-en="Contact" data-pt="Contato" data-es="Contacto">Contact</a></li>
       </ul>
+      <div class="language-selector">
+        <button class="lang-btn active" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="pt">PT</button>
+        <button class="lang-btn" data-lang="es">ES</button>
+      </div>
     </div>
   </nav>
 </header>
@@ -87,10 +95,23 @@
   </div>
 </main>
 
-<footer class="footer">
-  <div class="container">
-    <p>&copy; 2024 Mineral Gemstones</p>
-  </div>
-</footer>
+<footer class="footer"><div class="container"><p>&copy; 2024 Mineral Gemstones</p></div></footer>
+
+<script>
+  (function(){
+    const btns=document.querySelectorAll('.lang-btn');
+    function setLang(lang){
+      document.querySelectorAll('[data-en]').forEach(el=>{
+        const t=el.getAttribute('data-'+lang);
+        if(!t) return;
+        el.innerHTML=t;
+      });
+      btns.forEach(b=>b.classList.toggle('active', b.dataset.lang===lang));
+      document.documentElement.lang=lang;
+    }
+    btns.forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+    setLang('en');
+  })();
+</script>
 </body>
 </html>
