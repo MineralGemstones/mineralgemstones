@@ -1068,3 +1068,17 @@ i[class*=" fa"] + h3 + p{
   margin: 6px 0 16px 0;
   color: var(--dark-gray);
 }
+
+/* =========================================================
+   GEMSTONE IDENTIFICATION — AJUSTE DA IMAGEM DA LUPA
+   Reduz tamanho para algo mais proporcional e responsivo.
+   ========================================================= */
+img[src*="gemstone_identification"],
+img[alt*="Gemstone Identification"],
+img[alt*="Identificação de Gemas"] {
+  max-width: 520px;   /* ajuste para tamanho ideal */
+  width: 100%;        /* mantém responsivo */
+  height: auto;       /* preserva proporção */
+  display: block;     /* evita espaçamento estranho */
+  margin: 0 auto 16px;/* centraliza e dá respiro inferior */
+}
