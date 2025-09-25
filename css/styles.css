@@ -1030,3 +1030,41 @@ img[src*="quality_analysis"] {
   margin: 6px 0 16px 0;
   color: var(--dark-gray);
 }
+
+/* =========================================================
+   HOTFIX UNIVERSAL — funciona no markup i + h4/p (ou i + h3/p)
+   Usado na página Gemstone Appraisal sem alterar o HTML.
+   Seguro para o resto do site, pois mira apenas i + h4/h3.
+   ========================================================= */
+
+/* Ícone e título na mesma linha */
+i[class^="fa"] + h4,
+i[class*=" fa"] + h4,
+i[class^="fa"] + h3,
+i[class*=" fa"] + h3{
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 6px 10px; /* espaço entre ícone e título */
+}
+
+/* Aparência e alinhamento do ícone */
+i[class^="fa"],
+i[class*=" fa"]{
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--primary-color);
+  margin-right: 0; /* o espaço está no h4/h3 acima */
+}
+
+/* Garante que a descrição venha abaixo, ocupando toda a largura */
+i[class^="fa"] + h4 + p,
+i[class*=" fa"] + h4 + p,
+i[class^="fa"] + h3 + p,
+i[class*=" fa"] + h3 + p{
+  display: block;
+  clear: both;
+  margin: 6px 0 16px 0;
+  color: var(--dark-gray);
+}
