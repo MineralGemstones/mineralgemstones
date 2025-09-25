@@ -57,21 +57,16 @@
     /* Permite que o <a> se comporte como card */
     a.service-card{display:block;color:inherit;text-decoration:none}
 
-    /* ==== FIX: toques no mobile sempre ativam o link do card ==== */
+    /* ==== FIX mobile: garantir que o toque dispare navegação ==== */
     .interiors-grid a.service-card{
-      position:relative;              /* garante empilhamento correto */
+      position:relative;
       cursor:pointer;
-      -webkit-tap-highlight-color: transparent; /* remove highlight no iOS */
-      touch-action: manipulation;     /* melhora responsividade do toque */
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
       z-index:0;
     }
-    /* Faz o toque "passar" dos filhos direto para o <a> no mobile */
-    .interiors-grid a.service-card *{
-      pointer-events:none;
-    }
-    /* Mantém hover suave no desktop */
+    /* Hover suave no desktop */
     a.service-card:hover{transform:translateY(-2px);}
-
   </style>
 </head>
 <body>
@@ -292,7 +287,7 @@ Hoje, além dos serviços gemológicos profissionais, também faço CURADORIA E 
             data-es="Hola, mi nombre es Rafael Ferreira, y soy el fundador de Mineral Gemstones. Durante muchos años, seguí un camino profesional convencional, pero siempre sentí que faltaba algo: una conexión verdadera con mi trabajo. Esa conexión la encontré en el fascinante y eterno mundo de las piedras preciosas.
 Viviendo en Los Ángeles desde hace más de diez años, decidí transformar una pasión de larga data en una profesión. Me sumergí de lleno en los estudios y hoy soy un orgulloso estudiante avanzado del Gemological Institute of America (GIA), la autoridad mundial más grande y respetada en gemología, cursando la prestigiosa formación de Graduate Gemologist.
 Mineral Gemstones nació de mi viaje personal y del deseo de traer claridad, confianza y transparencia al mercado de la joyería. Mi objetivo no es solo evaluar una piedra; es entender su historia, su viaje desde la mina hasta la joya, y traducir su valor de manera honesta y precisa para usted.
-Hoy, además de los servicios gemológicos profesionales, también realizo CURADURÍA Y ASESORÍA EN PIEDRAS NATURALES — losas semipreciosas, cuarcitas, mármoles y ónix retroiluminado — ayudando a propietarios, arquitectos y diseñadores a transformar espacios con rigor técnico y estética refinada.">
+Hoy, además de los servicios gemológicos profesionales, también realizo CURADURÍA Y ASESORÍA EN PEDRAS NATURALES — losas semipreciosas, cuarcitas, mármoles y ónix retroiluminado — ayudando a propietarios, arquitectos y diseñadores a transformar espacios con rigor técnico y estética refinada.">
             Hello, my name is Rafael Ferreira, and I am the founder of Mineral Gemstones...
           </p>
           <div class="features">
@@ -430,7 +425,7 @@ Hoy, además de los servicios gemológicos profesionales, también realizo CURAD
   <!-- JS principal do site -->
   <script src="/js/main.js"></script>
 
-  <!-- Funcionais adicionais: carrossel, idioma, feedback e testimonials fix -->
+  <!-- Funcionais adicionais: carrossel, idioma, feedback, testimonials fix e clique mobile nos cards -->
   <script>
   document.addEventListener("DOMContentLoaded", function () {
     /* ====== HERO CAROUSEL ====== */
@@ -451,7 +446,6 @@ Hoy, además de los servicios gemológicos profesionales, también realizo CURAD
       const burger = document.getElementById("hamburger");
       const menu = document.querySelector(".nav-menu");
       if(!burger || !menu) return;
-      // usa 'active' para combinar com o CSS existente
       burger.addEventListener("click", ()=>{
         menu.classList.toggle("active");
         burger.classList.toggle("active");
@@ -532,6 +526,34 @@ Hoy, además de los servicios gemológicos profesionales, también realizo CURAD
 
       const timer = setInterval(nextSlide, 4000);
       window.addEventListener('resize', recalc, {passive:true});
+    })();
+
+    /* ====== FIX de clique no mobile para os cards de Natural Stones ====== */
+    (function(){
+      const cards = document.querySelectorAll('.interiors-grid a.service-card');
+      if(!cards.length) return;
+
+      cards.forEach(a=>{
+        // Acessibilidade extra (alguns navegadores / leitores de tela)
+        a.setAttribute('role','link');
+
+        // Navegação confiável no iOS/Safari com toque
+        a.addEventListener('touchend', function(e){
+          // Se ainda não navegou, evita ghost click e navega
+          if (e.cancelable) e.preventDefault();
+          const href = a.getAttribute('href');
+          if(href) window.location.href = href;
+        }, {passive:false});
+
+        // Teclado (Enter/Espaço)
+        a.addEventListener('keydown', function(e){
+          if(e.key === 'Enter' || e.key === ' '){
+            e.preventDefault();
+            const href = a.getAttribute('href');
+            if(href) window.location.href = href;
+          }
+        });
+      });
     })();
   });
   </script>
