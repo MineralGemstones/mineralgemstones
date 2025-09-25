@@ -6,6 +6,7 @@
   <title>Mineral Gemstones - Professional Gemological Services</title>
   <meta name="description" content="Professional gemological services including gemstone identification, appraisal, and certification — plus premium natural stones and semi-precious slabs for interiors.">
 
+  <!-- Caminhos originais -->
   <link rel="stylesheet" href="/css/styles.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
@@ -18,46 +19,63 @@
     /* Botão de idioma ativo */
     .lang-btn.active{outline:2px solid #fff3}
 
-    /* ===== Testimonials ===== */
+    /* ===== Testimonials (corrigido) ===== */
     .testimonials{padding:60px 0;background:#000}
     .testimonials .section-title{margin-bottom:22px;color:#fff}
     .t-wrap{position:relative;overflow:hidden}
     .t-track{display:flex;will-change:transform;transition:transform .5s ease}
-    .t-card{min-width:320px;flex:0 0 calc(100% - 20px);margin:0 10px;background:#111;border:1px solid #222;border-radius:16px;padding:22px;color:#eee;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+    .t-card{
+      min-width:320px;
+      flex:0 0 calc(100% - 20px);
+      margin:0 10px;
+      background:#111;border:1px solid #222;border-radius:16px;
+      padding:22px;color:#eee;box-shadow:0 8px 24px rgba(0,0,0,.25)
+    }
     .t-stars{color:#f5c518;margin-bottom:8px}
     .t-author{margin-top:10px;opacity:.9;font-weight:600}
     .t-nav{display:flex;gap:10px;justify-content:center;margin-top:16px}
     .t-btn{background:#1b1b1b;border:1px solid #2a2a2a;border-radius:10px;padding:8px 12px;color:#ddd;cursor:pointer}
     .t-btn:hover{background:#242424}
-
     @media(min-width:720px){.t-card{flex:0 0 calc(70% - 20px)}}
     @media(min-width:1024px){.t-card{flex:0 0 calc(50% - 20px)}}
 
-    /* Natural Stones */
+    /* ===== Natural Stones (estilos leves, reusando grid) ===== */
     .interiors{padding:60px 0;background:#f7f7f7}
-    .interiors-hero{background:#fff;border:1px solid #e8e8e8;border-radius:16px;padding:20px;display:flex;gap:20px;flex-direction:column;align-items:center;text-align:center}
+    .interiors .section-title{margin-bottom:22px}
+    .interiors-hero{
+      background:#fff;border:1px solid #e8e8e8;border-radius:16px;
+      padding:20px;display:flex;gap:20px;
+      /* centralizado */
+      flex-direction:column;align-items:center;justify-content:center;text-align:center;
+      flex-wrap:wrap
+    }
     .interiors-hero .copy{max-width:720px;margin:0 auto}
-    .services-grid.interiors-grid a.service-card{
-      display:block;
-      background:#fff;
-      border:1px solid #e8e8e8;
-      border-radius:10px;
-      padding:30px;
-      text-align:center;
-      box-shadow:0 5px 15px rgba(0,0,0,0.1);
-      transition:transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .services-grid.interiors-grid a.service-card:hover{
-      transform:translateY(-6px);
-      box-shadow:0 10px 20px rgba(0,0,0,0.15);
-    }
-    .services-grid.interiors-grid a.service-card h3{margin-top:10px;color:#0056b3}
-    .services-grid.interiors-grid a.service-card p{color:#666;margin:8px 0}
+    .pill{display:inline-block;background:#111;color:#fff;border-radius:999px;padding:6px 12px;font-size:.85rem;margin-bottom:10px}
+    .services-grid.interiors-grid .service-card{background:#fff;border:1px solid #e8e8e8}
     .badge{display:inline-block;margin-top:8px;font-size:.8rem;color:#444}
+
+    /* Permite que o <a> se comporte como card */
+    a.service-card{display:block;color:inherit;text-decoration:none}
+
+    /* ==== FIX: toques no mobile sempre ativam o link do card ==== */
+    .interiors-grid a.service-card{
+      position:relative;              /* garante empilhamento correto */
+      cursor:pointer;
+      -webkit-tap-highlight-color: transparent; /* remove highlight no iOS */
+      touch-action: manipulation;     /* melhora responsividade do toque */
+      z-index:0;
+    }
+    /* Faz o toque "passar" dos filhos direto para o <a> no mobile */
+    .interiors-grid a.service-card *{
+      pointer-events:none;
+    }
+    /* Mantém hover suave no desktop */
+    a.service-card:hover{transform:translateY(-2px);}
+
   </style>
 </head>
 <body>
-  <!-- HEADER -->
+  <!-- Header -->
   <header class="header">
     <nav class="navbar">
       <div class="nav-container">
@@ -65,13 +83,20 @@
           <img src="/images/logo.png" alt="Mineral Gemstones" class="logo">
         </div>
         <ul class="nav-menu">
-          <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
-          <li class="nav-item"><a href="#natural-stones" class="nav-link">Natural Stones</a></li>
-          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-          <li class="nav-item"><a href="#education" class="nav-link">Education</a></li>
-          <li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
-          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+          <li class="nav-item"><a href="#home" class="nav-link" data-en="Home" data-pt="Início" data-es="Inicio">Home</a></li>
+          <li class="nav-item"><a href="#services" class="nav-link" data-en="Services" data-pt="Serviços" data-es="Servicios">Services</a></li>
+          <!-- RENOMEADO: Natural Stones -->
+          <li class="nav-item">
+            <a href="#natural-stones" class="nav-link"
+               data-en="Natural Stones"
+               data-pt="Pedras Naturais"
+               data-es="Piedras Naturales">Natural Stones</a>
+          </li>
+          <!-- /RENOMEADO -->
+          <li class="nav-item"><a href="#about" class="nav-link" data-en="About" data-pt="Sobre" data-es="Acerca">About</a></li>
+          <li class="nav-item"><a href="#education" class="nav-link" data-en="Education" data-pt="Educação" data-es="Educación">Education</a></li>
+          <li class="nav-item"><a href="#testimonials" class="nav-link" data-en="Testimonials" data-pt="Depoimentos" data-es="Testimonios">Testimonials</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link" data-en="Contact" data-pt="Contato" data-es="Contacto">Contact</a></li>
         </ul>
         <div class="language-selector">
           <button class="lang-btn active" data-lang="en">EN</button>
@@ -85,12 +110,12 @@
     </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- Hero -->
   <section id="home" class="hero">
     <div class="hero-content">
-      <h1 class="hero-title">Professional Gemological Services</h1>
-      <p class="hero-subtitle">Expert gemstone identification, appraisal, and certification by certified gemologists</p>
-      <a href="#contact" class="cta-button">Get Expert Analysis</a>
+      <h1 class="hero-title" data-en="Professional Gemological Services" data-pt="Serviços Gemológicos Profissionais" data-es="Servicios Gemológicos Profesionales">Professional Gemological Services</h1>
+      <p class="hero-subtitle" data-en="Expert gemstone identification, appraisal, and certification by certified gemologists" data-pt="Identificação, avaliação e certificação de gemas por gemólogos certificados" data-es="Identificación, evaluación y certificación de gemas por gemólogos certificados">Expert gemstone identification, appraisal, and certification by certified gemologists</p>
+      <a href="#contact" class="cta-button" data-en="Get Expert Analysis" data-pt="Obter Análise Especializada" data-es="Obtener Análisis Experto">Get Expert Analysis</a>
     </div>
     <div class="hero-image">
       <div class="image-carousel" id="heroCarousel">
@@ -101,55 +126,424 @@
     </div>
   </section>
 
-  <!-- NATURAL STONES -->
-  <section id="natural-stones" class="interiors">
+  <!-- Services -->
+  <section id="services" class="services">
     <div class="container">
-      <h2 class="section-title">Natural Stones</h2>
-      <div class="services-grid interiors-grid">
-        <a href="/pages/natural-stones/semi_precious_slabs.html" class="service-card">
-          <div class="service-icon"><i class="fas fa-layer-group"></i></div>
-          <h3>Semi-Precious Slabs</h3>
-          <p>Allure Agate, Blue Agate, Quartz, Petrified Wood and more. Backlit options available.</p>
-          <span class="badge">Tables • Counters • Feature Walls</span>
-        </a>
-
-        <a href="/pages/natural-stones/quartzite_marble.html" class="service-card">
-          <div class="service-icon"><i class="fas fa-mountain"></i></div>
-          <h3>Quartzite & Marble Curation</h3>
-          <p>High-end selections like Taj Mahal, Cristallo, Patagonia and rare marbles for luxury projects.</p>
-          <span class="badge">Kitchens • Bathrooms • Fireplaces</span>
-        </a>
-
-        <a href="/pages/natural-stones/backlit_onyx.html" class="service-card">
-          <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
-          <h3>Backlit Onyx Walls</h3>
-          <p>Technical guidance and vendor coordination for dramatic translucent onyx installations.</p>
-          <span class="badge">Lighting Specs • Diffusers • Power</span>
-        </a>
+      <h2 class="section-title" data-en="Our Services" data-pt="Nossos Serviços" data-es="Nuestros Servicios">Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <a href="/pages/services/gemstone_identification.html">
+            <div class="service-icon"><i class="fas fa-gem"></i></div>
+            <h3 data-en="Gemstone Identification" data-pt="Identificação de Gemas" data-es="Identificación de Gemas">Gemstone Identification</h3>
+            <p data-en="Professional identification of precious and semi-precious stones using advanced gemological equipment" data-pt="Identificação profissional de pedras preciosas e semi-preciosas usando equipamentos gemológicos avançados" data-es="Identificación profesional de piedras preciosas y semipreciosas utilizando equipos gemológicos avanzados">Professional identification of precious and semi-precious stones using advanced gemological equipment</p>
+          </a>
+        </div>
+        <div class="service-card">
+          <a href="/pages/services/gemstone_appraisal.html">
+            <div class="service-icon"><i class="fas fa-certificate"></i></div>
+            <h3 data-en="Gemstone Appraisal" data-pt="Avaliação de Gemas" data-es="Evaluación de Gemas">Gemstone Appraisal</h3>
+            <p data-en="Accurate valuation of gemstones for insurance, estate, or resale purposes" data-pt="Avaliação precisa de gemas para fins de seguro, inventário ou revenda" data-es="Evaluación precisa de gemas para fines de seguro, patrimonio o reventa">Accurate valuation of gemstones for insurance, estate, or resale purposes</p>
+          </a>
+        </div>
+        <div class="service-card">
+          <a href="/pages/services/certification_services.html">
+            <div class="service-icon"><i class="fas fa-award"></i></div>
+            <h3 data-en="Certification Services" data-pt="Serviços de Certificação" data-es="Servicios de Certificación">Certification Services</h3>
+            <p data-en="Official certification and documentation of gemstone authenticity and quality" data-pt="Certificação oficial e documentação da autenticidade e qualidade das gemas" data-es="Certificación oficial y documentación de autenticidad y calidad de gemas">Official certification and documentation of gemstone authenticity and quality</p>
+          </a>
+        </div>
+        <div class="service-card">
+          <a href="/pages/services/quality_analysis.html">
+            <div class="service-icon"><i class="fas fa-search"></i></div>
+            <h3 data-en="Quality Analysis" data-pt="Análise de Qualidade" data-es="Análisis de Calidad">Quality Analysis</h3>
+            <p data-en="Comprehensive analysis of cut, color, clarity, and carat weight following GIA standards" data-pt="Análise abrangente de lapidação, cor, pureza e peso em quilates seguindo padrões GIA" data-es="Análisis integral de corte, color, claridad y peso en quilates siguiendo estándares GIA">Comprehensive analysis of cut, color, clarity, and carat weight following GIA standards</p>
+          </a>
+        </div>
+        <div class="service-card">
+          <a href="/pages/services/detailed_appraisal_services.html">
+            <div class="service-icon"><i class="fas fa-balance-scale"></i></div>
+            <h3 data-en="Detailed Appraisal Services" data-pt="Serviços de Avaliação Detalhados" data-es="Servicios de Tasación Detallados">Detailed Appraisal Services</h3>
+            <p data-en="Explore our comprehensive appraisal services, including insurance, fair market value, verbal consultations, and buyer's advisory." data-pt="Explore nossos serviços de avaliação abrangentes, incluindo seguro, valor justo de mercado, consultas verbais e consultoria para compradores." data-es="Explore nuestros servicios de tasación integrales, incluyendo seguros, valor justo de mercado, consultas verbales y asesoramiento para compradores.">Explore our comprehensive appraisal services, including insurance, fair market value, verbal consultations, and buyer's advisory.</p>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
+  <!-- NATURAL STONES -->
+  <section id="natural-stones" class="interiors">
     <div class="container">
-      <h2 class="section-title">Contact Us</h2>
-      <ul>
-        <li><i class="fas fa-envelope"></i> <a href="mailto:rafael@mineralgemstones.com">rafael@mineralgemstones.com</a></li>
-        <li><i class="fab fa-whatsapp"></i> <a href="https://wa.me/13236028629" target="_blank">WhatsApp</a></li>
-      </ul>
+      <h2 class="section-title"
+          data-en="Natural Stones"
+          data-pt="Pedras Naturais"
+          data-es="Piedras Naturales">Natural Stones</h2>
+
+      <div class="interiors-hero">
+        <div class="copy">
+          <span class="pill"
+            data-en="Residential & Commercial"
+            data-pt="Residencial & Comercial"
+            data-es="Residencial & Comercial">Residential & Commercial</span>
+          <h3
+            data-en="Transform nature into art — premium slabs and custom pieces"
+            data-pt="Transforme a natureza em arte — slabs premium e peças sob medida"
+            data-es="Transforma la naturaleza en arte — losas premium y piezas a medida">
+            Transform nature into art — premium slabs and custom pieces
+          </h3>
+          <p
+            data-en="We curate and advise on natural stones and semi-precious slabs for kitchens, bathrooms, feature walls, tables and luxury accents. From selection to logistics and care, we guide you end-to-end."
+            data-pt="Selecionamos e assessoramos pedras naturais e slabs semipreciosas para cozinhas, banheiros, painéis, mesas e detalhes de luxo. Da escolha à logística e manutenção, guiamos você de ponta a ponta."
+            data-es="Seleccionamos y asesoramos en piedras naturales y losas semipreciosas para cocinas, baños, paneles, mesas y detalles de lujo. Desde la elección hasta la logística y el mantenimiento, te guiamos de principio a fin.">
+            We curate and advise on natural stones and semi-precious slabs for kitchens, bathrooms, feature walls, tables and luxury accents. From selection to logistics and care, we guide you end-to-end.
+          </p>
+          <a href="#contact" class="cta-button"
+             data-en="Request a Quote"
+             data-pt="Solicitar Orçamento"
+             data-es="Solicitar Presupuesto">Request a Quote</a>
+        </div>
+        <img src="/images/interiors/interiors_hero.jpg" alt="Semi-precious and natural stone slabs for interiors" style="max-width:420px;border-radius:12px;width:100%;object-fit:cover">
+      </div>
+
+      <div class="services-grid interiors-grid" style="margin-top:28px">
+        <a href="/pages/natural-stones/semi_precious_slabs.html" class="service-card">
+          <div class="service-icon"><i class="fas fa-layer-group"></i></div>
+          <h3 data-en="Semi-Precious Slabs" data-pt="Slabs Semipreciosas" data-es="Losas Semipreciosas">Semi-Precious Slabs</h3>
+          <p data-en="Allure Agate, Blue Agate, Quartz, Petrified Wood and more. Backlit options available."
+             data-pt="Allure Agate, Blue Agate, Quartzo, Madeira Petrificada e mais. Opções com backlight."
+             data-es="Allure Agate, Blue Agate, Cuarzo, Madera Petrificada y más. Opciones retroiluminadas.">
+             Allure Agate, Blue Agate, Quartz, Petrified Wood and more. Backlit options available.
+          </p>
+          <span class="badge" data-en="Tables • Counters • Feature Walls" data-pt="Mesas • Bancadas • Painéis" data-es="Mesas • Encimeras • Paneles">Tables • Counters • Feature Walls</span>
+        </a>
+
+        <a href="/pages/natural-stones/quartzite_marble.html" class="service-card">
+          <div class="service-icon"><i class="fas fa-mountain"></i></div>
+          <h3 data-en="Quartzite & Marble Curation" data-pt="Curadoria de Quartzitos & Mármores" data-es="Curaduría de Cuarcitas & Mármoles">Quartzite & Marble Curation</h3>
+          <p data-en="High-end selections like Taj Mahal, Cristallo, Patagonia and rare marbles for luxury projects."
+             data-pt="Seleções high-end como Taj Mahal, Cristallo, Patagonia e mármores raros para projetos de luxo."
+             data-es="Selecciones high-end como Taj Mahal, Cristallo, Patagonia y mármoles raros para proyectos de lujo.">
+             High-end selections like Taj Mahal, Cristallo, Patagonia and rare marbles for luxury projects.
+          </p>
+          <span class="badge" data-en="Kitchens • Bathrooms • Fireplaces" data-pt="Cozinhas • Banheiros • Lareiras" data-es="Cocinas • Baños • Chimeneas">Kitchens • Bathrooms • Fireplaces</span>
+        </a>
+
+        <a href="/pages/natural-stones/backlit_onyx.html" class="service-card">
+          <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
+          <h3 data-en="Backlit Onyx Walls" data-pt="Paredes de Ônix Retroiluminado" data-es="Paredes de Ónix Retroiluminadas">Backlit Onyx Walls</h3>
+          <p data-en="Design, technical guidance and vendor coordination for dramatic translucent onyx installations."
+             data-pt="Projeto, orientação técnica e coordenação de fornecedores para instalações de ônix translúcido."
+             data-es="Diseño, guía técnica y coordinación de proveedores para instalaciones de ónix translúcido.">
+             Design, technical guidance and vendor coordination for dramatic translucent onyx installations.
+          </p>
+          <span class="badge" data-en="Lighting Specs • Diffusers • Power" data-pt="Especificações de Luz • Difusores • Energia" data-es="Especificaciones de Luz • Difusores • Energía">Lighting Specs • Diffusers • Power</span>
+        </a>
+
+        <a href="/pages/natural-stones/custom_furniture.html" class="service-card">
+          <div class="service-icon"><i class="fas fa-couch"></i></div>
+          <h3 data-en="Custom Furniture & Accents" data-pt="Mobiliário & Peças Sob Medida" data-es="Mobiliario & Piezas a Medida">Custom Furniture & Accents</h3>
+          <p data-en="Tables, sideboards, vanity tops and decorative panels with gemstone or natural stone surfaces."
+             data-pt="Mesas, aparadores, tampos de lavatório e painéis decorativos com superfícies de gemas ou pedra natural."
+             data-es="Mesas, aparadores, encimeras de baño y paneles decorativos con superficies de gemas o piedra natural.">
+             Tables, sideboards, vanity tops and decorative panels with gemstone or natural stone surfaces.
+          </p>
+          <span class="badge" data-en="Residential • Hospitality" data-pt="Residencial • Hospitalidade" data-es="Residencial • Hotelería">Residential • Hospitality</span>
+        </a>
+
+        <a href="/pages/natural-stones/sourcing_logistics.html" class="service-card">
+          <div class="service-icon"><i class="fas fa-truck-ramp-box"></i></div>
+          <h3 data-en="Sourcing & Logistics" data-pt="Sourcing & Logística" data-es="Sourcing & Logística">Sourcing & Logistics</h3>
+          <p data-en="Global sourcing, inspection, slab selection, crating and insured transport to fabricators."
+             data-pt="Sourcing global, inspeção, seleção de slabs, engradotamento e transporte assegurado ao marmorista."
+             data-es="Sourcing global, inspección, selección de losas, embalaje y transporte asegurado al marmolista.">
+             Global sourcing, inspection, slab selection, crating and insured transport to fabricators.
+          </p>
+          <span class="badge" data-en="Trade & Homeowners" data-pt="Trade & Residencial" data-es="Trade & Residencial">Trade & Homeowners</span>
+        </a>
+
+        <a href="/pages/natural-stones/installation_care.html" class="service-card">
+          <div class="service-icon"><i class="fas fa-handshake-angle"></i></div>
+          <h3 data-en="Installation Advisory & Care" data-pt="Assessoria de Instalação & Manutenção" data-es="Asesoría de Instalación & Cuidado">Installation Advisory & Care</h3>
+          <p data-en="Recommendations on fabricators, sealing, maintenance routines and long-term preservation."
+             data-pt="Recomendações de marmoristas, seladores, rotinas de manutenção e preservação de longo prazo."
+             data-es="Recomendaciones de marmolistas, selladores, rutinas de mantenimiento y preservación a largo plazo.">
+             Recommendations on fabricators, sealing, maintenance routines and long-term preservation.
+          </p>
+          <span class="badge" data-en="Spec Sheets • Care Guides" data-pt="Especificações • Guias de Cuidado" data-es="Especificaciones • Guías de Cuidado">Spec Sheets • Care Guides</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- /NATURAL STONES -->
+
+  <!-- About -->
+  <section id="about" class="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2 class="section-title" data-en="About Mineral Gemstones" data-pt="Sobre a Mineral Gemstones" data-es="Acerca de Mineral Gemstones">About Mineral Gemstones</h2>
+          <p data-en="Hello, my name is Rafael Ferreira, and I am the founder of Mineral Gemstones. For many years, I followed a conventional professional path, but I always felt something was missing: a true connection with my work. I found that connection in the fascinating and eternal world of gemstones.
+Living in Los Angeles for over ten years, I decided to transform a long-standing passion into a profession. I immersed myself in studies and today I am a proud advanced student of the Gemological Institute of America (GIA ), the largest and most respected global authority in gemology, pursuing the prestigious Graduate Gemologist training.
+Mineral Gemstones was born from my personal journey and the desire to bring clarity, confidence, and transparency to the jewelry market. My goal is not just to appraise a stone; it is to understand its history, its journey from the mine to the jewel, and to translate its value honestly and accurately for you.
+Today, beyond professional gemological services, I also curate and advise on NATURAL STONES — semi-precious slabs, quartzites, marbles and backlit onyx — helping homeowners, architects and designers transform spaces with technical rigor and refined aesthetics."
+            data-pt="Olá, meu nome é Rafael Ferreira, e sou o fundador da Mineral Gemstones. Por muitos anos, trilhei um caminho profissional convencional, mas sempre senti que algo faltava: uma conexão verdadeira com o meu trabalho. Essa conexão eu encontrei no fascinante e eterno mundo das pedras preciosas.
+Morando em Los Angeles há mais de dez anos, decidi transformar uma paixão de longa data em uma profissão. Mergulhei de cabeça nos estudos e hoje sou um orgulhoso estudante avançado do Gemological Institute of America (GIA), a maior e mais respeitada autoridade mundial em gemologia, cursando a prestigiada formação de Graduate Gemologist.
+A Mineral Gemstones nasceu da minha jornada pessoal e do desejo de trazer clareza, confiança e transparência ao mercado de joias. Meu objetivo não é apenas avaliar uma pedra; é entender sua história, sua jornada desde a mina até a joia, e traduzir seu valor de forma honesta e precisa para você.
+Hoje, além dos serviços gemológicos profissionais, também faço CURADORIA E ASSESSORIA EM PEDRAS NATURAIS — slabs semipreciosas, quartzitos, mármores e ônix retroiluminado — ajudando clientes finais, arquitetos e designers a transformar espaços com rigor técnico e estética apurada."
+            data-es="Hola, mi nombre es Rafael Ferreira, y soy el fundador de Mineral Gemstones. Durante muchos años, seguí un camino profesional convencional, pero siempre sentí que faltaba algo: una conexión verdadera con mi trabajo. Esa conexión la encontré en el fascinante y eterno mundo de las piedras preciosas.
+Viviendo en Los Ángeles desde hace más de diez años, decidí transformar una pasión de larga data en una profesión. Me sumergí de lleno en los estudios y hoy soy un orgulloso estudiante avanzado del Gemological Institute of America (GIA), la autoridad mundial más grande y respetada en gemología, cursando la prestigiosa formación de Graduate Gemologist.
+Mineral Gemstones nació de mi viaje personal y del deseo de traer claridad, confianza y transparencia al mercado de la joyería. Mi objetivo no es solo evaluar una piedra; es entender su historia, su viaje desde la mina hasta la joya, y traducir su valor de manera honesta y precisa para usted.
+Hoy, además de los servicios gemológicos profesionales, también realizo CURADURÍA Y ASESORÍA EN PIEDRAS NATURALES — losas semipreciosas, cuarcitas, mármoles y ónix retroiluminado — ayudando a propietarios, arquitectos y diseñadores a transformar espacios con rigor técnico y estética refinada.">
+            Hello, my name is Rafael Ferreira, and I am the founder of Mineral Gemstones...
+          </p>
+          <div class="features">
+            <div class="feature"><i class="fas fa-check-circle"></i><span data-en="GIA Certified Gemologists" data-pt="Gemólogos Certificados pelo GIA" data-es="Gemólogos Certificados por GIA">GIA Certified Gemologists</span></div>
+            <div class="feature"><i class="fas fa-check-circle"></i><span data-en="Advanced Testing Equipment" data-pt="Equipamentos de Teste Avançados" data-es="Equipos de Prueba Avanzados">Advanced Testing Equipment</span></div>
+            <div class="feature"><i class="fas fa-check-circle"></i><span data-en="International Standards" data-pt="Padrões Internacionais" data-es="Estándares Internacionales">International Standards</span></div>
+          </div>
+        </div>
+        <div class="about-image">
+          <img src="/images/rafael_ferreira.png" alt="Rafael Ferreira - GIA Gemologist">
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- Education -->
+  <section id="education" class="education">
+    <div class="container">
+      <h2 class="section-title" data-en="Education" data-pt="Educação" data-es="Educación">Education</h2>
+    <div class="education-grid">
+        <div class="education-card">
+          <a href="/pages/education/diamond_4cs.html">
+            <img src="/images/education/diamond_4cs.jpg" alt="The 4Cs of Diamonds">
+            <div class="education-content">
+              <h3 data-en="The 4Cs of Diamonds" data-pt="Os 4Cs dos Diamantes" data-es="Las 4Cs de los Diamantes">The 4Cs of Diamonds</h3>
+              <p data-en="Learn about Cut, Color, Clarity, and Carat Weight - the universal standard for diamond quality." data-pt="Aprenda sobre Lapidação, Cor, Pureza e Peso em Quilates - o padrão universal para a qualidade de diamantes." data-es="Aprenda sobre Talla, Color, Claridad y Peso en Quilates - el estándar universal para la calidad de los diamantes.">Learn about Cut, Color, Clarity, and Carat Weight - the universal standard for diamond quality.</p>
+            </div>
+          </a>
+        </div>
+        <div class="education-card">
+          <a href="/pages/education/precious_stones.html">
+            <img src="/images/education/precious_stones.jpg" alt="Precious Stones Guide">
+            <div class="education-content">
+              <h3 data-en="Precious Stones Guide" data-pt="Guia de Pedras Preciosas" data-es="Guía de Piedras Preciosas">Precious Stones Guide</h3>
+              <p data-en="Discover the world of precious stones, including sapphires, rubies, and emeralds." data-pt="Descubra o mundo das pedras preciosas, incluindo safiras, rubis e esmeraldas." data-es="Descubra el mundo de las piedras preciosas, incluyendo zafiros, rubíes y esmeraldas.">Discover the world of precious stones, including sapphires, rubies, and emeralds.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <h2 class="section-title" data-en="Testimonials" data-pt="Depoimentos" data-es="Testimonios">Testimonials</h2>
+    <div class="t-wrap">
+      <div class="t-track" id="tTrack">
+        <article class="t-card"><div class="t-stars">★★★★★</div><p>Exceptional expertise. Rafael explained every detail of my diamond and gave me total confidence in the purchase.</p><div class="t-author">Mariana S. — Engagement Ring</div></article>
+        <article class="t-card"><div class="t-stars">★★★★★</div><p>Professional appraisal delivered fast and clearly documented. Perfect for my insurance provider.</p><div class="t-author">Daniel R. — Insurance Appraisal</div></article>
+        <article class="t-card"><div class="t-stars">★★★★★</div><p>We verified a family emerald and learned its history. Honest, transparent, and very knowledgeable.</p><div class="t-author">Lucia A. — Heirloom Evaluation</div></article>
+        <article class="t-card"><div class="t-stars">★★★★★</div><p>Great buyer’s advisory. Saved me from overpaying and found a better stone that matched my goals.</p><div class="t-author">Brian K. — Buyer’s Advisory</div></article>
+        <article class="t-card"><div class="t-stars">★★★★★</div><p>The education content is outstanding. I now understand the 4Cs and feel secure investing in gems.</p><div class="t-author">Patricia M. — Education Session</div></article>
+      </div>
+    </div>
+    <div class="t-nav">
+      <button class="t-btn" id="tPrev"><i class="fas fa-chevron-left"></i></button>
+      <button class="t-btn" id="tNext"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title" data-en="Contact Us" data-pt="Entre em Contato" data-es="Contáctenos">Contact Us</h2>
+      <div class="contact-content">
+        <div class="contact-info">
+          <h3 data-en="Get in Touch" data-pt="Fale Conosco" data-es="Póngase en Contacto">Get in Touch</h3>
+          <p data-en="Have a question or need a consultation? Contact us today!" data-pt="Tem alguma dúvida ou precisa de uma consulta? Entre em contato conosco hoje!" data-es="¿Tiene alguna pregunta o necesita una consulta? ¡Contáctenos hoy!">Have a question or need a consultation? Contact us today!</p>
+          <ul>
+            <li><i class="fas fa-user"></i> Rafael Ferreira – GIA Gemologist</li>
+            <li><i class="fas fa-map-marker-alt"></i> California - USA</li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:rafael@mineralgemstones.com">rafael@mineralgemstones.com</a></li>
+            <!-- WhatsApp link -->
+            <li>
+              <i class="fab fa-whatsapp"></i>
+              <a href="https://wa.me/13236028629?text=Ol%C3%A1%20Rafael!%20Vim%20do%20site%20Mineral%20Gemstones."
+                 target="_blank" rel="noopener"
+                 onclick="if(window.gtag){gtag('event','click',{event_category:'contact',event_label:'whatsapp_contact_link'});}">
+                 <span data-en="WhatsApp" data-pt="WhatsApp" data-es="WhatsApp">WhatsApp</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="contact-form">
+          <form action="https://formspree.io/f/xrbajjar" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required data-en="Your Name" data-pt="Seu Nome" data-es="Su Nombre">
+            <input type="email" name="email" placeholder="Your Email" required data-en="Your Email" data-pt="Seu E-mail" data-es="Su Correo">
+            <textarea name="message" placeholder="Your Message" required data-en="Your Message" data-pt="Sua Mensagem" data-es="Su Mensaje"></textarea>
+            <button type="submit" class="cta-button" data-en="Send Message" data-pt="Enviar Mensagem" data-es="Enviar Mensaje">Send Message</button>
+            <p id="formStatus" aria-live="polite" style="margin-top:.5rem"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <img src="/images/logo.png" alt="Mineral Gemstones" class="footer-logo">
+          <p data-en="Professional gemological services with over 6 years of experience. Certified gemologists providing accurate identification and valuation."
+             data-pt="Serviços gemológicos profissionais com mais de 6 anos de experiência. Gemólogos certificados fornecendo identificação e avaliação precisas."
+             data-es="Servicios gemológicos profesionales con más de 6 años de experiencia. Gemólogos certificados que brindan identificación y valoración precisas.">
+            Professional gemological services with over 6 years of experience. Certified gemologists providing accurate identification and valuation.
+          </p>
+        </div>
+        <div class="footer-section">
+          <h4 data-en="Services" data-pt="Serviços" data-es="Servicios">Services</h4>
+          <ul>
+            <li><a href="/pages/services/gemstone_identification.html">Gemstone Identification</a></li>
+            <li><a href="/pages/services/gemstone_appraisal.html">Gemstone Appraisal</a></li>
+            <li><a href="/pages/services/certification_services.html">Certification Services</a></li>
+            <li><a href="/pages/services/quality_analysis.html">Quality Analysis</a></li>
+            <li><a href="/pages/services/detailed_appraisal_services.html">Detailed Appraisal Services</a></li>
+            <!-- Link rápido para a nova seção -->
+            <li><a href="#natural-stones">Natural Stones</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4 data-en="Contact" data-pt="Contato" data-es="Contacto">Contact</h4>
+          <p>Rafael Ferreira – GIA Gemologist</p>
+          <p data-en="California - USA" data-pt="Califórnia - EUA" data-es="California - EE.UU.">California - USA</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Mineral Gemstones. <span data-en="All rights reserved." data-pt="Todos os direitos reservados." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS principal do site -->
+  <script src="/js/main.js"></script>
+
+  <!-- Funcionais adicionais: carrossel, idioma, feedback e testimonials fix -->
   <script>
-  // Garantindo que o card inteiro seja clicável
-  document.querySelectorAll('.service-card').forEach(card=>{
-    card.addEventListener('click', e=>{
-      if(card.tagName.toLowerCase()==='a') return; // já é link
-      const link = card.querySelector('a');
-      if(link) window.location = link.href;
-    });
+  document.addEventListener("DOMContentLoaded", function () {
+    /* ====== HERO CAROUSEL ====== */
+    (function(){
+      const wrap = document.getElementById("heroCarousel");
+      if(!wrap) return;
+      const slides = wrap.querySelectorAll(".carousel-image");
+      let i = 0;
+      setInterval(() => {
+        slides[i].classList.remove("active");
+        i = (i + 1) % slides.length;
+        slides[i].classList.add("active");
+      }, 4000);
+    })();
+
+    /* ====== MOBILE MENU ====== */
+    (function(){
+      const burger = document.getElementById("hamburger");
+      const menu = document.querySelector(".nav-menu");
+      if(!burger || !menu) return;
+      // usa 'active' para combinar com o CSS existente
+      burger.addEventListener("click", ()=>{
+        menu.classList.toggle("active");
+        burger.classList.toggle("active");
+      });
+    })();
+
+    /* ====== LANGUAGE SWITCHER ====== */
+    (function(){
+      const btns = document.querySelectorAll(".lang-btn");
+      function setLang(lang) {
+        document.querySelectorAll("[data-en]").forEach(function(el){
+          const text = el.getAttribute("data-" + lang);
+          if(!text) return;
+          if(el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+            el.setAttribute("placeholder", text);
+          } else {
+            el.innerHTML = text;
+          }
+        });
+        btns.forEach(b => b.classList.toggle("active", b.dataset.lang === lang));
+      }
+      btns.forEach(b => b.addEventListener("click", ()=> setLang(b.dataset.lang)));
+      setLang("en");
+    })();
+
+    /* ====== CONTACT FORM FEEDBACK ====== */
+    (function(){
+      const form = document.querySelector("#contact form");
+      const status = document.getElementById("formStatus");
+      if(!form || !status) return;
+      form.addEventListener("submit", function(){
+        setTimeout(()=> status.textContent = "Message sent! Thank you.", 500);
+      });
+    })();
+
+    /* ====== TESTIMONIALS - loop contínuo com deslocamento em px ====== */
+    (function(){
+      const track = document.getElementById('tTrack');
+      const wrap  = track?.closest('.t-wrap');
+      const prev  = document.getElementById('tPrev');
+      const next  = document.getElementById('tNext');
+      if(!track || !wrap) return;
+
+      const first = track.children[0];
+      const last  = track.children[track.children.length-1];
+      const firstClone = first.cloneNode(true);
+      const lastClone  = last.cloneNode(true);
+      track.appendChild(firstClone);
+      track.insertBefore(lastClone, first);
+
+      let idx = 1;
+      let slideW = wrap.clientWidth;
+
+      function recalc(){
+        slideW = wrap.clientWidth;
+        go(idx, true);
+      }
+
+      function go(i, instant=false){
+        track.style.transition = instant ? 'none' : 'transform .5s ease';
+        track.style.transform  = `translateX(-${i * slideW}px)`;
+      }
+
+      function nextSlide(){ idx++; go(idx); }
+      function prevSlide(){ idx--; go(idx); }
+
+      go(idx, true);
+
+      track.addEventListener('transitionend', ()=>{
+        const cards = track.children;
+        const lastIndex = cards.length - 1;
+        if(cards[idx] === firstClone){ idx = 1; go(idx, true); }
+        if(cards[idx] === lastClone ){ idx = lastIndex - 1; go(idx, true); }
+      });
+
+      prev && prev.addEventListener('click', prevSlide);
+      next && next.addEventListener('click', nextSlide);
+
+      const timer = setInterval(nextSlide, 4000);
+      window.addEventListener('resize', recalc, {passive:true});
+    })();
   });
   </script>
+
+  <!-- WhatsApp floating button -->
+  <div class="whatsapp-fab">
+    <a href="https://wa.me/13236028629?text=Ol%C3%A1%20Rafael!%20Vim%20do%20site%20Mineral%20Gemstones%20-%20quero%20uma%20consultoria%20sobre%20pedras%20naturais."
+       target="_blank" rel="noopener" aria-label="Falar no WhatsApp"
+       onclick="if(window.gtag){gtag('event','click',{event_category:'contact',event_label:'whatsapp_fab'});}">
+      <i class="fab fa-whatsapp" aria-hidden="true"></i>
+      <span data-en="Chat on WhatsApp" data-pt="WhatsApp" data-es="WhatsApp">WhatsApp</span>
+    </a>
+  </div>
 </body>
 </html>
