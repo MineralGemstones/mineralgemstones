@@ -950,3 +950,29 @@ img[src*="quality_analysis"] {
 @media (prefers-reduced-motion: reduce){
   .whatsapp-fab a { transition: none; }
 }
+
+/* ===== Gemstone Appraisal: ícone ao lado do título ===== */
+.appraisal-list .appraisal-item{
+  display: grid;
+  grid-template-columns: 28px 1fr;  /* ícone + título */
+  column-gap: 12px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.appraisal-list .appraisal-item i{
+  font-size: 20px;
+  color: var(--primary-color);
+  line-height: 1;
+}
+
+.appraisal-list .appraisal-item h4{
+  margin: 0;                 /* evita quebras extras */
+  font-size: 1.25em;
+}
+
+.appraisal-list .appraisal-item p{
+  grid-column: 1 / -1;       /* descrição ocupa largura total */
+  margin: 6px 0 0 0;
+  color: var(--dark-gray);
+}
