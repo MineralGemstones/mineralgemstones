@@ -57,13 +57,18 @@
     /* Permite que o <a> se comporte como card */
     a.service-card{display:block;color:inherit;text-decoration:none}
 
-    /* ==== FIX mobile: garantir que o toque dispare navegação ==== */
+    /* ==== FIX mobile (iOS): garantir plano superior e tap confiável ==== */
+    .interiors-grid{position:relative; z-index:10;}
     .interiors-grid a.service-card{
       position:relative;
       cursor:pointer;
       -webkit-tap-highlight-color: transparent;
       touch-action: manipulation;
       z-index:0;
+    }
+    /* Garante que o PRIMEIRO card (Semi-Precious Slabs) fique acima de qualquer overlay */
+    .interiors-grid a.service-card:first-child{
+      z-index:20;
     }
     /* Hover suave no desktop */
     a.service-card:hover{transform:translateY(-2px);}
@@ -534,12 +539,11 @@ Hoy, además de los servicios gemológicos profesionales, también realizo CURAD
       if(!cards.length) return;
 
       cards.forEach(a=>{
-        // Acessibilidade extra (alguns navegadores / leitores de tela)
         a.setAttribute('role','link');
 
-        // Navegação confiável no iOS/Safari com toque
+        // Navegação confiável no iOS/Safari/Firefox iOS com toque
         a.addEventListener('touchend', function(e){
-          // Se ainda não navegou, evita ghost click e navega
+          // evita "ghost click" e garante navegação
           if (e.cancelable) e.preventDefault();
           const href = a.getAttribute('href');
           if(href) window.location.href = href;
@@ -554,6 +558,31 @@ Hoy, además de los servicios gemológicos profesionales, también realizo CURAD
           }
         });
       });
+
+      /* Fallback EXTRA específico para o PRIMEIRO card (Semi-Precious Slabs) no iOS + Firefox:
+         Se algum overlay estiver por cima e "capturar" o evento, vamos ouvir no documento
+         e checar se o toque ocorreu dentro do bounding box do card. */
+      const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+      const firstCard = document.querySelector('.interiors-grid a.service-card:first-child');
+      if(isIOS && firstCard){
+        document.addEventListener('touchend', function(ev){
+          // se já veio do próprio link, não faz nada
+          if (ev.target && (firstCard.contains(ev.target) || ev.target === firstCard)) return;
+
+          const t = ev.changedTouches && ev.changedTouches[0];
+          if(!t) return;
+
+          const r = firstCard.getBoundingClientRect();
+          const x = t.clientX;
+          const y = t.clientY;
+          const inside = x >= r.left && x <= r.right && y >= r.top && y <= r.bottom;
+          if(inside){
+            ev.preventDefault();
+            const href = firstCard.getAttribute('href');
+            if(href) window.location.href = href;
+          }
+        }, {passive:false});
+      }
     })();
   });
   </script>
