@@ -291,6 +291,12 @@ section {
 .about-text p {
     margin-bottom: 20px;
     font-size: 1.1em;
+    line-height: 1.8;
+    text-align: justify;          /* alinhado dos dois lados */
+    text-justify: inter-word;     /* melhor distribuição dos espaços */
+    hyphens: auto;                /* hifenização automática */
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
 }
 
 .about-image {
