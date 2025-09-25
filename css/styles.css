@@ -1077,8 +1077,53 @@ img[src*="gemstone_identification"],
 img[alt*="Gemstone Identification"],
 img[alt*="Identificação de Gemas"] {
   max-width: 520px;   /* ajuste para tamanho ideal */
-  width: 100%;        /* mantém responsivo */
-  height: auto;       /* preserva proporção */
-  display: block;     /* evita espaçamento estranho */
-  margin: 0 auto 16px;/* centraliza e dá respiro inferior */
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 16px;
+}
+
+/* =========================================================
+   GEMSTONE APPRAISAL — DIMINUIÇÃO DE IMAGENS
+   (Cobre variações de src e alt em EN/PT/ES)
+   ========================================================= */
+img[src*="gemstone_appraisal"],
+img[alt*="Gemstone Appraisal"],
+img[alt*="Avaliação de Gemas"],
+img[alt*="Evaluación de Gemas"] {
+  max-width: 520px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 16px;
+}
+
+/* =========================================================
+   CERTIFICATION SERVICES — DIMINUIÇÃO DE IMAGENS
+   (Cobre variações de src e alt em EN/PT/ES)
+   ========================================================= */
+img[src*="certification_services"],
+img[alt*="Certification Services"],
+img[alt*="Serviços de Certificação"],
+img[alt*="Servicios de Certificación"] {
+  max-width: 520px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 16px;
+}
+
+/* =========================================================
+   QUALITY ANALYSIS — DIMINUIÇÃO DE IMAGENS
+   Obs: a imagem principal continua oculta pelo display:none !important;
+   estas regras afetam outras imagens da página (por alt).
+   ========================================================= */
+img[alt*="Quality Analysis"],
+img[alt*="Análise de Qualidade"],
+img[alt*="Análisis de Calidad"] {
+  max-width: 520px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 16px;
 }
