@@ -951,28 +951,58 @@ img[src*="quality_analysis"] {
   .whatsapp-fab a { transition: none; }
 }
 
-/* ===== Gemstone Appraisal: ícone ao lado do título ===== */
+/* =========================================================
+   GEMSTONE APPRAISAL — ÍCONE ALINHADO AO LADO DO TÍTULO
+   Funciona mesmo quando <i> e <h4> são elementos irmãos.
+   ========================================================= */
+
+/* Caso você tenha usado um contêiner por item (opção moderna) */
 .appraisal-list .appraisal-item{
   display: grid;
-  grid-template-columns: 28px 1fr;  /* ícone + título */
+  grid-template-columns: 28px 1fr;
   column-gap: 12px;
   align-items: center;
   margin-bottom: 18px;
 }
-
-.appraisal-list .appraisal-item i{
+.appraisal-list .appraisal-item > i{
   font-size: 20px;
   color: var(--primary-color);
   line-height: 1;
 }
-
-.appraisal-list .appraisal-item h4{
-  margin: 0;                 /* evita quebras extras */
+.appraisal-list .appraisal-item > h4{
+  margin: 0;
   font-size: 1.25em;
 }
-
-.appraisal-list .appraisal-item p{
-  grid-column: 1 / -1;       /* descrição ocupa largura total */
+.appraisal-list .appraisal-item > p{
+  grid-column: 1 / -1;
   margin: 6px 0 0 0;
+  color: var(--dark-gray);
+}
+
+/* Fallback universal (quando o <i> é IRMÃO do <h4> no mesmo bloco) */
+.appraisal-list > i,
+.appraisal-row > i,
+.appraisal-item > i.fa,
+.appraisal-item > i.fas,
+.appraisal-item > i.far {
+  float: left;                 /* força o ícone a sentar ao lado do título */
+  width: 28px;
+  font-size: 20px;
+  line-height: 1;
+  margin: 2px 10px 0 0;        /* espaço entre ícone e texto */
+  color: var(--primary-color);
+}
+
+.appraisal-list > h4,
+.appraisal-row > h4,
+.appraisal-item > h4 {
+  margin: 0 0 6px 0;
+}
+
+.appraisal-list > p,
+.appraisal-row > p,
+.appraisal-item > p {
+  clear: both;                 /* garante que a descrição venha abaixo */
+  margin: 6px 0 16px 0;
   color: var(--dark-gray);
 }
