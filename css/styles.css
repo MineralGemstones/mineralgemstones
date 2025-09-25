@@ -952,57 +952,81 @@ img[src*="quality_analysis"] {
 }
 
 /* =========================================================
-   GEMSTONE APPRAISAL — ÍCONE ALINHADO AO LADO DO TÍTULO
-   Funciona mesmo quando <i> e <h4> são elementos irmãos.
+   GEMSTONE APPRAISAL — ÍCONES ALINHADOS AO LADO DO TÍTULO
+   Use .appraisal-list + .appraisal-item (HTML recomendado).
+   Mantém descrição embaixo ocupando toda a largura.
    ========================================================= */
 
-/* Caso você tenha usado um contêiner por item (opção moderna) */
+/* Layout moderno com CSS Grid */
 .appraisal-list .appraisal-item{
   display: grid;
   grid-template-columns: 28px 1fr;
   column-gap: 12px;
-  align-items: center;
+  align-items: start;
   margin-bottom: 18px;
 }
-.appraisal-list .appraisal-item > i{
+
+.appraisal-list .appraisal-item > i,
+.appraisal-list .appraisal-item > svg{
   font-size: 20px;
   color: var(--primary-color);
   line-height: 1;
+  margin-top: 2px;
 }
+
 .appraisal-list .appraisal-item > h4{
   margin: 0;
   font-size: 1.25em;
 }
+
 .appraisal-list .appraisal-item > p{
-  grid-column: 1 / -1;
+  grid-column: 1 / -1; /* descrição quebra para a linha de baixo */
   margin: 6px 0 0 0;
   color: var(--dark-gray);
 }
 
-/* Fallback universal (quando o <i> é IRMÃO do <h4> no mesmo bloco) */
-.appraisal-list > i,
+/* Fallback universal (se o HTML não usa .appraisal-item) */
+.appraisal-row{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
 .appraisal-row > i,
+.appraisal-row > svg{
+  flex: 0 0 28px;
+  font-size: 20px;
+  color: var(--primary-color);
+  line-height: 1;
+}
+.appraisal-row + p{
+  margin: 6px 0 16px 40px; /* recuo alinhado ao ícone */
+  color: var(--dark-gray);
+}
+
+/* Último recurso (páginas antigas) — mantém compatibilidade */
+.appraisal-list > i,
 .appraisal-item > i.fa,
 .appraisal-item > i.fas,
 .appraisal-item > i.far {
-  float: left;                 /* força o ícone a sentar ao lado do título */
+  display: inline-block;
+  vertical-align: middle;
   width: 28px;
   font-size: 20px;
   line-height: 1;
-  margin: 2px 10px 0 0;        /* espaço entre ícone e texto */
+  margin: 0 10px 0 0;
   color: var(--primary-color);
 }
-
 .appraisal-list > h4,
-.appraisal-row > h4,
 .appraisal-item > h4 {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
   margin: 0 0 6px 0;
 }
-
 .appraisal-list > p,
-.appraisal-row > p,
 .appraisal-item > p {
-  clear: both;                 /* garante que a descrição venha abaixo */
+  clear: both;
   margin: 6px 0 16px 0;
   color: var(--dark-gray);
 }
