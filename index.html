@@ -3,168 +3,240 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mineral Gemstones | Colored Gemstones & Natural Stone Sourcing</title>
-  <meta name="description" content="Supplier of natural colored gemstones for jewelry, collectors and designers, plus premium natural stones and semi-precious slabs for homes, interiors and custom projects.">
+  <title>Mineral Gemstones | Colored Stones, Natural Stones & Gemological Services</title>
+  <meta name="description" content="Supplier of natural colored stones for jewelry, premium natural stones for interiors, and professional gemological services.">
 
   <link rel="stylesheet" href="/css/styles.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 
   <style>
-    /* Hero fade */
-    .carousel-image {
-      opacity: 0;
-      transition: opacity .6s ease;
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    /* Hero carousel */
+    .carousel-image{
+      opacity:0;
+      transition:opacity .6s ease;
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover
     }
-    .carousel-image.active { opacity: 1; }
-    .hero-image { position: relative; overflow: hidden; }
+    .carousel-image.active{opacity:1}
+    .hero-image{position:relative;overflow:hidden}
 
-    /* Language button active */
-    .lang-btn.active { outline: 2px solid #fff3; }
+    /* Active language button */
+    .lang-btn.active{outline:2px solid #fff3}
 
-    /* Generic helpers */
-    .section-lead {
-      max-width: 860px;
-      margin: 0 auto 28px;
-      text-align: center;
-      line-height: 1.7;
-      color: #5a5a5a;
+    /* Reduced spacing between sections */
+    .colored-stones,
+    .interiors,
+    .services.reordered-services,
+    .about,
+    .education,
+    .contact,
+    .testimonials{
+      padding:48px 0 !important;
+    }
+
+    .section-title{
+      margin-bottom:12px !important;
+    }
+
+    .section-lead{
+      max-width:860px;
+      margin:0 auto 18px;
+      text-align:center;
+      line-height:1.7;
+      color:#5a5a5a;
+    }
+
+    /* Shared hero blocks */
+    .feature-hero{
+      background:#fff;
+      border:1px solid #e8e8e8;
+      border-radius:16px;
+      padding:18px;
+      display:flex;
+      gap:16px;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+    }
+
+    .feature-hero .copy{
+      max-width:760px;
+      margin:0 auto;
+    }
+
+    .feature-hero h3{
+      margin:0 0 10px 0;
+    }
+
+    .feature-hero p{
+      margin:0 0 14px 0;
+      line-height:1.75;
+      color:#555;
+    }
+
+    .pill{
+      display:inline-block;
+      background:#111;
+      color:#fff;
+      border-radius:999px;
+      padding:6px 12px;
+      font-size:.85rem;
+      margin-bottom:10px;
+    }
+
+    /* Colored Stones and Natural Stones sections */
+    .colored-stones{background:#fff}
+    .interiors{background:#f7f7f7}
+    .services.reordered-services{background:#fff}
+
+    .services-grid.feature-grid .service-card{
+      background:#fff;
+      border:1px solid #e8e8e8;
+    }
+
+    .badge{
+      display:inline-block;
+      margin-top:8px;
+      font-size:.8rem;
+      color:#444;
+    }
+
+    a.service-card{
+      display:block;
+      color:inherit;
+      text-decoration:none;
+    }
+
+    a.service-card:hover{
+      transform:translateY(-2px);
+    }
+
+    .service-head{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:10px;
+      text-align:left;
+      justify-content:flex-start;
+    }
+
+    .service-head i{
+      font-size:1.35em;
+      line-height:1;
+      color:var(--accent-color);
+      flex:0 0 auto;
+    }
+
+    .service-card h3{margin:0}
+
+    /* Colored Stones cards */
+    .colored-cards{
+      margin-top:22px;
+    }
+
+    .colored-cards .service-card{
+      background:#fff;
+      border:1px solid #e8e8e8;
+      border-radius:16px;
+      padding:20px;
+    }
+
+    .mini-cta{
+      display:inline-block;
+      margin-top:12px;
+      padding:10px 16px;
+      border-radius:999px;
+      background:#111;
+      color:#fff;
+      text-decoration:none;
+      font-weight:600;
+      transition:all .2s ease;
+    }
+
+    .mini-cta:hover{
+      background:#222;
+      transform:translateY(-1px);
+    }
+
+    /* Detail cards */
+    .details-wrap{
+      margin-top:20px;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+    }
+
+    .detail-card{
+      background:#fcfcfc;
+      border:1px solid #e7e7e7;
+      border-radius:16px;
+      padding:20px;
+      scroll-margin-top:110px;
+    }
+
+    .detail-card h3{
+      margin:0 0 10px 0;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .detail-card h3 i{
+      color:var(--accent-color);
+    }
+
+    .detail-card p{
+      margin:0 0 10px 0;
+      color:#555;
+      line-height:1.75;
+    }
+
+    .detail-card p:last-child{
+      margin-bottom:0;
     }
 
     /* Testimonials */
-    .testimonials { padding: 60px 0; background: #000; }
-    .testimonials .section-title { margin-bottom: 22px; color: #fff; }
-    .t-wrap { position: relative; overflow: hidden; }
-    .t-track { display: flex; will-change: transform; transition: transform .5s ease; }
-    .t-card {
-      min-width: 320px;
-      flex: 0 0 calc(100% - 20px);
-      margin: 0 10px;
-      background: #111;
-      border: 1px solid #222;
-      border-radius: 16px;
-      padding: 22px;
-      color: #eee;
-      box-shadow: 0 8px 24px rgba(0,0,0,.25);
+    .testimonials{
+      background:#000;
     }
-    .t-stars { color: #f5c518; margin-bottom: 8px; }
-    .t-author { margin-top: 10px; opacity: .9; font-weight: 600; }
-    .t-nav { display: flex; gap: 10px; justify-content: center; margin-top: 16px; }
-    .t-btn {
-      background: #1b1b1b;
-      border: 1px solid #2a2a2a;
-      border-radius: 10px;
-      padding: 8px 12px;
-      color: #ddd;
-      cursor: pointer;
+    .testimonials .section-title{
+      color:#fff;
     }
-    .t-btn:hover { background: #242424; }
-    @media(min-width:720px) { .t-card { flex: 0 0 calc(70% - 20px); } }
-    @media(min-width:1024px) { .t-card { flex: 0 0 calc(50% - 20px); } }
-
-    /* Colored Gemstones + Natural Stones shared blocks */
-    .colored-gemstones,
-    .interiors {
-      padding: 60px 0;
+    .testimonials .section-lead{
+      color:#c9c9c9;
+      margin-bottom:20px;
     }
-
-    .colored-gemstones {
-      background: #fff;
+    .t-wrap{position:relative;overflow:hidden}
+    .t-track{display:flex;will-change:transform;transition:transform .5s ease}
+    .t-card{
+      min-width:320px;
+      flex:0 0 calc(100% - 20px);
+      margin:0 10px;
+      background:#111;
+      border:1px solid #222;
+      border-radius:16px;
+      padding:22px;
+      color:#eee;
+      box-shadow:0 8px 24px rgba(0,0,0,.25)
     }
-
-    .interiors {
-      background: #f7f7f7;
+    .t-stars{color:#f5c518;margin-bottom:8px}
+    .t-author{margin-top:10px;opacity:.9;font-weight:600}
+    .t-nav{display:flex;gap:10px;justify-content:center;margin-top:16px}
+    .t-btn{
+      background:#1b1b1b;
+      border:1px solid #2a2a2a;
+      border-radius:10px;
+      padding:8px 12px;
+      color:#ddd;
+      cursor:pointer
     }
-
-    .colored-gemstones .section-title,
-    .interiors .section-title {
-      margin-bottom: 14px;
-    }
-
-    .feature-hero {
-      background: #fff;
-      border: 1px solid #e8e8e8;
-      border-radius: 16px;
-      padding: 24px;
-      display: flex;
-      gap: 20px;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      flex-wrap: wrap;
-    }
-
-    .feature-hero .copy {
-      max-width: 760px;
-      margin: 0 auto;
-    }
-
-    .feature-hero h3 {
-      margin-bottom: 12px;
-    }
-
-    .feature-hero p {
-      line-height: 1.8;
-      color: #555;
-      margin-bottom: 18px;
-    }
-
-    .pill {
-      display: inline-block;
-      background: #111;
-      color: #fff;
-      border-radius: 999px;
-      padding: 6px 12px;
-      font-size: .85rem;
-      margin-bottom: 10px;
-    }
-
-    .services-grid.feature-grid .service-card {
-      background: #fff;
-      border: 1px solid #e8e8e8;
-    }
-
-    .badge {
-      display: inline-block;
-      margin-top: 8px;
-      font-size: .8rem;
-      color: #444;
-    }
-
-    /* Clickable cards */
-    a.service-card {
-      display: block;
-      color: inherit;
-      text-decoration: none;
-    }
-
-    a.service-card:hover {
-      transform: translateY(-2px);
-    }
-
-    /* Icon + title row */
-    .service-head {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 12px;
-      text-align: left;
-      justify-content: flex-start;
-    }
-
-    .service-head i {
-      font-size: 1.4em;
-      line-height: 1;
-      color: var(--accent-color);
-      flex: 0 0 auto;
-    }
-
-    .service-card h3 { margin: 0; }
+    .t-btn:hover{background:#242424}
+    @media(min-width:720px){.t-card{flex:0 0 calc(70% - 20px)}}
+    @media(min-width:1024px){.t-card{flex:0 0 calc(50% - 20px)}}
   </style>
 </head>
 <body>
@@ -177,30 +249,14 @@
         </div>
 
         <ul class="nav-menu">
-          <li class="nav-item">
-            <a href="#home" class="nav-link" data-en="Home" data-pt="Início" data-es="Inicio">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="#services" class="nav-link" data-en="Services" data-pt="Serviços" data-es="Servicios">Services</a>
-          </li>
-          <li class="nav-item">
-            <a href="#colored-gemstones" class="nav-link" data-en="Colored Gemstones" data-pt="Pedras Coloridas" data-es="Piedras de Color">Colored Gemstones</a>
-          </li>
-          <li class="nav-item">
-            <a href="#natural-stones" class="nav-link" data-en="Natural Stones" data-pt="Pedras Naturais" data-es="Piedras Naturales">Natural Stones</a>
-          </li>
-          <li class="nav-item">
-            <a href="#about" class="nav-link" data-en="About" data-pt="Sobre" data-es="Acerca">About</a>
-          </li>
-          <li class="nav-item">
-            <a href="#education" class="nav-link" data-en="Education" data-pt="Educação" data-es="Educación">Education</a>
-          </li>
-          <li class="nav-item">
-            <a href="#testimonials" class="nav-link" data-en="Testimonials" data-pt="Depoimentos" data-es="Testimonios">Testimonials</a>
-          </li>
-          <li class="nav-item">
-            <a href="#contact" class="nav-link" data-en="Contact" data-pt="Contato" data-es="Contacto">Contact</a>
-          </li>
+          <li class="nav-item"><a href="#home" class="nav-link" data-en="Home" data-pt="Início" data-es="Inicio">Home</a></li>
+          <li class="nav-item"><a href="#colored-stones" class="nav-link" data-en="Colored Stones" data-pt="Pedras Coloridas" data-es="Piedras de Color">Colored Stones</a></li>
+          <li class="nav-item"><a href="#natural-stones" class="nav-link" data-en="Natural Stones" data-pt="Pedras Naturais" data-es="Piedras Naturales">Natural Stones</a></li>
+          <li class="nav-item"><a href="#services" class="nav-link" data-en="Gemological Services" data-pt="Serviços Gemológicos" data-es="Servicios Gemológicos">Gemological Services</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link" data-en="About" data-pt="Sobre" data-es="Acerca">About</a></li>
+          <li class="nav-item"><a href="#education" class="nav-link" data-en="Education" data-pt="Educação" data-es="Educación">Education</a></li>
+          <li class="nav-item"><a href="#testimonials" class="nav-link" data-en="Testimonials" data-pt="Depoimentos" data-es="Testimonios">Testimonials</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link" data-en="Contact" data-pt="Contato" data-es="Contacto">Contact</a></li>
         </ul>
 
         <div class="language-selector">
@@ -210,9 +266,7 @@
         </div>
 
         <div class="hamburger" id="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
         </div>
       </div>
     </nav>
@@ -222,175 +276,89 @@
   <section id="home" class="hero">
     <div class="hero-content">
       <h1 class="hero-title"
-          data-en="Colored Gemstones & Natural Stone Sourcing"
-          data-pt="Fornecimento de Pedras Coloridas e Pedras Naturais"
-          data-es="Suministro de Piedras de Color y Piedra Natural">
-          Colored Gemstones & Natural Stone Sourcing
+          data-en="Colored Stones, Natural Stones & Trusted Expertise"
+          data-pt="Pedras Coloridas, Pedras Naturais e Expertise de Confiança"
+          data-es="Piedras de Color, Piedra Natural y Experiencia de Confianza">
+          Colored Stones, Natural Stones & Trusted Expertise
       </h1>
 
       <p class="hero-subtitle"
-         data-en="Supplying natural colored gemstones for jewelry, collectors and designers — plus premium natural stones and semi-precious slabs for countertops, walls, tables and custom interiors."
-         data-pt="Fornecimento de pedras coloridas naturais para joias, colecionadores e designers — além de pedras naturais e slabs semipreciosas para bancadas, paredes, mesas e projetos de interiores."
-         data-es="Suministro de piedras de color naturales para joyería, coleccionistas y diseñadores — además de piedra natural y losas semipreciosas para encimeras, muros, mesas y proyectos de interiorismo.">
-         Supplying natural colored gemstones for jewelry, collectors and designers — plus premium natural stones and semi-precious slabs for countertops, walls, tables and custom interiors.
+         data-en="Supplying natural colored stones for jewelry, premium natural stones for interiors, and professional gemological support with market knowledge and refined selection."
+         data-pt="Fornecimento de pedras coloridas naturais para joias, pedras naturais premium para interiores e suporte gemológico profissional com conhecimento de mercado e seleção refinada."
+         data-es="Suministro de piedras de color naturales para joyería, piedra natural premium para interiores y soporte gemológico profesional con conocimiento de mercado y selección refinada.">
+         Supplying natural colored stones for jewelry, premium natural stones for interiors, and professional gemological support with market knowledge and refined selection.
       </p>
 
       <a href="#contact" class="cta-button"
-         data-en="Request a Quote"
-         data-pt="Solicitar Orçamento"
-         data-es="Solicitar Presupuesto">
-         Request a Quote
+         data-en="Request Information"
+         data-pt="Solicitar Informações"
+         data-es="Solicitar Información">
+         Request Information
       </a>
     </div>
 
     <div class="hero-image">
       <div class="image-carousel" id="heroCarousel">
-        <img src="/images/hero/hero_image_1.jpg" alt="Colored gemstones and fine jewelry" class="carousel-image active">
-        <img src="/images/hero/hero_image_2.jpg" alt="Luxury natural stones and slabs" class="carousel-image">
-        <img src="/images/hero/hero_image_3.jpg" alt="Mineral Gemstones sourcing and consultation" class="carousel-image">
+        <img src="/images/hero/hero_image_1.jpg" alt="Colored stones for jewelry" class="carousel-image active">
+        <img src="/images/hero/hero_image_2.jpg" alt="Natural stones for interiors" class="carousel-image">
+        <img src="/images/hero/hero_image_3.jpg" alt="Gemstone sourcing and expertise" class="carousel-image">
       </div>
     </div>
   </section>
 
-  <!-- Gemological Services -->
-  <section id="services" class="services">
+  <!-- Colored Stones -->
+  <section id="colored-stones" class="colored-stones">
     <div class="container">
       <h2 class="section-title"
-          data-en="Gemological Services"
-          data-pt="Serviços Gemológicos"
-          data-es="Servicios Gemológicos">
-          Gemological Services
-      </h2>
-
-      <p class="section-lead"
-         data-en="Professional support for gemstone identification, quality review, valuation guidance and documentation services."
-         data-pt="Suporte profissional para identificação de gemas, análise de qualidade, orientação de avaliação e serviços de documentação."
-         data-es="Soporte profesional para identificación de gemas, análisis de calidad, orientación de valoración y servicios de documentación.">
-         Professional support for gemstone identification, quality review, valuation guidance and documentation services.
-      </p>
-
-      <div class="services-grid">
-        <a href="/pages/services/gemstone_identification.html" class="service-card">
-          <div class="service-head">
-            <i class="fas fa-gem"></i>
-            <h3 data-en="Gemstone Identification" data-pt="Identificação de Gemas" data-es="Identificación de Gemas">Gemstone Identification</h3>
-          </div>
-          <p data-en="Professional identification of precious and semi-precious stones using advanced gemological equipment."
-             data-pt="Identificação profissional de pedras preciosas e semi-preciosas usando equipamentos gemológicos avançados."
-             data-es="Identificación profesional de piedras preciosas y semipreciosas utilizando equipos gemológicos avanzados.">
-             Professional identification of precious and semi-precious stones using advanced gemological equipment.
-          </p>
-        </a>
-
-        <a href="/pages/services/gemstone_appraisal.html" class="service-card">
-          <div class="service-head">
-            <i class="fas fa-certificate"></i>
-            <h3 data-en="Gemstone Appraisal" data-pt="Avaliação de Gemas" data-es="Evaluación de Gemas">Gemstone Appraisal</h3>
-          </div>
-          <p data-en="Accurate valuation support for gemstones for insurance, estate planning or resale purposes."
-             data-pt="Suporte preciso de avaliação de gemas para seguro, planejamento patrimonial ou revenda."
-             data-es="Soporte preciso de valoración de gemas para seguros, planificación patrimonial o reventa.">
-             Accurate valuation support for gemstones for insurance, estate planning or resale purposes.
-          </p>
-        </a>
-
-        <a href="/pages/services/certification_services.html" class="service-card">
-          <div class="service-head">
-            <i class="fas fa-award"></i>
-            <h3 data-en="Certification Guidance" data-pt="Orientação para Certificação" data-es="Orientación para Certificación">Certification Guidance</h3>
-          </div>
-          <p data-en="Guidance on gemstone documentation, authenticity review and certification pathways."
-             data-pt="Orientação sobre documentação de gemas, análise de autenticidade e caminhos para certificação."
-             data-es="Orientación sobre documentación de gemas, revisión de autenticidad y procesos de certificación.">
-             Guidance on gemstone documentation, authenticity review and certification pathways.
-          </p>
-        </a>
-
-        <a href="/pages/services/quality_analysis.html" class="service-card">
-          <div class="service-head">
-            <i class="fas fa-search"></i>
-            <h3 data-en="Quality Analysis" data-pt="Análise de Qualidade" data-es="Análisis de Calidad">Quality Analysis</h3>
-          </div>
-          <p data-en="Comprehensive analysis of color, clarity, cut and overall quality with a market-aware perspective."
-             data-pt="Análise abrangente de cor, pureza, lapidação e qualidade geral com visão de mercado."
-             data-es="Análisis integral de color, claridad, talla y calidad general con enfoque de mercado.">
-             Comprehensive analysis of color, clarity, cut and overall quality with a market-aware perspective.
-          </p>
-        </a>
-
-        <a href="/pages/services/detailed_appraisal_services.html" class="service-card">
-          <div class="service-head">
-            <i class="fas fa-balance-scale"></i>
-            <h3 data-en="Detailed Advisory Services" data-pt="Serviços de Consultoria Detalhada" data-es="Servicios de Asesoría Detallada">Detailed Advisory Services</h3>
-          </div>
-          <p data-en="Explore detailed support for insurance, fair market value, verbal consultations and buyer guidance."
-             data-pt="Explore suporte detalhado para seguro, valor justo de mercado, consultas verbais e orientação para compradores."
-             data-es="Explore soporte detallado para seguros, valor justo de mercado, consultas verbales y orientación para compradores.">
-             Explore detailed support for insurance, fair market value, verbal consultations and buyer guidance.
-          </p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Colored Gemstones -->
-  <section id="colored-gemstones" class="colored-gemstones">
-    <div class="container">
-      <h2 class="section-title"
-          data-en="Colored Gemstones"
+          data-en="Colored Stones"
           data-pt="Pedras Coloridas"
-          data-es="Piedras de Color">
-          Colored Gemstones
-      </h2>
+          data-es="Piedras de Color">Colored Stones</h2>
 
       <p class="section-lead"
-         data-en="Natural colored gemstones selected for jewelers, designers, collectors and private clients seeking quality, rarity and market confidence."
-         data-pt="Pedras coloridas naturais selecionadas para joalheiros, designers, colecionadores e clientes privados que buscam qualidade, raridade e segurança de mercado."
-         data-es="Piedras de color naturales seleccionadas para joyeros, diseñadores, coleccionistas y clientes privados que buscan calidad, rareza y confianza de mercado.">
-         Natural colored gemstones selected for jewelers, designers, collectors and private clients seeking quality, rarity and market confidence.
+         data-en="Natural colored stones selected for jewelry designers, retailers, collectors and private clients who value quality, beauty and confidence in every purchase."
+         data-pt="Pedras coloridas naturais selecionadas para designers de joias, lojistas, colecionadores e clientes privados que valorizam qualidade, beleza e segurança em cada compra."
+         data-es="Piedras de color naturales seleccionadas para diseñadores de joyería, minoristas, coleccionistas y clientes privados que valoran calidad, belleza y seguridad en cada compra.">
+         Natural colored stones selected for jewelry designers, retailers, collectors and private clients who value quality, beauty and confidence in every purchase.
       </p>
 
       <div class="feature-hero">
         <div class="copy">
           <span class="pill"
-                data-en="Jewelry • Collectors • Trade"
-                data-pt="Joias • Colecionadores • Trade"
-                data-es="Joyería • Coleccionistas • Trade">
-                Jewelry • Collectors • Trade
-          </span>
+            data-en="Jewelry • Collectors • Trade"
+            data-pt="Joias • Colecionadores • Trade"
+            data-es="Joyería • Coleccionistas • Trade">Jewelry • Collectors • Trade</span>
 
-          <h3 data-en="Natural colored gemstones sourced with care and expertise"
-              data-pt="Pedras coloridas naturais selecionadas com critério e experiência"
-              data-es="Piedras de color naturales seleccionadas con criterio y experiencia">
-              Natural colored gemstones sourced with care and expertise
+          <h3
+            data-en="Carefully sourced natural colored stones for jewelry and private selection"
+            data-pt="Pedras coloridas naturais cuidadosamente selecionadas para joias e seleção privada"
+            data-es="Piedras de color naturales cuidadosamente seleccionadas para joyería y selección privada">
+            Carefully sourced natural colored stones for jewelry and private selection
           </h3>
 
-          <p data-en="We supply natural sapphires, emeralds, rubies, tourmalines, spinels, aquamarines and other colored gemstones for fine jewelry, custom projects, resale and private collections."
-             data-pt="Fornecemos safiras, esmeraldas, rubis, turmalinas, spinels, águas-marinhas e outras pedras coloridas naturais para joias finas, projetos sob medida, revenda e coleções particulares."
-             data-es="Suministramos zafiros, esmeraldas, rubíes, turmalinas, espinelas, aguamarinas y otras piedras de color naturales para joyería fina, proyectos a medida, reventa y colecciones privadas.">
-             We supply natural sapphires, emeralds, rubies, tourmalines, spinels, aquamarines and other colored gemstones for fine jewelry, custom projects, resale and private collections.
+          <p
+            data-en="We work with sapphires, emeralds, rubies, tourmalines, spinels, aquamarines and other natural colored stones, helping clients source stones that match design goals, budget, rarity and market value."
+            data-pt="Trabalhamos com safiras, esmeraldas, rubis, turmalinas, spinels, águas-marinhas e outras pedras coloridas naturais, ajudando clientes a encontrar pedras alinhadas ao design, orçamento, raridade e valor de mercado."
+            data-es="Trabajamos con zafiros, esmeraldas, rubíes, turmalinas, espinelas, aguamarinas y otras piedras de color naturales, ayudando a los clientes a encontrar piedras alineadas con el diseño, el presupuesto, la rareza y el valor de mercado.">
+            We work with sapphires, emeralds, rubies, tourmalines, spinels, aquamarines and other natural colored stones, helping clients source stones that match design goals, budget, rarity and market value.
           </p>
-
-          <a href="#contact" class="cta-button"
-             data-en="Ask About Availability"
-             data-pt="Consultar Disponibilidade"
-             data-es="Consultar Disponibilidad">
-             Ask About Availability
-          </a>
         </div>
       </div>
 
-      <div class="services-grid feature-grid" style="margin-top:28px">
+      <div class="services-grid colored-cards">
         <div class="service-card">
           <div class="service-head">
             <i class="fas fa-ring"></i>
             <h3 data-en="Stones for Jewelry" data-pt="Pedras para Joias" data-es="Piedras para Joyería">Stones for Jewelry</h3>
           </div>
-          <p data-en="Loose gemstones for rings, earrings, pendants, bracelets and custom fine jewelry creations."
-             data-pt="Gemas soltas para anéis, brincos, pingentes, pulseiras e criações personalizadas de joalheria fina."
-             data-es="Gemas sueltas para anillos, aretes, colgantes, pulseras y creaciones personalizadas de joyería fina.">
-             Loose gemstones for rings, earrings, pendants, bracelets and custom fine jewelry creations.
+          <p data-en="Loose stones selected for rings, pendants, earrings, bracelets and custom fine jewelry."
+             data-pt="Pedras soltas selecionadas para anéis, pingentes, brincos, pulseiras e joias finas personalizadas."
+             data-es="Piedras sueltas seleccionadas para anillos, colgantes, aretes, pulseras y joyería fina personalizada.">
+             Loose stones selected for rings, pendants, earrings, bracelets and custom fine jewelry.
           </p>
+          <a href="#stones-for-jewelry-detail" class="mini-cta"
+             data-en="Learn More"
+             data-pt="Saiba Mais"
+             data-es="Saber Más">Learn More</a>
         </div>
 
         <div class="service-card">
@@ -398,11 +366,15 @@
             <i class="fas fa-search-dollar"></i>
             <h3 data-en="Custom Sourcing" data-pt="Sourcing Sob Medida" data-es="Sourcing a Medida">Custom Sourcing</h3>
           </div>
-          <p data-en="Support for specific sizes, shapes, matched pairs and stones chosen for design, resale or collection."
-             data-pt="Suporte para tamanhos, formatos, pares e pedras escolhidas para design, revenda ou coleção."
-             data-es="Soporte para tamaños, formas, pares y piedras elegidas para diseño, reventa o colección.">
-             Support for specific sizes, shapes, matched pairs and stones chosen for design, resale or collection.
+          <p data-en="Targeted sourcing for specific shapes, sizes, colors, matched pairs and tailored buying goals."
+             data-pt="Sourcing direcionado para formatos, tamanhos, cores, pares e objetivos específicos de compra."
+             data-es="Sourcing dirigido para formas, tamaños, colores, pares y objetivos específicos de compra.">
+             Targeted sourcing for specific shapes, sizes, colors, matched pairs and tailored buying goals.
           </p>
+          <a href="#custom-sourcing-detail" class="mini-cta"
+             data-en="Learn More"
+             data-pt="Saiba Mais"
+             data-es="Saber Más">Learn More</a>
         </div>
 
         <div class="service-card">
@@ -410,10 +382,67 @@
             <i class="fas fa-handshake"></i>
             <h3 data-en="Trade & Private Clients" data-pt="Trade & Clientes Privados" data-es="Trade & Clientes Privados">Trade & Private Clients</h3>
           </div>
-          <p data-en="Serving jewelers, designers, resellers, collectors and buyers looking for natural colored stones with clarity and confidence."
-             data-pt="Atendimento a joalheiros, designers, revendedores, colecionadores e compradores em busca de pedras coloridas naturais com clareza e segurança."
-             data-es="Atención a joyeros, diseñadores, revendedores, coleccionistas y compradores que buscan piedras de color naturales con claridad y confianza.">
-             Serving jewelers, designers, resellers, collectors and buyers looking for natural colored stones with clarity and confidence.
+          <p data-en="Reliable support for jewelers, resellers, collectors and individual buyers seeking quality stones."
+             data-pt="Suporte confiável para joalheiros, revendedores, colecionadores e compradores individuais em busca de pedras de qualidade."
+             data-es="Soporte confiable para joyeros, revendedores, coleccionistas y compradores individuales que buscan piedras de calidad.">
+             Reliable support for jewelers, resellers, collectors and individual buyers seeking quality stones.
+          </p>
+          <a href="#trade-private-detail" class="mini-cta"
+             data-en="Learn More"
+             data-pt="Saiba Mais"
+             data-es="Saber Más">Learn More</a>
+        </div>
+      </div>
+
+      <div class="details-wrap">
+        <div id="stones-for-jewelry-detail" class="detail-card">
+          <h3>
+            <i class="fas fa-ring"></i>
+            <span data-en="Stones for Jewelry" data-pt="Pedras para Joias" data-es="Piedras para Joyería">Stones for Jewelry</span>
+          </h3>
+          <p data-en="This service is focused on natural colored stones intended for finished jewelry or custom jewelry projects. Whether the client needs a center stone for a ring, a matched pair for earrings, side stones for a design, or a stone for a pendant, we help identify the best options based on color, shape, cut, size, quality and overall visual impact."
+             data-pt="Este serviço é focado em pedras coloridas naturais destinadas a joias prontas ou projetos personalizados. Seja para uma pedra central de anel, um par para brincos, pedras laterais para um design ou uma pedra para pingente, ajudamos a identificar as melhores opções com base em cor, formato, lapidação, tamanho, qualidade e impacto visual."
+             data-es="Este servicio está enfocado en piedras de color naturales destinadas a joyería terminada o proyectos personalizados. Ya sea una piedra central para un anillo, un par para aretes, piedras laterales para un diseño o una piedra para un colgante, ayudamos a identificar las mejores opciones según color, forma, talla, tamaño, calidad e impacto visual.">
+             This service is focused on natural colored stones intended for finished jewelry or custom jewelry projects. Whether the client needs a center stone for a ring, a matched pair for earrings, side stones for a design, or a stone for a pendant, we help identify the best options based on color, shape, cut, size, quality and overall visual impact.
+          </p>
+          <p data-en="The goal is not simply to sell a stone, but to help the client choose a stone that makes sense aesthetically and commercially, creating stronger results for jewelry design, gifting or resale."
+             data-pt="O objetivo não é apenas vender uma pedra, mas ajudar o cliente a escolher uma pedra que faça sentido estética e comercialmente, gerando melhores resultados para design de joias, presente ou revenda."
+             data-es="El objetivo no es solo vender una piedra, sino ayudar al cliente a elegir una piedra que tenga sentido estética y comercialmente, generando mejores resultados para diseño de joyería, regalo o reventa.">
+             The goal is not simply to sell a stone, but to help the client choose a stone that makes sense aesthetically and commercially, creating stronger results for jewelry design, gifting or resale.
+          </p>
+        </div>
+
+        <div id="custom-sourcing-detail" class="detail-card">
+          <h3>
+            <i class="fas fa-search-dollar"></i>
+            <span data-en="Custom Sourcing" data-pt="Sourcing Sob Medida" data-es="Sourcing a Medida">Custom Sourcing</span>
+          </h3>
+          <p data-en="Custom sourcing is designed for clients who need something specific and do not want to waste time searching blindly. This includes requests for exact colors, calibrated sizes, particular cuts, matched pairs, rare varieties, or stones selected for a defined budget range."
+             data-pt="O sourcing sob medida é destinado a clientes que precisam de algo específico e não querem perder tempo buscando às cegas. Isso inclui pedidos por cores exatas, tamanhos calibrados, lapidações específicas, pares, variedades raras ou pedras selecionadas dentro de uma faixa de orçamento definida."
+             data-es="El sourcing a medida está diseñado para clientes que necesitan algo específico y no quieren perder tiempo buscando a ciegas. Esto incluye solicitudes de colores exactos, tamaños calibrados, tallas específicas, pares, variedades raras o piedras seleccionadas dentro de un rango de presupuesto definido.">
+             Custom sourcing is designed for clients who need something specific and do not want to waste time searching blindly. This includes requests for exact colors, calibrated sizes, particular cuts, matched pairs, rare varieties, or stones selected for a defined budget range.
+          </p>
+          <p data-en="This process adds value because it combines sourcing knowledge, supplier access and selection criteria to bring clients options that are more aligned with their needs, instead of random inventory that does not fit the project."
+             data-pt="Esse processo agrega valor porque combina conhecimento de sourcing, acesso a fornecedores e critérios de seleção para apresentar opções mais alinhadas às necessidades do cliente, em vez de um estoque aleatório que não se encaixa no projeto."
+             data-es="Este proceso agrega valor porque combina conocimiento de sourcing, acceso a proveedores y criterios de selección para presentar opciones más alineadas con las necesidades del cliente, en lugar de inventario aleatorio que no encaja en el proyecto.">
+             This process adds value because it combines sourcing knowledge, supplier access and selection criteria to bring clients options that are more aligned with their needs, instead of random inventory that does not fit the project.
+          </p>
+        </div>
+
+        <div id="trade-private-detail" class="detail-card">
+          <h3>
+            <i class="fas fa-handshake"></i>
+            <span data-en="Trade & Private Clients" data-pt="Trade & Clientes Privados" data-es="Trade & Clientes Privados">Trade & Private Clients</span>
+          </h3>
+          <p data-en="We work with both business and individual buyers. Trade clients may include jewelry designers, retailers, resellers or industry professionals looking for reliable stone selection and sourcing support. Private clients may be collectors, gift buyers or individuals searching for a special stone with confidence and guidance."
+             data-pt="Trabalhamos tanto com compradores profissionais quanto com clientes individuais. Os clientes do trade podem incluir designers de joias, varejistas, revendedores ou profissionais do setor em busca de seleção confiável e suporte em sourcing. Já os clientes privados podem ser colecionadores, compradores de presentes ou pessoas buscando uma pedra especial com segurança e orientação."
+             data-es="Trabajamos tanto con compradores profesionales como con clientes individuales. Los clientes trade pueden incluir diseñadores de joyería, minoristas, revendedores o profesionales del sector que buscan selección confiable y soporte de sourcing. Los clientes privados pueden ser coleccionistas, compradores de regalos o personas que buscan una piedra especial con seguridad y orientación.">
+             We work with both business and individual buyers. Trade clients may include jewelry designers, retailers, resellers or industry professionals looking for reliable stone selection and sourcing support. Private clients may be collectors, gift buyers or individuals searching for a special stone with confidence and guidance.
+          </p>
+          <p data-en="This dual positioning allows Mineral Gemstones to serve different levels of demand while maintaining a professional, transparent and results-oriented approach."
+             data-pt="Esse posicionamento duplo permite que a Mineral Gemstones atenda diferentes níveis de demanda mantendo uma abordagem profissional, transparente e orientada a resultados."
+             data-es="Este posicionamiento dual permite que Mineral Gemstones atienda distintos niveles de demanda manteniendo un enfoque profesional, transparente y orientado a resultados.">
+             This dual positioning allows Mineral Gemstones to serve different levels of demand while maintaining a professional, transparent and results-oriented approach.
           </p>
         </div>
       </div>
@@ -426,15 +455,13 @@
       <h2 class="section-title"
           data-en="Natural Stones"
           data-pt="Pedras Naturais"
-          data-es="Piedras Naturales">
-          Natural Stones
-      </h2>
+          data-es="Piedras Naturales">Natural Stones</h2>
 
       <p class="section-lead"
-         data-en="Premium natural stones and semi-precious surfaces for residential, hospitality and custom interior projects."
-         data-pt="Pedras naturais premium e superfícies semipreciosas para projetos residenciais, de hospitalidade e interiores sob medida."
-         data-es="Piedras naturales premium y superficies semipreciosas para proyectos residenciales, de hospitalidad e interiores a medida.">
-         Premium natural stones and semi-precious surfaces for residential, hospitality and custom interior projects.
+         data-en="Premium natural stones and semi-precious slabs curated for homes, luxury interiors, custom furniture and architectural applications."
+         data-pt="Pedras naturais premium e slabs semipreciosas selecionados para casas, interiores de luxo, mobiliário sob medida e aplicações arquitetônicas."
+         data-es="Piedras naturales premium y losas semipreciosas seleccionadas para hogares, interiores de lujo, mobiliario a medida y aplicaciones arquitectónicas.">
+         Premium natural stones and semi-precious slabs curated for homes, luxury interiors, custom furniture and architectural applications.
       </p>
 
       <div class="feature-hero">
@@ -442,140 +469,152 @@
           <span class="pill"
             data-en="Residential & Commercial"
             data-pt="Residencial & Comercial"
-            data-es="Residencial & Comercial">
-            Residential & Commercial
-          </span>
+            data-es="Residencial & Comercial">Residential & Commercial</span>
 
           <h3
-            data-en="Transform nature into art with premium slabs and custom pieces"
-            data-pt="Transforme a natureza em arte com slabs premium e peças sob medida"
-            data-es="Transforma la naturaleza en arte con losas premium y piezas a medida">
-            Transform nature into art with premium slabs and custom pieces
+            data-en="Transform nature into art with premium slabs and statement pieces"
+            data-pt="Transforme a natureza em arte com slabs premium e peças de destaque"
+            data-es="Transforma la naturaleza en arte con losas premium y piezas de impacto">
+            Transform nature into art with premium slabs and statement pieces
           </h3>
 
           <p
-            data-en="We curate and advise on natural stones and semi-precious slabs for kitchens, bathrooms, feature walls, tables and luxury accents. From selection to logistics and care, we guide you from start to finish."
-            data-pt="Selecionamos e assessoramos pedras naturais e slabs semipreciosas para cozinhas, banheiros, painéis, mesas e detalhes de luxo. Da escolha à logística e manutenção, guiamos você do início ao fim."
-            data-es="Seleccionamos y asesoramos en piedras naturales y losas semipreciosas para cocinas, baños, paneles, mesas y detalles de lujo. Desde la elección hasta la logística y el mantenimiento, te guiamos de principio a fin.">
-            We curate and advise on natural stones and semi-precious slabs for kitchens, bathrooms, feature walls, tables and luxury accents. From selection to logistics and care, we guide you from start to finish.
+            data-en="We curate and advise on natural stones and semi-precious slabs for kitchens, bathrooms, countertops, feature walls, tables and custom interior accents, helping clients combine visual impact with technical suitability."
+            data-pt="Selecionamos e assessoramos pedras naturais e slabs semipreciosas para cozinhas, banheiros, bancadas, painéis, mesas e detalhes internos sob medida, ajudando o cliente a unir impacto visual e adequação técnica."
+            data-es="Seleccionamos y asesoramos en piedras naturales y losas semipreciosas para cocinas, baños, encimeras, muros decorativos, mesas y detalles interiores a medida, ayudando al cliente a unir impacto visual y adecuación técnica.">
+            We curate and advise on natural stones and semi-precious slabs for kitchens, bathrooms, countertops, feature walls, tables and custom interior accents, helping clients combine visual impact with technical suitability.
           </p>
 
           <a href="#contact" class="cta-button"
              data-en="Request a Quote"
              data-pt="Solicitar Orçamento"
-             data-es="Solicitar Presupuesto">
-             Request a Quote
-          </a>
+             data-es="Solicitar Presupuesto">Request a Quote</a>
         </div>
       </div>
 
-      <div class="services-grid feature-grid" style="margin-top:28px">
+      <div class="services-grid feature-grid" style="margin-top:22px">
         <a href="/pages/natural-stones/semi_precious_slabs.html" class="service-card">
-          <div class="service-head">
-            <i class="fas fa-layer-group"></i>
-            <h3 data-en="Semi-Precious Slabs" data-pt="Slabs Semipreciosas" data-es="Losas Semipreciosas">Semi-Precious Slabs</h3>
-          </div>
-          <p data-en="Allure Agate, Blue Agate, Quartz, Petrified Wood and more. Backlit options available."
-             data-pt="Allure Agate, Blue Agate, Quartzo, Madeira Petrificada e mais. Opções com backlight."
-             data-es="Allure Agate, Blue Agate, Cuarzo, Madera Petrificada y más. Opciones retroiluminadas.">
-             Allure Agate, Blue Agate, Quartz, Petrified Wood and more. Backlit options available.
+          <div class="service-head"><i class="fas fa-layer-group"></i><h3 data-en="Semi-Precious Slabs" data-pt="Slabs Semipreciosas" data-es="Losas Semipreciosas">Semi-Precious Slabs</h3></div>
+          <p data-en="Allure Agate, Blue Agate, Quartz, Petrified Wood and other expressive materials. Backlit options available."
+             data-pt="Allure Agate, Blue Agate, Quartzo, Madeira Petrificada e outros materiais expressivos. Opções com backlight."
+             data-es="Allure Agate, Blue Agate, Cuarzo, Madera Petrificada y otros materiales expresivos. Opciones retroiluminadas.">
+             Allure Agate, Blue Agate, Quartz, Petrified Wood and other expressive materials. Backlit options available.
           </p>
-          <span class="badge"
-                data-en="Tables • Counters • Feature Walls"
-                data-pt="Mesas • Bancadas • Painéis"
-                data-es="Mesas • Encimeras • Paneles">
-                Tables • Counters • Feature Walls
-          </span>
+          <span class="badge" data-en="Tables • Counters • Feature Walls" data-pt="Mesas • Bancadas • Painéis" data-es="Mesas • Encimeras • Paneles">Tables • Counters • Feature Walls</span>
         </a>
 
         <a href="/pages/natural-stones/quartzite_marble.html" class="service-card">
-          <div class="service-head">
-            <i class="fas fa-mountain"></i>
-            <h3 data-en="Quartzite & Marble Curation" data-pt="Curadoria de Quartzitos & Mármores" data-es="Curaduría de Cuarcitas & Mármoles">Quartzite & Marble Curation</h3>
-          </div>
-          <p data-en="High-end selections like Taj Mahal, Cristallo, Patagonia and rare marbles for luxury projects."
-             data-pt="Seleções high-end como Taj Mahal, Cristallo, Patagonia e mármores raros para projetos de luxo."
-             data-es="Selecciones high-end como Taj Mahal, Cristallo, Patagonia y mármoles raros para proyectos de lujo.">
-             High-end selections like Taj Mahal, Cristallo, Patagonia and rare marbles for luxury projects.
+          <div class="service-head"><i class="fas fa-mountain"></i><h3 data-en="Quartzite & Marble Curation" data-pt="Curadoria de Quartzitos & Mármores" data-es="Curaduría de Cuarcitas & Mármoles">Quartzite & Marble Curation</h3></div>
+          <p data-en="High-end selections such as Taj Mahal, Cristallo, Patagonia and rare marbles for elevated spaces."
+             data-pt="Seleções high-end como Taj Mahal, Cristallo, Patagonia e mármores raros para ambientes sofisticados."
+             data-es="Selecciones high-end como Taj Mahal, Cristallo, Patagonia y mármoles raros para espacios sofisticados.">
+             High-end selections such as Taj Mahal, Cristallo, Patagonia and rare marbles for elevated spaces.
           </p>
-          <span class="badge"
-                data-en="Kitchens • Bathrooms • Fireplaces"
-                data-pt="Cozinhas • Banheiros • Lareiras"
-                data-es="Cocinas • Baños • Chimeneas">
-                Kitchens • Bathrooms • Fireplaces
-          </span>
+          <span class="badge" data-en="Kitchens • Bathrooms • Fireplaces" data-pt="Cozinhas • Banheiros • Lareiras" data-es="Cocinas • Baños • Chimeneas">Kitchens • Bathrooms • Fireplaces</span>
         </a>
 
         <a href="/pages/natural-stones/backlit_onyx.html" class="service-card">
-          <div class="service-head">
-            <i class="fas fa-lightbulb"></i>
-            <h3 data-en="Backlit Onyx Walls" data-pt="Paredes de Ônix Retroiluminado" data-es="Paredes de Ónix Retroiluminadas">Backlit Onyx Walls</h3>
-          </div>
-          <p data-en="Design, technical guidance and vendor coordination for dramatic translucent onyx installations."
-             data-pt="Projeto, orientação técnica e coordenação de fornecedores para instalações de ônix translúcido."
-             data-es="Diseño, guía técnica y coordinación de proveedores para instalaciones de ónix translúcido.">
-             Design, technical guidance and vendor coordination for dramatic translucent onyx installations.
+          <div class="service-head"><i class="fas fa-lightbulb"></i><h3 data-en="Backlit Onyx Walls" data-pt="Paredes de Ônix Retroiluminado" data-es="Paredes de Ónix Retroiluminadas">Backlit Onyx Walls</h3></div>
+          <p data-en="Technical and design guidance for translucent onyx applications that create dramatic lighting effects."
+             data-pt="Orientação técnica e de design para aplicações em ônix translúcido com efeito de iluminação marcante."
+             data-es="Guía técnica y de diseño para aplicaciones en ónix translúcido con efecto de iluminación impactante.">
+             Technical and design guidance for translucent onyx applications that create dramatic lighting effects.
           </p>
-          <span class="badge"
-                data-en="Lighting Specs • Diffusers • Power"
-                data-pt="Especificações de Luz • Difusores • Energia"
-                data-es="Especificaciones de Luz • Difusores • Energía">
-                Lighting Specs • Diffusers • Power
-          </span>
+          <span class="badge" data-en="Lighting Specs • Diffusers • Power" data-pt="Especificações de Luz • Difusores • Energia" data-es="Especificaciones de Luz • Difusores • Energía">Lighting Specs • Diffusers • Power</span>
         </a>
 
         <a href="/pages/natural-stones/custom_furniture.html" class="service-card">
-          <div class="service-head">
-            <i class="fas fa-couch"></i>
-            <h3 data-en="Custom Furniture & Accents" data-pt="Mobiliário & Peças Sob Medida" data-es="Mobiliario & Piezas a Medida">Custom Furniture & Accents</h3>
-          </div>
-          <p data-en="Tables, sideboards, vanity tops and decorative panels with gemstone or natural stone surfaces."
-             data-pt="Mesas, aparadores, tampos de lavatório e painéis decorativos com superfícies de gemas ou pedra natural."
-             data-es="Mesas, aparadores, encimeras de baño y paneles decorativos con superficies de gemas o piedra natural.">
-             Tables, sideboards, vanity tops and decorative panels with gemstone or natural stone surfaces.
+          <div class="service-head"><i class="fas fa-couch"></i><h3 data-en="Custom Furniture & Accents" data-pt="Mobiliário & Peças Sob Medida" data-es="Mobiliario & Piezas a Medida">Custom Furniture & Accents</h3></div>
+          <p data-en="Tables, vanities, decorative panels and statement pieces with gemstone or natural stone surfaces."
+             data-pt="Mesas, lavatórios, painéis decorativos e peças de destaque com superfícies em gema ou pedra natural."
+             data-es="Mesas, tocadores, paneles decorativos y piezas de destaque con superficies de gema o piedra natural.">
+             Tables, vanities, decorative panels and statement pieces with gemstone or natural stone surfaces.
           </p>
-          <span class="badge"
-                data-en="Residential • Hospitality"
-                data-pt="Residencial • Hospitalidade"
-                data-es="Residencial • Hotelería">
-                Residential • Hospitality
-          </span>
+          <span class="badge" data-en="Residential • Hospitality" data-pt="Residencial • Hospitalidade" data-es="Residencial • Hotelería">Residential • Hospitality</span>
         </a>
 
         <a href="/pages/natural-stones/sourcing_logistics.html" class="service-card">
-          <div class="service-head">
-            <i class="fas fa-truck-ramp-box"></i>
-            <h3 data-en="Sourcing & Logistics" data-pt="Sourcing & Logística" data-es="Sourcing & Logística">Sourcing & Logistics</h3>
-          </div>
-          <p data-en="Global sourcing, inspection, slab selection, crating and insured transport to fabricators."
-             data-pt="Sourcing global, inspeção, seleção de slabs, engradotamento e transporte assegurado ao marmorista."
-             data-es="Sourcing global, inspección, selección de losas, embalaje y transporte asegurado al marmolista.">
-             Global sourcing, inspection, slab selection, crating and insured transport to fabricators.
+          <div class="service-head"><i class="fas fa-truck-ramp-box"></i><h3 data-en="Sourcing & Logistics" data-pt="Sourcing & Logística" data-es="Sourcing & Logística">Sourcing & Logistics</h3></div>
+          <p data-en="Stone sourcing, slab selection, inspection, crating and transport coordination for projects and fabricators."
+             data-pt="Sourcing de pedras, seleção de slabs, inspeção, engradotamento e coordenação de transporte para projetos e marmoristas."
+             data-es="Sourcing de piedras, selección de losas, inspección, embalaje y coordinación de transporte para proyectos y marmolistas.">
+             Stone sourcing, slab selection, inspection, crating and transport coordination for projects and fabricators.
           </p>
-          <span class="badge"
-                data-en="Trade & Homeowners"
-                data-pt="Trade & Residencial"
-                data-es="Trade & Residencial">
-                Trade & Homeowners
-          </span>
+          <span class="badge" data-en="Trade & Homeowners" data-pt="Trade & Residencial" data-es="Trade & Residencial">Trade & Homeowners</span>
         </a>
 
         <a href="/pages/natural-stones/installation_care.html" class="service-card">
-          <div class="service-head">
-            <i class="fas fa-handshake-angle"></i>
-            <h3 data-en="Installation Advisory & Care" data-pt="Assessoria de Instalação & Manutenção" data-es="Asesoría de Instalación & Cuidado">Installation Advisory & Care</h3>
-          </div>
-          <p data-en="Recommendations on fabricators, sealing, maintenance routines and long-term preservation."
-             data-pt="Recomendações de marmoristas, seladores, rotinas de manutenção e preservação de longo prazo."
-             data-es="Recomendaciones de marmolistas, selladores, rutinas de mantenimiento y preservación a largo plazo.">
-             Recommendations on fabricators, sealing, maintenance routines and long-term preservation.
+          <div class="service-head"><i class="fas fa-handshake-angle"></i><h3 data-en="Installation Advisory & Care" data-pt="Assessoria de Instalação & Manutenção" data-es="Asesoría de Instalación & Cuidado">Installation Advisory & Care</h3></div>
+          <p data-en="Recommendations on fabricators, sealing, maintenance and long-term preservation of premium surfaces."
+             data-pt="Recomendações sobre marmoristas, selagem, manutenção e preservação de longo prazo de superfícies premium."
+             data-es="Recomendaciones sobre marmolistas, sellado, mantenimiento y preservación a largo plazo de superficies premium.">
+             Recommendations on fabricators, sealing, maintenance and long-term preservation of premium surfaces.
           </p>
-          <span class="badge"
-                data-en="Spec Sheets • Care Guides"
-                data-pt="Especificações • Guias de Cuidado"
-                data-es="Especificaciones • Guías de Cuidado">
-                Spec Sheets • Care Guides
-          </span>
+          <span class="badge" data-en="Spec Sheets • Care Guides" data-pt="Especificações • Guias de Cuidado" data-es="Especificaciones • Guías de Cuidado">Spec Sheets • Care Guides</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gemological Services -->
+  <section id="services" class="services reordered-services">
+    <div class="container">
+      <h2 class="section-title"
+          data-en="Gemological Services"
+          data-pt="Serviços Gemológicos"
+          data-es="Servicios Gemológicos">Gemological Services</h2>
+
+      <p class="section-lead"
+         data-en="Professional support for gemstone identification, documentation, quality analysis and valuation guidance when deeper technical review is needed."
+         data-pt="Suporte profissional para identificação de gemas, documentação, análise de qualidade e orientação de avaliação quando uma revisão técnica mais profunda é necessária."
+         data-es="Soporte profesional para identificación de gemas, documentación, análisis de calidad y orientación de valoración cuando se necesita una revisión técnica más profunda.">
+         Professional support for gemstone identification, documentation, quality analysis and valuation guidance when deeper technical review is needed.
+      </p>
+
+      <div class="services-grid">
+        <a href="/pages/services/gemstone_identification.html" class="service-card">
+          <div class="service-head"><i class="fas fa-gem"></i><h3 data-en="Gemstone Identification" data-pt="Identificação de Gemas" data-es="Identificación de Gemas">Gemstone Identification</h3></div>
+          <p data-en="Professional identification of precious and semi-precious stones using advanced gemological equipment."
+             data-pt="Identificação profissional de pedras preciosas e semi-preciosas usando equipamentos gemológicos avançados."
+             data-es="Identificación profesional de piedras preciosas y semipreciosas utilizando equipos gemológicos avanzados.">
+             Professional identification of precious and semi-precious stones using advanced gemological equipment.
+          </p>
+        </a>
+
+        <a href="/pages/services/gemstone_appraisal.html" class="service-card">
+          <div class="service-head"><i class="fas fa-certificate"></i><h3 data-en="Gemstone Appraisal" data-pt="Avaliação de Gemas" data-es="Evaluación de Gemas">Gemstone Appraisal</h3></div>
+          <p data-en="Accurate valuation support for gemstones for insurance, estate planning or resale purposes."
+             data-pt="Suporte preciso de avaliação de gemas para seguro, planejamento patrimonial ou revenda."
+             data-es="Soporte preciso de valoración de gemas para seguros, planificación patrimonial o reventa.">
+             Accurate valuation support for gemstones for insurance, estate planning or resale purposes.
+          </p>
+        </a>
+
+        <a href="/pages/services/certification_services.html" class="service-card">
+          <div class="service-head"><i class="fas fa-award"></i><h3 data-en="Certification Guidance" data-pt="Orientação para Certificação" data-es="Orientación para Certificación">Certification Guidance</h3></div>
+          <p data-en="Guidance on gemstone documentation, authenticity review and certification pathways."
+             data-pt="Orientação sobre documentação de gemas, análise de autenticidade e caminhos para certificação."
+             data-es="Orientación sobre documentación de gemas, revisión de autenticidad y procesos de certificación.">
+             Guidance on gemstone documentation, authenticity review and certification pathways.
+          </p>
+        </a>
+
+        <a href="/pages/services/quality_analysis.html" class="service-card">
+          <div class="service-head"><i class="fas fa-search"></i><h3 data-en="Quality Analysis" data-pt="Análise de Qualidade" data-es="Análisis de Calidad">Quality Analysis</h3></div>
+          <p data-en="Comprehensive analysis of color, clarity, cut and overall quality with a market-aware perspective."
+             data-pt="Análise abrangente de cor, pureza, lapidação e qualidade geral com visão de mercado."
+             data-es="Análisis integral de color, claridad, talla y calidad general con enfoque de mercado.">
+             Comprehensive analysis of color, clarity, cut and overall quality with a market-aware perspective.
+          </p>
+        </a>
+
+        <a href="/pages/services/detailed_appraisal_services.html" class="service-card">
+          <div class="service-head"><i class="fas fa-balance-scale"></i><h3 data-en="Detailed Advisory Services" data-pt="Serviços de Consultoria Detalhada" data-es="Servicios de Asesoría Detallada">Detailed Advisory Services</h3></div>
+          <p data-en="Explore detailed support for insurance, fair market value, verbal consultations and buyer guidance."
+             data-pt="Explore suporte detalhado para seguro, valor justo de mercado, consultas verbais e orientação para compradores."
+             data-es="Explore soporte detallado para seguros, valor justo de mercado, consultas verbales y orientación para compradores.">
+             Explore detailed support for insurance, fair market value, verbal consultations and buyer guidance.
+          </p>
         </a>
       </div>
     </div>
@@ -589,32 +628,27 @@
           <h2 class="section-title"
               data-en="About Mineral Gemstones"
               data-pt="Sobre a Mineral Gemstones"
-              data-es="Acerca de Mineral Gemstones">
-              About Mineral Gemstones
-          </h2>
+              data-es="Acerca de Mineral Gemstones">About Mineral Gemstones</h2>
 
-          <p data-en="Hello, my name is Rafael Ferreira, founder of Mineral Gemstones. I specialize in natural colored gemstones for jewelry and in curated natural stones and semi-precious materials for homes, interiors and custom projects. My work combines gemological knowledge, sourcing expertise and a careful eye for quality, helping clients make confident decisions whether they are buying a gemstone for jewelry or selecting premium stone for a space.
-Based in California, I serve private clients, collectors, jewelry professionals, designers, architects and trade partners looking for trusted guidance, transparency and refined material selection."
-             data-pt="Olá, meu nome é Rafael Ferreira, fundador da Mineral Gemstones. Sou especializado em pedras coloridas naturais para joias e em pedras naturais e materiais semipreciosos selecionados para casas, interiores e projetos sob medida. Meu trabalho combina conhecimento gemológico, experiência em sourcing e um olhar criterioso para qualidade, ajudando clientes a tomar decisões seguras, seja na compra de uma gema para joalheria ou na escolha de uma pedra premium para um ambiente.
-Baseado na Califórnia, atendo clientes privados, colecionadores, profissionais de joalheria, designers, arquitetos e parceiros do trade que buscam orientação confiável, transparência e seleção refinada de materiais."
-             data-es="Hola, mi nombre es Rafael Ferreira, fundador de Mineral Gemstones. Me especializo en piedras de color naturales para joyería y en piedras naturales y materiales semipreciosos seleccionados para casas, interiores y proyectos a medida. Mi trabajo combina conocimiento gemológico, experiencia en sourcing y un criterio riguroso de calidad, ayudando a los clientes a tomar decisiones seguras, ya sea al comprar una gema para joyería o al seleccionar piedra premium para un espacio.
-Con base en California, atiendo a clientes privados, coleccionistas, profesionales de joyería, diseñadores, arquitectos y socios del sector que buscan orientación confiable, transparencia y selección refinada de materiales.">
-            Hello, my name is Rafael Ferreira, founder of Mineral Gemstones...
+          <p data-en="Hello, my name is Rafael Ferreira, and I am the founder of Mineral Gemstones. My work is built around three connected areas: colored stones, natural stones and gemological services.
+I specialize in sourcing and supplying natural colored stones for jewelry designers, resellers, collectors and private clients who are looking for quality, beauty, market awareness and trustworthy selection. This includes stones for jewelry, custom sourcing and support for both trade and private clients.
+I also curate natural stones and semi-precious slabs for interiors, custom furniture and architectural applications, helping clients combine visual impact with technical suitability.
+In addition, I provide gemological services when deeper analysis, documentation, quality review or valuation support is needed. Based in California, I serve clients with a professional, transparent and results-oriented approach."
+             data-pt="Olá, meu nome é Rafael Ferreira, e sou o fundador da Mineral Gemstones. Meu trabalho é construído sobre três áreas conectadas: pedras coloridas, pedras naturais e serviços gemológicos.
+Sou especializado em sourcing e fornecimento de pedras coloridas naturais para designers de joias, revendedores, colecionadores e clientes privados que buscam qualidade, beleza, visão de mercado e uma seleção confiável. Isso inclui pedras para joias, sourcing sob medida e suporte tanto para o trade quanto para clientes privados.
+Também faço a curadoria de pedras naturais e slabs semipreciosas para interiores, mobiliário sob medida e aplicações arquitetônicas, ajudando clientes a unir impacto visual e adequação técnica.
+Além disso, ofereço serviços gemológicos quando uma análise mais profunda, documentação, revisão de qualidade ou suporte de avaliação é necessária. Baseado na Califórnia, atendo clientes com uma abordagem profissional, transparente e orientada a resultados."
+             data-es="Hola, mi nombre es Rafael Ferreira, y soy el fundador de Mineral Gemstones. Mi trabajo se construye sobre tres áreas conectadas: piedras de color, piedra natural y servicios gemológicos.
+Me especializo en sourcing y suministro de piedras de color naturales para diseñadores de joyería, revendedores, coleccionistas y clientes privados que buscan calidad, belleza, visión de mercado y una selección confiable. Esto incluye piedras para joyería, sourcing a medida y soporte tanto para trade como para clientes privados.
+También realizo la curaduría de piedra natural y losas semipreciosas para interiores, mobiliario a medida y aplicaciones arquitectónicas, ayudando a los clientes a unir impacto visual y adecuación técnica.
+Además, ofrezco servicios gemológicos cuando se necesita un análisis más profundo, documentación, revisión de calidad o soporte de valoración. Con base en California, atiendo a los clientes con un enfoque profesional, transparente y orientado a resultados.">
+            Hello, my name is Rafael Ferreira...
           </p>
 
           <div class="features">
-            <div class="feature">
-              <i class="fas fa-check-circle"></i>
-              <span data-en="GIA-Trained Expertise" data-pt="Conhecimento com Formação GIA" data-es="Conocimiento con Formación GIA">GIA-Trained Expertise</span>
-            </div>
-            <div class="feature">
-              <i class="fas fa-check-circle"></i>
-              <span data-en="Sourcing & Market Guidance" data-pt="Sourcing & Orientação de Mercado" data-es="Sourcing & Orientación de Mercado">Sourcing & Market Guidance</span>
-            </div>
-            <div class="feature">
-              <i class="fas fa-check-circle"></i>
-              <span data-en="International Standards" data-pt="Padrões Internacionais" data-es="Estándares Internacionales">International Standards</span>
-            </div>
+            <div class="feature"><i class="fas fa-check-circle"></i><span data-en="Colored Stones Sourcing & Supply" data-pt="Sourcing & Fornecimento de Pedras Coloridas" data-es="Sourcing y Suministro de Piedras de Color">Colored Stones Sourcing & Supply</span></div>
+            <div class="feature"><i class="fas fa-check-circle"></i><span data-en="Natural Stones for Interiors" data-pt="Pedras Naturais para Interiores" data-es="Piedra Natural para Interiores">Natural Stones for Interiors</span></div>
+            <div class="feature"><i class="fas fa-check-circle"></i><span data-en="Gemological Services & Guidance" data-pt="Serviços Gemológicos & Consultoria" data-es="Servicios Gemológicos & Asesoría">Gemological Services & Guidance</span></div>
           </div>
         </div>
 
@@ -628,23 +662,17 @@ Con base en California, atiendo a clientes privados, coleccionistas, profesional
   <!-- Education -->
   <section id="education" class="education">
     <div class="container">
-      <h2 class="section-title"
-          data-en="Education"
-          data-pt="Educação"
-          data-es="Educación">
-          Education
-      </h2>
-
+      <h2 class="section-title" data-en="Education" data-pt="Educação" data-es="Educación">Education</h2>
       <div class="education-grid">
         <div class="education-card">
           <a href="/pages/education/diamond_4cs.html">
             <img src="/images/education/diamond_4cs.jpg" alt="The 4Cs of Diamonds">
             <div class="education-content">
               <h3 data-en="The 4Cs of Diamonds" data-pt="Os 4Cs dos Diamantes" data-es="Las 4Cs de los Diamantes">The 4Cs of Diamonds</h3>
-              <p data-en="Learn about Cut, Color, Clarity, and Carat Weight — the universal standard for diamond quality."
-                 data-pt="Aprenda sobre Lapidação, Cor, Pureza e Peso em Quilates — o padrão universal para a qualidade de diamantes."
-                 data-es="Aprenda sobre Talla, Color, Claridad y Peso en Quilates — el estándar universal para la calidad de los diamantes.">
-                 Learn about Cut, Color, Clarity, and Carat Weight — the universal standard for diamond quality.
+              <p data-en="Learn about Cut, Color, Clarity, and Carat Weight - the universal standard for diamond quality."
+                 data-pt="Aprenda sobre Lapidação, Cor, Pureza e Peso em Quilates - o padrão universal para a qualidade de diamantes."
+                 data-es="Aprenda sobre Talla, Color, Claridad y Peso en Quilates - el estándar universal para la calidad de los diamantes.">
+                 Learn about Cut, Color, Clarity, and Carat Weight - the universal standard for diamond quality.
               </p>
             </div>
           </a>
@@ -655,10 +683,10 @@ Con base en California, atiendo a clientes privados, coleccionistas, profesional
             <img src="/images/education/precious_stones.jpg" alt="Precious Stones Guide">
             <div class="education-content">
               <h3 data-en="Precious Stones Guide" data-pt="Guia de Pedras Preciosas" data-es="Guía de Piedras Preciosas">Precious Stones Guide</h3>
-              <p data-en="Discover the world of precious stones, including sapphires, rubies and emeralds."
+              <p data-en="Discover the world of precious stones, including sapphires, rubies, and emeralds."
                  data-pt="Descubra o mundo das pedras preciosas, incluindo safiras, rubis e esmeraldas."
                  data-es="Descubra el mundo de las piedras preciosas, incluyendo zafiros, rubíes y esmeraldas.">
-                 Discover the world of precious stones, including sapphires, rubies and emeralds.
+                 Discover the world of precious stones, including sapphires, rubies, and emeralds.
               </p>
             </div>
           </a>
@@ -670,43 +698,45 @@ Con base en California, atiendo a clientes privados, coleccionistas, profesional
   <!-- Testimonials -->
   <section id="testimonials" class="testimonials">
     <div class="container">
-      <h2 class="section-title"
-          data-en="Testimonials"
-          data-pt="Depoimentos"
-          data-es="Testimonios">
-          Testimonials
-      </h2>
+      <h2 class="section-title" data-en="Testimonials" data-pt="Depoimentos" data-es="Testimonios">Testimonials</h2>
+
+      <p class="section-lead"
+         data-en="Feedback from clients looking for colored stones, natural stones and trustworthy support."
+         data-pt="Feedback de clientes em busca de pedras coloridas, pedras naturais e suporte confiável."
+         data-es="Comentarios de clientes que buscan piedras de color, piedra natural y soporte confiable.">
+         Feedback from clients looking for colored stones, natural stones and trustworthy support.
+      </p>
 
       <div class="t-wrap">
         <div class="t-track" id="tTrack">
           <article class="t-card">
             <div class="t-stars">★★★★★</div>
-            <p>Exceptional guidance. Rafael helped me choose a colored gemstone that matched both my design and budget.</p>
-            <div class="t-author">Mariana S. — Jewelry Project</div>
+            <p>Rafael helped me source the perfect sapphire for a custom ring. The communication was clear and the stone matched exactly what I had in mind.</p>
+            <div class="t-author">Melissa T. — Colored Stone Client</div>
           </article>
 
           <article class="t-card">
             <div class="t-stars">★★★★★</div>
-            <p>Professional, clear, and trustworthy. The gemstone evaluation gave me much more confidence before buying.</p>
-            <div class="t-author">Daniel R. — Stone Review</div>
+            <p>Excellent sourcing support. The emerald options were beautiful, well selected and much more aligned with my budget than what I was finding on my own.</p>
+            <div class="t-author">Daniel R. — Private Buyer</div>
           </article>
 
           <article class="t-card">
             <div class="t-stars">★★★★★</div>
-            <p>Great eye for natural stone selection. The recommendations for our interior project were elegant and practical.</p>
-            <div class="t-author">Lucia A. — Interior Design Client</div>
+            <p>Very professional and transparent. I appreciated the guidance on color, quality and what actually made sense for resale in my business.</p>
+            <div class="t-author">Jessica M. — Trade Client</div>
           </article>
 
           <article class="t-card">
             <div class="t-stars">★★★★★</div>
-            <p>Excellent sourcing support. Communication was smooth and the stone options were exactly what I needed.</p>
-            <div class="t-author">Brian K. — Trade Client</div>
+            <p>Rafael helped us evaluate natural stone options for our interior project with a great balance of beauty, practicality and cost awareness.</p>
+            <div class="t-author">Carlos A. — Natural Stone Client</div>
           </article>
 
           <article class="t-card">
             <div class="t-stars">★★★★★</div>
-            <p>Very knowledgeable and honest. I felt supported from the first consultation through the final decision.</p>
-            <div class="t-author">Patricia M. — Private Client</div>
+            <p>What I liked most was the honesty. Instead of pushing a sale, he helped me choose the right colored stone for my project with confidence.</p>
+            <div class="t-author">Patricia L. — Jewelry Client</div>
           </article>
         </div>
       </div>
@@ -721,23 +751,15 @@ Con base en California, atiendo a clientes privados, coleccionistas, profesional
   <!-- Contact -->
   <section id="contact" class="contact">
     <div class="container">
-      <h2 class="section-title"
-          data-en="Contact Us"
-          data-pt="Entre em Contato"
-          data-es="Contáctenos">
-          Contact Us
-      </h2>
-
+      <h2 class="section-title" data-en="Contact Us" data-pt="Entre em Contato" data-es="Contáctenos">Contact Us</h2>
       <div class="contact-content">
         <div class="contact-info">
           <h3 data-en="Get in Touch" data-pt="Fale Conosco" data-es="Póngase en Contacto">Get in Touch</h3>
-
-          <p data-en="Looking for colored gemstones for jewelry or natural stones for your project? Contact us for availability, sourcing support and quote requests."
-             data-pt="Procura pedras coloridas para joias ou pedras naturais para o seu projeto? Entre em contato para consultar disponibilidade, suporte em sourcing e orçamentos."
-             data-es="¿Busca piedras de color para joyería o piedra natural para su proyecto? Contáctenos para consultar disponibilidad, soporte de sourcing y presupuestos.">
-             Looking for colored gemstones for jewelry or natural stones for your project? Contact us for availability, sourcing support and quote requests.
+          <p data-en="Looking for colored stones, natural stones or gemological support? Contact us for availability, sourcing and quote requests."
+             data-pt="Procura pedras coloridas, pedras naturais ou suporte gemológico? Entre em contato para consultar disponibilidade, sourcing e orçamentos."
+             data-es="¿Busca piedras de color, piedra natural o soporte gemológico? Contáctenos para consultar disponibilidad, sourcing y presupuestos.">
+             Looking for colored stones, natural stones or gemological support? Contact us for availability, sourcing and quote requests.
           </p>
-
           <ul>
             <li><i class="fas fa-user"></i> Rafael Ferreira – Gemology & Stone Sourcing Consultant</li>
             <li><i class="fas fa-map-marker-alt"></i> California - USA</li>
@@ -745,8 +767,7 @@ Con base en California, atiendo a clientes privados, coleccionistas, profesional
             <li>
               <i class="fab fa-whatsapp"></i>
               <a href="https://wa.me/13236028629?text=Hi%20Rafael!%20I%20came%20from%20the%20Mineral%20Gemstones%20website%20and%20would%20like%20more%20information."
-                 target="_blank"
-                 rel="noopener"
+                 target="_blank" rel="noopener"
                  onclick="if(window.gtag){gtag('event','click',{event_category:'contact',event_label:'whatsapp_contact_link'});}">
                  <span data-en="WhatsApp" data-pt="WhatsApp" data-es="WhatsApp">WhatsApp</span>
               </a>
@@ -774,23 +795,22 @@ Con base en California, atiendo a clientes privados, coleccionistas, profesional
       <div class="footer-content">
         <div class="footer-section">
           <img src="/images/logo.png" alt="Mineral Gemstones" class="footer-logo">
-          <p data-en="Supplier of natural colored gemstones for jewelry and premium natural stones for interiors, with expert guidance, sourcing support and refined material selection."
-             data-pt="Fornecedor de pedras coloridas naturais para joias e pedras naturais premium para interiores, com orientação especializada, suporte em sourcing e seleção refinada de materiais."
-             data-es="Proveedor de piedras de color naturales para joyería y piedra natural premium para interiores, con orientación experta, soporte de sourcing y selección refinada de materiales.">
-            Supplier of natural colored gemstones for jewelry and premium natural stones for interiors, with expert guidance, sourcing support and refined material selection.
+          <p data-en="Natural colored stones for jewelry, premium natural stones for interiors, and professional gemological support with a transparent and results-oriented approach."
+             data-pt="Pedras coloridas naturais para joias, pedras naturais premium para interiores e suporte gemológico profissional com uma abordagem transparente e orientada a resultados."
+             data-es="Piedras de color naturales para joyería, piedra natural premium para interiores y soporte gemológico profesional con un enfoque transparente y orientado a resultados.">
+            Natural colored stones for jewelry, premium natural stones for interiors, and professional gemological support with a transparent and results-oriented approach.
           </p>
         </div>
 
         <div class="footer-section">
           <h4 data-en="Services" data-pt="Serviços" data-es="Servicios">Services</h4>
           <ul>
-            <li><a href="/pages/services/gemstone_identification.html">Gemstone Identification</a></li>
-            <li><a href="/pages/services/gemstone_appraisal.html">Gemstone Appraisal</a></li>
-            <li><a href="/pages/services/certification_services.html">Certification Guidance</a></li>
-            <li><a href="/pages/services/quality_analysis.html">Quality Analysis</a></li>
-            <li><a href="/pages/services/detailed_appraisal_services.html">Detailed Advisory Services</a></li>
-            <li><a href="#colored-gemstones">Colored Gemstones</a></li>
+            <li><a href="#colored-stones">Colored Stones</a></li>
             <li><a href="#natural-stones">Natural Stones</a></li>
+            <li><a href="#services">Gemological Services</a></li>
+            <li><a href="#stones-for-jewelry-detail">Stones for Jewelry</a></li>
+            <li><a href="#custom-sourcing-detail">Custom Sourcing</a></li>
+            <li><a href="#trade-private-detail">Trade & Private Clients</a></li>
           </ul>
         </div>
 
@@ -811,156 +831,136 @@ Con base en California, atiendo a clientes privados, coleccionistas, profesional
   <!-- Main JS -->
   <script src="/js/main.js"></script>
 
-  <!-- Additional JS -->
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      let currentLang = "en";
+  document.addEventListener("DOMContentLoaded", function () {
+    let currentLang = "en";
 
-      /* Current year */
-      (function () {
-        const yearEl = document.getElementById("year");
-        if (yearEl) yearEl.textContent = new Date().getFullYear();
-      })();
+    /* Current year */
+    (function(){
+      const yearEl = document.getElementById("year");
+      if(yearEl) yearEl.textContent = new Date().getFullYear();
+    })();
 
-      /* Hero carousel */
-      (function () {
-        const wrap = document.getElementById("heroCarousel");
-        if (!wrap) return;
-        const slides = wrap.querySelectorAll(".carousel-image");
-        let i = 0;
-        setInterval(() => {
-          slides[i].classList.remove("active");
-          i = (i + 1) % slides.length;
-          slides[i].classList.add("active");
-        }, 4000);
-      })();
+    /* Hero carousel */
+    (function(){
+      const wrap = document.getElementById("heroCarousel");
+      if(!wrap) return;
+      const slides = wrap.querySelectorAll(".carousel-image");
+      let i = 0;
+      setInterval(() => {
+        slides[i].classList.remove("active");
+        i = (i + 1) % slides.length;
+        slides[i].classList.add("active");
+      }, 4000);
+    })();
 
-      /* Mobile menu */
-      (function () {
-        const burger = document.getElementById("hamburger");
-        const menu = document.querySelector(".nav-menu");
-        if (!burger || !menu) return;
+    /* Mobile menu */
+    (function(){
+      const burger = document.getElementById("hamburger");
+      const menu = document.querySelector(".nav-menu");
+      if(!burger || !menu) return;
+      burger.addEventListener("click", ()=>{
+        menu.classList.toggle("active");
+        burger.classList.toggle("active");
+      });
+    })();
 
-        burger.addEventListener("click", () => {
-          menu.classList.toggle("active");
-          burger.classList.toggle("active");
+    /* Language switcher */
+    (function(){
+      const btns = document.querySelectorAll(".lang-btn");
+
+      function setLang(lang) {
+        currentLang = lang;
+        document.documentElement.setAttribute("lang", lang);
+
+        document.querySelectorAll("[data-en]").forEach(function(el){
+          const text = el.getAttribute("data-" + lang);
+          if(!text) return;
+
+          if(el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
+            el.setAttribute("placeholder", text);
+          } else {
+            el.innerHTML = text;
+          }
         });
-      })();
 
-      /* Language switcher */
-      (function () {
-        const btns = document.querySelectorAll(".lang-btn");
+        btns.forEach(b => b.classList.toggle("active", b.dataset.lang === lang));
+      }
 
-        function setLang(lang) {
-          currentLang = lang;
-          document.documentElement.setAttribute("lang", lang);
+      btns.forEach(b => b.addEventListener("click", ()=> setLang(b.dataset.lang)));
+      setLang("en");
+    })();
 
-          document.querySelectorAll("[data-en]").forEach(function (el) {
-            const text = el.getAttribute("data-" + lang);
-            if (!text) return;
+    /* Contact form feedback */
+    (function(){
+      const form = document.querySelector("#contact form");
+      const status = document.getElementById("formStatus");
+      if(!form || !status) return;
 
-            if (el.tagName === "INPUT" || el.tagName === "TEXTAREA") {
-              el.setAttribute("placeholder", text);
-            } else {
-              el.innerHTML = text;
-            }
-          });
+      const messages = {
+        en: "Sending message...",
+        pt: "Enviando mensagem...",
+        es: "Enviando mensaje..."
+      };
 
-          btns.forEach(b => b.classList.toggle("active", b.dataset.lang === lang));
-        }
+      form.addEventListener("submit", function(){
+        status.textContent = messages[currentLang] || messages.en;
+      });
+    })();
 
-        btns.forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
-        setLang("en");
-      })();
+    /* Testimonials carousel */
+    (function(){
+      const track = document.getElementById('tTrack');
+      const wrap  = track?.closest('.t-wrap');
+      const prev  = document.getElementById('tPrev');
+      const next  = document.getElementById('tNext');
+      if(!track || !wrap) return;
 
-      /* Contact form feedback */
-      (function () {
-        const form = document.querySelector("#contact form");
-        const status = document.getElementById("formStatus");
-        if (!form || !status) return;
+      const first = track.children[0];
+      const last  = track.children[track.children.length-1];
+      const firstClone = first.cloneNode(true);
+      const lastClone  = last.cloneNode(true);
+      track.appendChild(firstClone);
+      track.insertBefore(lastClone, first);
 
-        const messages = {
-          en: "Sending message...",
-          pt: "Enviando mensagem...",
-          es: "Enviando mensaje..."
-        };
+      let idx = 1;
+      let slideW = wrap.clientWidth;
 
-        form.addEventListener("submit", function () {
-          status.textContent = messages[currentLang] || messages.en;
-        });
-      })();
-
-      /* Testimonials carousel */
-      (function () {
-        const track = document.getElementById("tTrack");
-        const wrap = track?.closest(".t-wrap");
-        const prev = document.getElementById("tPrev");
-        const next = document.getElementById("tNext");
-        if (!track || !wrap) return;
-
-        const first = track.children[0];
-        const last = track.children[track.children.length - 1];
-        const firstClone = first.cloneNode(true);
-        const lastClone = last.cloneNode(true);
-
-        track.appendChild(firstClone);
-        track.insertBefore(lastClone, first);
-
-        let idx = 1;
-        let slideW = wrap.clientWidth;
-
-        function recalc() {
-          slideW = wrap.clientWidth;
-          go(idx, true);
-        }
-
-        function go(i, instant = false) {
-          track.style.transition = instant ? "none" : "transform .5s ease";
-          track.style.transform = `translateX(-${i * slideW}px)`;
-        }
-
-        function nextSlide() {
-          idx++;
-          go(idx);
-        }
-
-        function prevSlide() {
-          idx--;
-          go(idx);
-        }
-
+      function recalc(){
+        slideW = wrap.clientWidth;
         go(idx, true);
+      }
 
-        track.addEventListener("transitionend", () => {
-          const cards = track.children;
-          const lastIndex = cards.length - 1;
+      function go(i, instant=false){
+        track.style.transition = instant ? 'none' : 'transform .5s ease';
+        track.style.transform  = `translateX(-${i * slideW}px)`;
+      }
 
-          if (cards[idx] === firstClone) {
-            idx = 1;
-            go(idx, true);
-          }
+      function nextSlide(){ idx++; go(idx); }
+      function prevSlide(){ idx--; go(idx); }
 
-          if (cards[idx] === lastClone) {
-            idx = lastIndex - 1;
-            go(idx, true);
-          }
-        });
+      go(idx, true);
 
-        if (prev) prev.addEventListener("click", prevSlide);
-        if (next) next.addEventListener("click", nextSlide);
+      track.addEventListener('transitionend', ()=>{
+        const cards = track.children;
+        const lastIndex = cards.length - 1;
+        if(cards[idx] === firstClone){ idx = 1; go(idx, true); }
+        if(cards[idx] === lastClone ){ idx = lastIndex - 1; go(idx, true); }
+      });
 
-        setInterval(nextSlide, 4000);
-        window.addEventListener("resize", recalc, { passive: true });
-      })();
-    });
+      prev && prev.addEventListener('click', prevSlide);
+      next && next.addEventListener('click', nextSlide);
+
+      setInterval(nextSlide, 4000);
+      window.addEventListener('resize', recalc, {passive:true});
+    })();
+  });
   </script>
 
   <!-- WhatsApp floating button -->
   <div class="whatsapp-fab">
     <a href="https://wa.me/13236028629?text=Hi%20Rafael!%20I%20came%20from%20the%20Mineral%20Gemstones%20website%20and%20would%20like%20more%20information."
-       target="_blank"
-       rel="noopener"
-       aria-label="Chat on WhatsApp"
+       target="_blank" rel="noopener" aria-label="Chat on WhatsApp"
        onclick="if(window.gtag){gtag('event','click',{event_category:'contact',event_label:'whatsapp_fab'});}">
       <i class="fab fa-whatsapp" aria-hidden="true"></i>
       <span data-en="Chat on WhatsApp" data-pt="Falar no WhatsApp" data-es="Hablar por WhatsApp">Chat on WhatsApp</span>
